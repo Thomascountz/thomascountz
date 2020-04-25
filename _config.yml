@@ -1,20 +1,20 @@
-site: Sidey
-url: #yoururl
-title: Sidey
-description: Simple and minimalistic jekyll blogging theme.
+site: Thomas Countz
+url: https://thomascountz.com
+title: Thomas Countz
+description: Personal site of Thomas Countz
 twitter:
-  username: #yourusername
+  username: @thomascountz
   card: summary
-  creator: #yourusername
+  creator: @thomascountz
 author:
-  twitter: #yourusername
-  name: #yourusername
+  twitter: @thomascountz
+  name: @thomascountz
   avatar:
-  email: #youremail
-  url: #yoururl
+  email: thomascountz@gmail.com
+  url: https://thomascountz.com
 permalink: pretty
 
-baseurl: ""
+baseurl: "https://thomascountz.com"
 
 highlighter: none
 
