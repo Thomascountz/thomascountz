@@ -3,18 +3,18 @@ url: https://thomascountz.com
 title: Thomas Countz
 description: Personal site of Thomas Countz
 twitter:
-  username: @thomascountz
+  username: thomascountz
   card: summary
-  creator: @thomascountz
+  creator: thomascountz
 author:
-  twitter: @thomascountz
-  name: @thomascountz
+  twitter: thomascountz
+  name: thomascountz
   avatar:
   email: thomascountz@gmail.com
   url: https://thomascountz.com
 permalink: pretty
 
-baseurl: "https://thomascountz.com"
+baseurl: ""
 
 highlighter: none
 
