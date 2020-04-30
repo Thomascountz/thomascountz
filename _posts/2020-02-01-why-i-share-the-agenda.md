@@ -5,7 +5,7 @@ date: 2020-02-01
 layout: post
 tags: ["process"]
 ---
-[Originally Published in The Pseudocode 001](https://thepseudocode.com)
+[Originally Published in The Pseudocode 001](https://thepseudocode.com/001/why-i-share-the-agenda/)
 
 Meetings, meetings, meetings! A day chopped up into a series of fits and starts where nothing gets finished and we all end up fatigued. (Sound familiar?) Although I long for a world where everyone can work at their own pace, for many of us, days like these are unavoidable.  
 

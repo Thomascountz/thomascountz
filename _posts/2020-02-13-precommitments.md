@@ -5,7 +5,7 @@ date: 2020-02-13
 layout: post
 tags: ["process"]
 ---
-[Originally Published in The Pseudocode 001](https://thepseudocode.com)
+[Originally Published in The Pseudocode 001](https://thepseudocode.com/001/precommitments)
 
 When John O'Nolan founded [Ghost](https://ghost.org) in April 2013, he made the same "we-won't-sell-out" pitch to customers that every other startup was making at the time:  
 
