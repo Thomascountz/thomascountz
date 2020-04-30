@@ -2,6 +2,8 @@
 title: Perceptrons in Neural Networks
 subtitle: Learning Machine Learning Journal 1
 author: Thomas Countz
+layout: post
+tags: ["machine learning", "perceptron"]
 ---
 
 Perceptrons are a type of artificial neuron that predates the sigmoid neuron. It appears that they were invented in 1957 by [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) at the Cornell Aeronautical Laboratory.
@@ -10,7 +12,7 @@ The initial difference between sigmoids and perceptrons, as I understand it, is 
 
 Taken from [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) we can model a perceptron that has 3 inputs like this:
 
-![Perceptron](https://cdn-images-1.medium.com/max/2000/1*7XNrKHmizd9GN6RxhpG6uQ.jpeg)
+![Perceptron](/assets/images/perceptron-basic.jpeg)
 
 A perceptron can have any number of inputs, but this one has three binary inputs x¹, x², and x³, and produces a binary output, which is called its *activation*.
 
@@ -22,7 +24,7 @@ To determine the perceptron’s activation, we take the *weighted sum* of each o
 
 The formula for perceptron neurons can can be expressed like this:
 
-![http://neuralnetworksanddeeplearning.com/index.html](https://cdn-images-1.medium.com/max/2000/1*h7m4YL-MdtWfO_8Vw-71Ag.png)
+![http://neuralnetworksanddeeplearning.com/index.html](/assets/images/perceptron-equation.png)
 
 Let’s break this down.
 
@@ -36,11 +38,13 @@ Let’s break this down.
 
 This formula is called a [Heaviside Step function](https://en.wikipedia.org/wiki/Heaviside_step_function), and it can be graphed like this:
 
-     f(x) = { x <= b : 0 , x > b : 1 }
+```
+f(x) = { x <= b : 0 , x > b : 1 }
+```
 
 Were x is our *weighted sum, *and b is our *bias*, 0, in this case.
 
-![](https://cdn-images-1.medium.com/max/2000/1*anmMc9bDkCRBTbwVJk4j3w.png)
+![](/assets/images/step-function.png)
 
 For any negative x, (input), our y, (output), is 0, and for any positive x, our y is 1.
 
@@ -50,7 +54,7 @@ I want to record this graph, as simple as it is, because it will help demonstrat
 
 It’s more common to represent the perceptron math like this:
 
-![https://en.wikipedia.org/wiki/Perceptron](https://cdn-images-1.medium.com/max/2000/1*T_mQVKH0PKS97waJ-RkDYg.png)
+![https://en.wikipedia.org/wiki/Perceptron](/assets/images/perceptron-equation-simple.png)
 
 * The summation is represented using dot product notation.
 
@@ -80,7 +84,7 @@ end
 
 Phew! That was a lot, but now we can add more detail to our perceptron model:
 
-![Perceptron Model](https://cdn-images-1.medium.com/max/2000/1*LyDp1dru7psq3044D2AXsQ.png)
+![Perceptron Model](/assets/images/perceptron-model2.png)
 
 ## IRL Example
 
@@ -112,7 +116,7 @@ Bias:
 
 Let’s map it using our illustration!
 
-![Pizza Perceptron](https://cdn-images-1.medium.com/max/2000/1*m9mE1AYIFkveNar5HzSKog.png)
+![Pizza Perceptron](/assets/images/pizza-perceptron.png)
 
 Each input represents a binary state of each scenario I’m considering, and each weight represents how important each yes-or-no answer is to my final decision. Let’s plug in the numbers.
 
@@ -141,13 +145,13 @@ Thanks for Reading <3
 
 ## Resources
 
-* [But what *is* a Neural Network? | Chapter 1, deep learning](https://www.youtube.com/watch?v=aircAruvnKk&t=6s)
+* [But what *is* a Neural Network? - Chapter 1, deep learning](https://www.youtube.com/watch?v=aircAruvnKk&t=6s)
 
-* [Gradient descent, how neural networks learn | Chapter 2, deep learning](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+* [Gradient descent, how neural networks learn - Chapter 2, deep learning](https://www.youtube.com/watch?v=IHZwWFHWa-w)
 
-* [What is backpropagation really doing? | Chapter 3, deep learning](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
+* [What is backpropagation really doing? - Chapter 3, deep learning](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
 
-* [Backpropagation calculus | Appendix to deep learning chapter 3](https://www.youtube.com/watch?v=tIeHLnjs5U8)
+* [Backpropagation calculus - Appendix to deep learning chapter 3](https://www.youtube.com/watch?v=tIeHLnjs5U8)
 
 * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) by [Michael Nielsen](http://michaelnielsen.org/)
 

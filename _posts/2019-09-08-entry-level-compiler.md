@@ -2,19 +2,13 @@
 title: Entry-level Compiler
 subtitle: Theory Behind Building a Markdown to HTML Compiler
 author: Thomas Countz
+tags: ["project", "computer science"]
+layout: post
 ---
 
-<div class="row">
-  <div class="col-6">
-  ![markie](https://cdn-images-1.medium.com/max/2006/1*xB3AK7F7J8TdmwY9j1UFGQ.jpeg)*markie*
-  </div>
+  ![markie](/assets/images/markie.jpeg)*markie*
 
-  <div class="col-6">
-  <p>
   A compiler’s job is to translate one language into another. We use them in computer programming to transform the high-level languages that humans can read and write into something that computers understand.
-  </p>
-  </div>
-</div>
 
 For example, our *source language* might be C, which we can write, and our *target language* could be assembly, which our computers can run. Without a compiler, (or an *assembler* in the case that our target language is assembly), we would have to work with computer instruction sequences that lack the expressiveness that we’re used to in modern-day software development.
 
@@ -28,7 +22,7 @@ Parsing takes that list of tokens and creates a tree structure, specifically an 
 
 Finally, code emission turns the abstract syntax tree into the target language by walking the tree branch-by-branch, node-by-node.
 
-![](https://cdn-images-1.medium.com/max/2472/1*nIpVCM_Z5YIHH2wKwtIX3w.jpeg)
+![](/assets/images/compiler-steps.jpeg)
 
 ## Lexical Analysis
 

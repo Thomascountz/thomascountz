@@ -2,6 +2,7 @@
 title: End of Freshman Year
 subtitle: What I've Learned After my First Year of Being a Software Consultant
 author: Thomas Countz
+layout: post
 ---
 
 As I enter my second year as a software consultant (my sophomore year, as no one will let me call it), I've gained a new perspective about being pushed, having to pull, personal principles, and being the adult in the room... 
