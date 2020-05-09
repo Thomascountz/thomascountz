@@ -316,7 +316,7 @@ Now, test it out with these images, or upload your own!
 ⚠️  This model is probably not going to infer all of your images very accurately. It was trained on a tiny dirty dataset, but it worked for illustrating the deployment pipeline in this article. Secondly, I miss labelled mourning doves as `morning_dove`, sorry!
 
 ```bash
-$ curl -F 'image=@/Users/thomas/Pictures/sparrow.jpg' https://shielded-eyrie-48894.herokuapp.com/ping/predict
+$ curl -F 'image=@/Users/thomas/Pictures/sparrow.jpg' https://shielded-eyrie-48894.herokuapp.com/predict
 {
   "success": "sparrow"
 }

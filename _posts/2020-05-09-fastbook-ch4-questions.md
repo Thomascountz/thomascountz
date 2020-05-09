@@ -116,7 +116,11 @@ The learning rate is what we use gently adjust the parameters. A high learning r
 
 ### What is a "gradient"?
 
-Also called the _derivative_, it's a function that describes the slope of another function at a given point. It tells us how "quickly" a function changes at a certain input.
+The gradient of a function, denoted as follows, is the vector of partial derivatives with respect to all of the independent variables, aka, the parameters.
+
+The _derivative_, it's a function that describes the slope of another function at a given point. It tells us how "quickly" a function changes at a certain input.
+
+To calculate the partial derivative of a single parameter, you hold all other parameters constant. After computing all of the partial derivatives, they're collected into a vector call the gradient.
 
 ### Do you need to know how to calculate gradients yourself?
 
