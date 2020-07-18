@@ -1,25 +1,5 @@
-# Sidey
+I’m a software engineer based in New York City. I currently work for [8thLight](https://8thlight.com) as a consultant and run [The Pseudocode](https://thepseudocode.com) newsletter.
 
-Sidey is a simple and minimalistic jekyll blogging theme.
+My day to day work allows me to work on a variety of teams on a variety of projects, and it’s here that I share my personal research and discoveries. I work with web technologies, machine learning, robotics, and team/work management.
 
-### Features
-
-- Responsive design
-- Inline CSS
-- Anchor headings
-- Search
-- Tags & tag pages
-- Security headers (for Netlify hosting)
-- 404 page
-- Compressed CSS and HTML
-- 100/100 score on Lighthouse, Page Speed Insights & Webpagetest
-- Robots.txt
-- Atom & Json feeds
-- Sass
-- Seo optimized (Twitter cards, Facebook Open Graph, Schema.org)
-- Ultra fast (Only ~5kb of CSS)
-- Sidebar navigation
-
-### Screenshot
-
-![Screenshot](screenshot.png)
+You can find my blog at [thomascountz.com](https://thomascountz.com) and on twitter [@thomascountz](https://thomascountz.com).
