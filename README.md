@@ -1,5 +1,5 @@
 I’m a software engineer based in New York City. I currently work for [8thLight](https://8thlight.com) as a consultant and run [The Pseudocode](https://thepseudocode.com) newsletter.
 
-My day to day work allows me to work on a variety of teams on a variety of projects, and it’s here that I share my personal research and discoveries. I work with web technologies, machine learning, robotics, and team/work management.
+My day-to-day allows me to work on a variety of teams on a variety of projects, and I share my personal research and discoveries on my [blog](https://thomascountz.com). I enjoy working with web technologies, machine learning, robotics, and team/work management.
 
 You can find my blog at [thomascountz.com](https://thomascountz.com) and on twitter [@thomascountz](https://thomascountz.com).
