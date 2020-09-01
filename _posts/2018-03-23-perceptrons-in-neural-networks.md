@@ -153,7 +153,7 @@ Thanks for Reading <3
 
 * [Backpropagation calculus - Appendix to deep learning chapter 3](https://www.youtube.com/watch?v=tIeHLnjs5U8)
 
-* [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) by [Michael Nielsen](http://michaelnielsen.org/)
+* [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/index.html) by [Michael Nielsen](http://michaelnielsen.org/)
 
 * [Perceptrons — the most basic form of a neural network](https://appliedgo.net/perceptron/)
 
