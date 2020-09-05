@@ -6,9 +6,9 @@ layout: post
 tags: ["rust"]
 ---
 
-[Checkout _Ownership in Rust, Part 1_](2018/07/09/ownership-in-rust-part-1).
+[Checkout _Ownership in Rust, Part 1_](/2018/07/09/ownership-in-rust-part-1).
 
-When we looked at ownership in Rust [last time](2018/07/09/ownership-in-rust-part-1), we looked at how Rust uses scope to determine when a resource/data in memory should be *dropped *or _freed._
+When we looked at ownership in Rust [last time](/2018/07/09/ownership-in-rust-part-1), we looked at how Rust uses scope to determine when a resource/data in memory should be *dropped *or _freed._
 
 We saw that for types that have a “copy trait,” (i.e. types whose data can be stored on the stack), the ownership model behaves similarly to other languages that may use a different paradigm, like garbage collection. But for types without this trait, we needed to be more conscious of the ownership rules.
 
