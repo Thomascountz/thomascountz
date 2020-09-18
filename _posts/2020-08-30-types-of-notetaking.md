@@ -3,7 +3,6 @@ title: Types of Notetaking
 author: Thomas Countz
 layout: post
 tags: ["process", "note taking"]
-
 ---
 
 Earlier this week, my pair and I struck upon something interesting, and I stopped to take notes.
@@ -95,8 +94,8 @@ I love diving deep into different topics, often topics that I may not directly v
 
 My solution to avoid this type of thing is to take long-form reference notes:
 
-- **Reference-able** — As you might be able to guess, these notes have to be notes that I can come back to and understand. That means that these aren't draft-zero notes, they're well crafted and continuously editable as I learn and discover new things. They're written with the reader in mind, even on the first pass.
-- **Structured** — These notes should be both hierarchical and linkable. If I taking notes on material that is related to notes I've taken in the past, I want to connect them somehow. This helps with referencing things later, but also helps as I'm editing.
+- **Reference-able** — As you might be able to guess, these notes have to be notes that I can come back to and understand. That means that these aren't draft-zero notes, they're well crafted and continuously editable as I learn and discover new things. They're written with the reader in mind, even on the first pass.
+- **Structured** — These notes should be both hierarchical and linkable. If I taking notes on material that is related to notes I've taken in the past, I want to connect them somehow. This helps with referencing things later, but also helps as I'm editing.
 - **Pleasurable** — It's important to me that these notes be enjoyable to write and to read. This means the ergonomics have to be comfortable and familiar and help me to focus on the content, rather than the styling.
 
 ### My solution: [Gitbook](https://www.gitbook.com/)/personal wiki
