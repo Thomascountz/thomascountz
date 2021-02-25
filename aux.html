@@ -3,26 +3,69 @@ layout: default
 ---
 
 <section class="posts">
-  <section class="post">
-    {% for post in site.categories.aux %}
-      <h2>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      </h2>
+  <div>
+  </div>
+  <section class="post" style="border:1px solid black;">
+    <h1 style="font-size:75px;line-height:75px">
+      Aux
+      <img src="https://www.thomascountz.com/assets/images/polymath.png" alt="countz research logo" width="75" align="right"/>
+    </h1>
 
-      <strong>
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%A %B %-d, %Y" }}</time>
-      </strong>
+    <p>
+    Aux (short for Auxiliary) is a line of internet-connected consumer electronics-inspired devices that collect and displays locally captured and internet queried data.
+    </p>
+    <p>
+    Aux requires and immense amount of research and prototyping. Along with the <a href="https://github.com/thomascountz/aux">Github repository</a> that stores various artifacts for the project (schematics, documentation, firmware, etc), this microfeed augments the project by creating a space for quick updates and ideas.
+    </p>
 
-      {{ post.content }}
+    <h2>Tech Details</h2>
+    <details>
+      <summary>
+        Proto 1 (Data Cube)
+      </summary>
+      <p>
+      Aux Proto 1 is driven by an ESP-WROOM-32 from Espressif and programmed via their Arduino-compatible library. It's a portable environmental sensor suite that communicates via MQTT.
+      </p>
+      <p>
+      It measures temperature, humidity, CO2, TVOC, lux, noise levels, heart rate, and blood oxygen levels. Sensor data and real-time data queried through internet APIs is readable via a gesture-sensitive onboard OLED display. Proto 1's enclosure is built from FR4, most commonly used to build printed circuit boards.
+      </p>
+      <p>
+      Proto 1's job is to monitor environmental conditions.
+      </p>
+    </details>
 
-      <span class="meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time> &middot;
-        {% for tag in post.tags %}
-          <a href="/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      </span>
-      <hr />
-    {% endfor %}
+    <details>
+      <summary>
+        Proto 2 (Wrist Watch)
+      </summary>
+      <p>
+      Aux Proto 2 is driven by an ESP-WROOM-32 from Espressif and programmed via their Arduino-compatible library. It's a smart watch that communicates via MQTT and BLE.
+      </p>
+      <p>
+      Time is kept using a real-time clock and its output is readable via a gesture-sensitive OLED display. An onboard accelerometer allows Proto 2 to monitor activities, behaviors, and gestures. Proto 2's housing is built from FR4, most commonly used to build printed circuit boards.
+      </p>
+      <p>
+      Proto 2's job is to tell time.
+      </p>
+    </details>
   </section>
+
+  {% for post in site.aux %}
+  <section class="post">
+    <h2>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </h2>
+
+    {{ post.content }}
+
+    <span class="meta">
+      {% for tag in post.tags %}
+      <a href="/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    </span>
+    <hr />
+  </section>
+  {% endfor %}
+
 </section>
 

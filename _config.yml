@@ -15,7 +15,6 @@ author:
 permalink: pretty
 
 baseurl: ""
-permalink: pretty
 
 highlighter: rouge
 
@@ -41,7 +40,10 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: :categories/:year/:month/:day/:slug
+    permalink: /:year/:month/:day/:slug
+  aux:
+    output: true
+    permalink: /aux/:path:output_ext
 
 defaults:
   - scope:
