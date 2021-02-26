@@ -62,5 +62,10 @@ defaults:
       layout: "post"
   - scope:
       path: ""
+      type: "aux"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
     values:
       image: /assets/images/tc.png
