@@ -11,7 +11,7 @@ body {
 	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 	line-height:1.5;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: rgb(22, 23, 26);
 }
 
@@ -156,7 +156,7 @@ strong, b {
 main {
 	display:flex;
 	flex-wrap:wrap;
-	max-width:60rem;
+	max-width:80rem;
 	margin:2rem auto;
 	padding:1rem;
 }
