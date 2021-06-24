@@ -8,7 +8,7 @@ tags: ["project", "ruby", "machine learning", "data science", "nasa", "space"]
 
 I'm both excited and saddened to share with you my experience pulling rocket telemetry data from a recorded video live stream of a rocket launch. What I'm sharing with you is going to feature very hacky brute force data munging, security worst practices, and, the data engineer's favorite: Google Sheets.
 
-But before I share, I want to give my condolences and pay my respects to Rocket Lab and their engineering team. Peter Beck's empathy and humility is demonstrated in all the work that they do. Rocket Lab is nevertheless one of the most ambitious, successful, and consistent areospace organizations, and thanks to their participation within the wider community, we can all learn from them.
+But before I share, I want to give my condolences and pay my respects to Rocket Lab and their engineering team. Peter Beck's empathy and humility is demonstrated in all the work that they do. Despite today's anomoly, Rocket Lab is nevertheless one of the most ambitious, successful, and consistent areospace organizations, and thanks to their participation within the wider community, we can all learn from them.
 
 > On one of our toughest days, our team operated with professionalism and worked swiftly to ensure the anomaly was managed safely. Our team is resilient, and our top priority remains to safely and reliably return to flight for our customers. We will learn from this, and we’ll be back on the pad again.
 > —[Rocket Lab Experiences Anomaly During Launch](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/)
@@ -19,7 +19,7 @@ Early today, [Rocket Lab](https://www.rocketlabusa.com/) launched their 20th Ele
 
 Unfortunately, the mission ended in failure right around T+00:02:30 shortly after main engine cutoff and second stage separation. In the live stream, the second stage appears to ignite and then quickly cutoff. Rocket Lab [released a statement](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/) confirming that the anomaly had lead to the failure of the mission, but not yet releasing any preliminary data that might point to the cause of the failure, of course, pending the investigation.
 
-Days like to day are a magnet for armchair engineers!
+Days like to day are a magnet for armchair engineers.
 
 ## Youtube Video Stream
 ![](/assets/images/rocket-lab-stream.png)
@@ -276,7 +276,7 @@ This is kind of where my armchair engineering stopped. I mean, I don't really kn
 What I do know is that things shouldn't have ended around T+00:03:30 and that the green line (velocity) should have kept going up, but around T+00:02:30, right around main engine cut off and stage separation, it started going down and stayed down.
 
 ## Conclusion
-This was a fun project! It really illustrates to me the power of motivation. This isn't too dissimilar to my day job, but at work, I can't just spin up cloud resources and the scale of the data is too large to try to manipulate in memory. That said, it was really fun to try to dive head first into a problem and come out on the other side having learned more about Google Cloud, `jq`, rocket trajectories, and basic data manipulation.
+This was a fun project from a bad day. It really illustrates to me the power of motivation. This isn't too dissimilar to my day job, but at work, I can't just spin up cloud resources and the scale of the data is too large to try to manipulate in memory. That said, it was really fun to try to dive head first into a problem and come out on the other side having learned more about Google Cloud, `jq`, rocket trajectories, and basic data manipulation.
 
 If I were to approach this problem again, I would keep the `rotatedBoundingBox` data and use it to identify the meaning of the data. SpaceX's Falcon 9 streams, for example, contain two readouts each of speed and altitude, one for the first and second stages. It would be impossible to distinguish between the two on format alone.
 
