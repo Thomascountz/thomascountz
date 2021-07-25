@@ -5,7 +5,7 @@ layout: post
 tags: ["ruby", "sql", "database", "rails"]
 ---
 
-You're on Ops. Debugging `Error`-s in invoicing Rails app, as usual. They're stored in MySQL and access through ActiveRecord and some helper methods. They've already been updated with a `status_message`, so now it's time to dig in and investigate.
+You're on Ops. Debugging `Error`-s in Invoicing Rails app, as usual. They're stored in MySQL and accessed through ActiveRecord and some helper methods. They've already been updated with a `status_message`, so now it's time to dig in and investigate.
 
 ```ruby
 irb(main):001:0> Error.column_names

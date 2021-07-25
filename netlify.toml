@@ -5,8 +5,8 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "no-referrer"
     X-Content-Type-Options = "nosniff"
-    
-    
+
+
 [[headers]]
   for = "*.ico"
   [headers.values]
@@ -104,3 +104,7 @@
   [headers.values]
     Cache-Control = "max-age=604800, public"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
