@@ -2,7 +2,7 @@
 title: Hexo - Prototyping, Design, Simulation
 author: Thomas Countz
 layout: post
-tags: ["hexo", "hardware", "PCB"]
+tags: ["hexo", "hardware", "PCB", "electronics", "LTSpice", "falstad"]
 ---
 
 ![Hexo cycling through six LEDs and landing on number four](/assets/images/hexo_gif.gif)
