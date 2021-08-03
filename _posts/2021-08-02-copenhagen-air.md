@@ -1,5 +1,5 @@
 ---
-title: København Luftkvalitet og Cykling
+title: Københavns Luftkvalitet og Cykling
 subtitle: Copenhagen Air Quality and Bicycling
 author: Thomas Countz
 layout: post
