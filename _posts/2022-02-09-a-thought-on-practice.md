@@ -1,5 +1,5 @@
 ---
-title: Thoughts on Practice
+title: A Thought on Practice
 subtitle: A new appreciation for the old
 author: Thomas Countz
 layout: post
