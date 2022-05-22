@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
+
 {% assign featured_posts = site.posts | where:'featured', true %}
 
-<section class="posts">
+<section class="posts" style="border: 2px solid black">
   <h3>Featured</h3>
   <ul class="featured">
     {% for post in featured_posts %}
@@ -15,9 +16,9 @@ layout: default
     </li>
     {% endfor %}
   </ul>
+</section>
 
-  <hr />
-
+<section class="posts">
   <h3>Archive</h3>
   <ul>
     {% for post in site.posts %}
