@@ -4,6 +4,7 @@ subtitle: Copenhagen Air Quality and Bicycling
 author: Thomas Countz
 layout: post
 tags: ["data", "python"]
+featured: true
 ---
 *Dataset retreived from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*
 

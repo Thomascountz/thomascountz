@@ -4,6 +4,7 @@ subtitle: Theory Behind Building a Markdown to HTML Compiler
 author: Thomas Countz
 tags: ["project", "computer science"]
 layout: post
+featured: true
 ---
 
   ![markie](/assets/images/markie.jpeg)*markie*
