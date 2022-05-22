@@ -3,6 +3,7 @@ title: "Essential & Relevant: A Unit Test Balancing Act"
 author: Thomas Countz
 layout: post
 tags: ["testing", "process"]
+featured: true
 ---
 [Originally Published on 8th Light's Blog](https://8thlight.com/blog/thomas-countz/2019/02/19/essential-and-relevant-unit-tests.html)
 

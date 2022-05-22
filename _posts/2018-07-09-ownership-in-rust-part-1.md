@@ -4,6 +4,7 @@ subtitle: It’s not my problem.
 author: Thomas Countz
 layout: post
 tags: ["rust"]
+featured: true
 ---
 
 [_Ownership in Rust, Part 2_ →](/2018/07/11/ownership-in-rust-part-2)

@@ -3,6 +3,7 @@ title: 19-line Line-by-line Python Perceptron
 author: Thomas Countz
 layout: post
 tags: ["machine learning"]
+featured: true
 ---
 
 ```python
