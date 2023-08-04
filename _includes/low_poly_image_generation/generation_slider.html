@@ -1,0 +1,75 @@
+<style>
+  .slider-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    /* box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1); */
+    /* border-radius: 10px; */
+  }
+
+  .slider {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #slideContainer {
+    width: 100%;
+    margin: 0 auto 15px auto;
+  }
+
+  #slideContainer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #generation {
+    font-family: monospace;
+    text-align: center;
+    /* font-size: 14px; */
+    margin-top: 15px;
+    /* color: #666; */
+  }
+</style>
+
+<div class="slider-container">
+  <div id="slideContainer">
+    <img id="slide"
+      src="/assets/images/low_poly_image_generation/out/gen-0000.png">
+    <p id="generation">Generation: 0000</p>
+  </div>
+  <input type="range" min="1" max="6128" value="1" class="slider" id="myRange">
+</div>
+
+<script>
+var generationNumbers = ["0000", "0001", "0002", "0003", "0004", "0006", "0007",
+"0008", "0010", "0016", "0019", "0022", "0023", "0029", "0034", "0045", "0046",
+"0047", "0048", "0052", "0057", "0058", "0060", "0065", "0070", "0072", "0073",
+"0074", "0076", "0078", "0087", "0088", "0108", "0117", "0120", "0132", "0135",
+"0137", "0158", "0169", "0176", "0193", "0224", "0233", "0254", "0256", "0277",
+"0288", "0294", "0308", "0358", "0361", "0378", "0422", "0429", "0454", "0510",
+"0549", "0634", "0682", "0708", "0746", "0779", "0835", "0851", "0857", "0860",
+"0906", "0984", "1045", "1102", "1131", "1180", "1223", "1241", "1245", "1248",
+"1265", "1268", "1544", "1558", "1563", "1568", "1700", "1855", "1877", "1897",
+"1944", "2194", "2233", "2236", "2241", "2358", "2389", "2461", "2548", "2619",
+"2625", "2739", "2740", "3194", "3223", "3826", "3988", "4016", "4069", "4189",
+"4308", "4332", "4440", "4684", "4924", "5081", "5143", "5170", "5405", "5433",
+"5475", "5560", "5702", "6124", "6198"];
+
+  var generations = generationNumbers.map(num => {
+    var img = new Image();
+    img.src = `/assets/images/low_poly_image_generation/out/gen-${num}.png`;
+    return img;
+  });
+
+  document.getElementById("myRange").max = generations.length;
+
+  document.getElementById("myRange").oninput = function () {
+    document.getElementById("slide").src = generations[this.value - 1].src;
+    var genNumber = generationNumbers[this.value - 1];
+    document.getElementById("generation").textContent = "Generation: " + genNumber;
+  };
+</script>
