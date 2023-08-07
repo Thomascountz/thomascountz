@@ -3,7 +3,10 @@ layout: default
 ---
 
 <section class="post">
-  <h2>{{ page.title }}</h2>
+  <div class="title">
+    <h2>{{ page.title }}</h2>
+    <h4>{{ page.subtitle }}</h4>
+  </div>
   {{ content }}
   <span class="meta">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> &middot; {% for tag in page.tags %}
@@ -12,5 +15,3 @@ layout: default
   <hr />
   {% include utterances.html %}
 </section>
-
-
