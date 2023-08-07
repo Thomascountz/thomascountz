@@ -54,9 +54,10 @@ We'll begin by going over what an evolutionary algorithm is and how it works. Th
   - [Final Configuration](#final-configuration)
 - [Results](#results)
   - [Subjective Analysis](#subjective-analysis)
-  - [Data Analysis](#data-analysis)
+  - [Data Analysis and Interpretation](#data-analysis-and-interpretation)
     - [Log Data](#log-data)
     - [Image Data](#image-data)
+    - [Revisiting the Objective](#revisiting-the-objective)
   - [Notes](#notes)
 
 
@@ -750,9 +751,9 @@ Finally, it's time to run the algorithm and see what happens! Let's take a subje
 
 After running the algorithm for over 6000 generations, after about an hour, I'm really please with the results!
 
-I'm surprised by the details the algorithm was able to replicate. For example, the curvature of the top of the ruby is really well defined, given that we're working with only straight lines. Also, the highlights along the gem's facets were captured well. If I squint, I have a hard time distinguishing the target image from the result. With that said, there's clearly some points stuck in the upper left corner that are shading part of the background the wrong color, but that said, I think it's those points contributing to the curvature I mentioned earlier.
+I'm surprised by the details the algorithm was able to replicate. For example, the curvature of the top of the ruby is really well defined, given that we're working with only straight lines. Also, the highlights along the gem's facets were captured well. If I squint, I have a hard time distinguishing the target image from the result. With that said, there's clearly some points stuck in the upper left corner that are shading part of the background the wrong color, but I think it's those points contributing to the gem's curve that I mentioned earlier.
 
-I thought that the algorithm made a lot of early success, and by generation 120, I was already impressed by the progress. As the algorithm continued to run, I felt the gains were diminishing, which is to be expected from an evolutionary algorithm. After about generation 2000, I felt like the algorithm was just making small tweaks to the image, but not really improving it, although it is clear that some refinements were being made.
+I thought that the algorithm had a lot of early success, and by generation 120, I was already impressed by the progress. As the algorithm continued to run, I felt the gains were diminishing, which is to be expected from an evolutionary algorithm. After about generation 2000, I felt like the algorithm was just making small tweaks to the image, but not really improving it, although it is clear that some refinements were being made.
 
 <div style="text-align:center; margin: 10px auto 10px auto;">
   <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/skip_montage.png" />
@@ -761,15 +762,17 @@ I thought that the algorithm made a lot of early success, and by generation 120,
 
 The biggest improvements to the image after the early generations appear to be in the grayscale values, rather than the positions of the points. This makes sense because the position of the points only really matter in that the resulting triangle contributes to the grayscale value of the pixels it covers. That said, the position of the points do appear to be improving, as evidenced by the edges of the Ruby logo becoming more defined.
 
-In terms of the algorithm's performance, I would like to continue tuning the hyperparameters to see if I can get the algorithm to converge faster. Without diving into the numbers yet, we can intuit how changes in the things like the `population_size`, `mutation_rate`, and `elitism_rate` might affect the performance of the algorithm rather dramatically. And, we can probably get a sense for how well our hyperparameter tuning is going by looking at the early generation's output images. For example, the current configuration reached generation 120 (show above) after just a minute and thirteen seconds.[^dynamic_hyperparameters]
+In terms of the algorithm's performance, we can intuit how changes in the things like the `population_size`, `mutation_rate`, and `elitism_rate` might affect the performance of the algorithm rather dramatically. And, we can probably get a sense for how well our hyperparameter tuning is going by looking at the early generation's output images. For example, the current configuration reached generation 120 (show above) after just a minute and thirteen seconds.[^dynamic_hyperparameters]
 
 [^dynamic_hyperparameters]: It's also possible to dynamically change the hyperparameters over time. For example, we could start with a high mutation rate to increase diversity, and then lower the mutation rate over time to increase exploitation.
 
-## Data Analysis
+## Data Analysis and Interpretation
 
-Now that we've taken a subjective look at the results, let's take an objective look at the numbers. We're going to treat these numbers as a baseline, since we've only done one run and there nothing to character performance against.[^additional_runs] Additionally, we're going to look at the numbers from the perspective of the algorithm's performance, rather than the performance of the Ruby code itself (namely using generation count as our time (`t`) instead of wall time or CPU time).[^ruby-performance]
+Now that we've taken a subjective look at the results, let's take an objective look at the numbers. We're going to treat these numbers as a baseline, since we've only done one run and there nothing to characterize the performance against.[^additional_runs] Additionally, we're going to look at the numbers from the perspective of the algorithm's performance, rather than the performance of the Ruby code itself[^time_t] [^ruby-performance]
 
 [^additional_runs]: Hi, Thomas here. I really wanted to finish this blog post. So as much as I want to write up my experience with tweaking the performance and hyperparameters, I'm going to leave that for another day. I hope you understand.
+
+[^time_t]: We'll use generation count as our time (`t`) instead of wall time or CPU time because it's a more accurate representation of the algorithm's performance. The algorithm is not guaranteed to run at a constant speed, so using generation count as our time allows us to compare only the algorithm's performance of different configurations.
 
 [^ruby-performance]: Me again. CPU and memory performance tuning is an important aspect of developing evolutionary algorithms, especially considering that they are known for being resource intensive, but I'm going to leave that for another day as well. You're welcome.
 
@@ -791,25 +794,45 @@ We can also see that the fitness of the fittest member of the population is not 
   <figcaption>Velocity of the fittest member of the population over time.</figcaption>
 </div>
 
-Here, we can see a lot of zero-efficiency/zero-velocity generations, where the fitness of the fittest member of the population did not change from the previous generation, but mostly after about the 1000th generation. This is to be expected because the algorithm is converging on a solution, and therefore, the fitness of the fittest member of the population will not change much from one generation to the next.
+Here, we can see a lot of zero-efficiency/zero-velocity generations, where the fitness of the fittest member of the population did not change from the previous generation, specifically after about the 1000th generation. This is to be expected because the algorithm is converging on a solution, and therefore, the fitness of the fittest member of the population will not change much from one generation to the next.
 
-We could this metric to improve our end condition function, i.e. stop the algorithm when the velocity drops below a certain threshold, rather than blindly after a certain number generations. We can also use "velocity" to compare the performance of different configurations; the faster the velocity drops, the faster the algorithm converges. 
+We could this metric to improve our end condition function, i.e. stop the algorithm when the efficiency drops below a certain threshold, rather than blindly after a certain number generations or a particular fitness score. We can also use efficiency to compare the performance of different configurations; the faster the efficiency drops, the faster the algorithm converges. 
 
-That said, convergence on a solution doesn't always mean that the solution is the best solution, so we should be careful not to prematurely stop the algorithm. For example, at around generation 4500, we see another significant spike in velocity even after many generations of little-or-no improvement. This is because the algorithm found a better solution than it had previously.
+That said, convergence on a solution doesn't always mean that the solution is the best solution, so we should be careful not to prematurely stop the algorithm. For example, at around generation 4500, we see another significant spike in velocity even after many generations of little-or-no improvement. This is because the algorithm found a better solution than it had previously thanks to the diversity introduced by the crossover and mutation functions.
+
+Looking at this data, I'm eager to explore increasing diversity in an attempt to reduce the number and length of those plateaus and therefore increase efficiency. My first idea would be to increase the population size, but I'm also curious to see what happens if we increase the mutation rate.
 
 ### Image Data
 
-Let's now switch our focus by looking at the output images themselves. We've configured the `highest_fitness_callback` to save the image of the fittest member of the population when it's found. We analyze these images as data, just like we did with the logs.
+Let's now switch our focus by looking at the output images. Subjectively, I thought that there was little to be gained after generation 2000, but based on the data from the logs, we know that the algorithm continued to find fitter members. Is generation 6198, at a fitness score of `2857.08`, really `60%` _better_ than generation 2194 at a fitness score of `1700.74`? What does "60% better" _look_ like?
 
-```ruby
-config.highest_fitness_callback = ->(member) { save_image(member_to_image(member)) }
-```
+Let's start by taking a look at the error across individual pixels.
+
 <div style="text-align:center; margin: 10px auto 10px auto;">
-  <img style="border: 1px solid gray; padding: 20px;" src="/assets/images/low_poly_image_generation/every_1000_generations.png" />
-  <figcaption>The first and last fittest member of every 1000 generations.</figcaption>
-</div>
+  <img style="border: 1px solid gray; padding: 20px;" src="/assets/images/low_poly_image_generation/grayscale_value_of_random_pixels.png" />
+  <figcaption>Five random pixels' grayscale values over time</figcaption>
+</div> 
 
-To my subjective eye, there was little to be gained after generation 2000, but we do know that the algorithm continued to improve the fitness of the fittest member of the population, although perhaps not in a visually significant way. Is generation 6198 at a fitness score of `2857.08` really `60%` better than generation 2194 at a fitness score of `1700.74`?
+Here, we're plotting the same five pixels from each member as they journey towards their target (indicated by the dashed lines) over each generation. We can actually see that these pixels remain relatively stable after just a few hundred generations, and even more so after about 2500 generations.
+
+
+
+<div style="text-align:center; margin: 10px auto 10px auto;">
+  <img style="border: 1px solid gray; padding: 20px;" src="/assets/images/low_poly_image_generation/grayscale_value_of_random_neighboring_pixels.png" />
+  <figcaption>10 random neighboring pixels' grayscale values over time moving towards grayscale 46</figcaption>
+</div> 
+
+We see a similar story when we look at 10 neighboring pixels that are all moving towards the same grayscale value. Looking at neighboring pixels is interesting because the algorithm is evolving the population by moving the vertices of triangles around, and therefore, the grayscale values of neighboring pixels are likely to be correlated. Again, we can see that the pixels stabilize after about 250 generations, even more so after around after 2500.
+
+But this time, we also clearly see the result of the large spike around generation 4500, that we see in the log data. It appears that these pixels somewhat stuck for over 1000 generations, and then suddenly jumped to their target grayscale value. 
+
+However, we also see a divergence around 5750 generations, even though the overall fitness score continued to increase. This illustrates the way our fitness function was designed: the fitness score can increase even if the error of individual pixels increases, as long as the error of other pixels decreases. 
+
+### Revisiting the Objective
+
+The subjective and objective story tell us a similar story: the algorithm continued to "improve" the image, but the improvements were not impactful enough to be visually significant. To my eye, a 60% increase in >4000 generations just doesn't amount to much. Our objective was to "...approximate the given image," and I felt like the algorithm did that after about 2000 generations.
+
+We used the inverse of the normalized mean error squared, as our fitness function, which is a good measure of how well the image approximates the target, mathematically speaking. But, is it the best way to measure how well the image approximates the target _visually_?
 
 
 ## Notes
