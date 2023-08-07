@@ -12,11 +12,13 @@ Inspired by biological systems, evolutionary algorithms model the patterns of mu
 
 These algorithms are used for a wide variety of tasks: from optimizing neural network parameters, evolving mechanical structures, simulating protein folding, and even generating art! 
 
-Today, we will use one such algorithm to create a low-poly version of the Ruby logo.
+Today, we will use one such algorithm to create a low-poly version of the Ruby logo, using Ruby[^why_ruby].
+
+[^why_ruby]: For academic study, we use a language like Python or Julia or R. For production, we use a language like C++ or Rust. But, for _fun_? For fun, we use Ruby.
 
 <div style="text-align:center">
   <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/ruby_logo_result.png" />
-  <figcaption>Result of 5000 generations of evolving a low-poly representation of the Ruby logo.</figcaption>
+  <figcaption>Result of over 6000 generations of evolving a low-poly representation of the Ruby logo.</figcaption>
 </div>
 
 In this post, we're going to be using the [petri_dish_lab](https://github.com/thomascountz/petri_dish) gem for the task of _image reconstruction_. Image reconstruction is a great example to use because we'll be able to visualize the evolutionary process working over time.
@@ -25,6 +27,9 @@ We'll begin by going over what an evolutionary algorithm is and how it works. Th
 
 > 🧑‍💻 [**Code Here**](https://github.com/thomascountz/petri_dish)\
 > The complete code for this blog post can be found as an example in the [`examples/low_poly_image_reconstruction`](https://github.com/Thomascountz/petri_dish/tree/main/examples/low_poly_reconstruction) directory of the [Petri Dish](https://github.com/thomascountz/petri_dish) repository. I recommend following along with the code as you read this post.
+
+> 🔷 **What is a Low-Poly Image?**
+> A Low-poly image is a type of 2-D image that's created by a series of variously sized polygons. Usually, each polygon shares at least one edge with another, and they do not overlap. By using different colors and varying the total polygon count, the result is a low-resolution version of an image.
 
 <br />
 
@@ -37,6 +42,7 @@ We'll begin by going over what an evolutionary algorithm is and how it works. Th
   - [Input _Target_ Image](#input-target-image)
   - [Member Genes](#member-genes)
   - [_Reconstructed_ Output Image](#reconstructed-output-image)
+- [Population Initialization](#population-initialization)
 - [Fitness Function](#fitness-function)
 - [Genetic Operators](#genetic-operators)
   - [Parent Selection Function](#parent-selection-function)
@@ -47,7 +53,10 @@ We'll begin by going over what an evolutionary algorithm is and how it works. Th
 - [Putting it Together](#putting-it-together)
   - [Final Configuration](#final-configuration)
 - [Results](#results)
-  - [Subjective Results](#subjective-results)
+  - [Subjective Analysis](#subjective-analysis)
+  - [Data Analysis](#data-analysis)
+    - [Log Data](#log-data)
+    - [Image Data](#image-data)
   - [Notes](#notes)
 
 
@@ -61,9 +70,9 @@ The image reconstruction process begins by creating a bunch of images with rando
 
 Once we have a bunch of random guesses, we compare each member to the target image, pixel-by-pixel, to determine their likeness to the target. This _measure of likeness_ is what we refer to as their _fitness_, and will be determined by how close each pixel is to the correct grayscale value.
 
-Based on their fitness, _parent_ members are then chosen and combined to create a new _child_ member in a process called _crossover_. The way we select and crossover parent members is by using _selection_ and _crossover_ functions, which we'll go into more detail about later along with _mutation_ functions, which mirrors the biological process of genetic mutation by injecting random changes into the child member. Together, these functions are called the _genetic operators_. The exact implementation of these operators is perhaps the most important part of developing an evolutionary algorithm, and we'll spend a lot of time on them later. If you're familiar with machine learning, you can think of the genetic operators as _hyperparameters_.
+Based on their fitness, _parent_ members are then chosen and combined to create a new _child_ member in a process called _crossover_. The way we select and crossover parent members is by using _selection_ and _crossover_ functions, which we'll go into more detail about later along with _mutation_ functions, which mirror the biological process of genetic mutation by injecting random changes into the child member. Together, these functions are called the _genetic operators_. The exact implementation of these operators is perhaps the most important part of developing an evolutionary algorithm, and we'll spend a lot of time on them later. If you're familiar with machine learning, you can think of the genetic operators as _hyperparameters_.
 
-And, just like in biological systems, the process of parent selection, child creation, and mutation repeats and repeats until we have enough new members to fill a new _population_. If any of the new members meet the criteria, we're done! Otherwise, we'll repeat this entire process, known as a _generation_, until we find a member that meets the objective, or we otherwise get close enough.
+And, just like in biological systems, the process of parent selection, child creation, and mutation repeats and repeats until we have enough new members to fill a new _population_. If any of the new members meet our objective, we're done! Otherwise, we'll repeat this entire process, known as a _generation_, until we find a member that meets the objective, or we otherwise get close enough.
 
 An evolutionary algorithm configured in this way is called a _genetic algorithm_. There are other types of evolutionary algorithms, but they all share a similar recursive structure, shown here in pseudocode:
 
@@ -93,9 +102,21 @@ def run(population)
 end
 ```
 
+> 🔄 **Tail Call Recursion**\
+> Notice that the `run` method above is recursive. Recursion isn't always the most efficient way to implement an algorithm because each recursive call in Ruby creates a new stack frame, which is a chunk of memory that stores the state of the method. Depending on how many generations we need our algorithm to run, this could cause an `SystemStackError (stack level too deep)` error. However, when a recursive call is the last thing that happens in a method (a method returns a call to itself), we can avoid allocating new stack frames by using a technique called _tail call optimization_. In Ruby, this is not enabled by default, but we can enable it using the following compiler options:
+> ```ruby
+> RubyVM::InstructionSequence.compile_option = {
+>   tailcall_optimization: true,
+>   trace_instruction: false
+> }
+> ```
+> This prevents the stack from growing indefinitely by reusing the same stack frame for each recursive call, rather than creating a new one.[^ruby_tail_call_optimization]
+
+[^ruby_tail_call_optimization]: Danny Guinther's 2015 blog posts are a fantastic resource for learning about how exactly Ruby implements tail call optimization: [Tail Call Optimization in Ruby: Background](http://blog.tdg5.com/tail-call-optimization-in-ruby-background/) and [Tail Call Optimization in Ruby: Deep Dive](http://blog.tdg5.com/tail-call-optimization-in-ruby-deep-dive/).  
+
 ## The Petri Dish Framework
 
-The [Petri Dish](https://github.com/thomascountz/petri_dish) framework is a Ruby gem that implements the evolutionary algorithm structure for us in the `PetriDish::World.run` method. We "only" need to supply the members, how to evaluate their fitness, the genetic operators, and when to stop. This is because, as we'll see, the specifics of an evolutionary algorithm are highly dependent on the problem we're trying to solve, but the underlying structure is always the same.
+The [Petri Dish](https://github.com/thomascountz/petri_dish) framework is a Ruby gem that implements the evolutionary algorithm structure for us in the `PetriDish::World.run` method. We need to supply the members of the population, how to evaluate their fitness, the genetic operators, and when to stop. These specifics of an evolutionary algorithm are highly dependent on the problem we're trying to solve, but the underlying structure is always the same.
 
 Here's what a stripped down version of what the `PetriDish::World.run` method looks like. See if you can spot the similarities to the pseudocode above:
 
@@ -151,7 +172,7 @@ The core configuration options that we're interested in for this post are:
 | `max_generations`            | The maximum number of generations to run the evolution for                                          |
 | `end_condition_function`     | A function that determines whether the evolution process should stop premature of `max_generations` |
 
-We'll take a look at each of these functions in detail later, but for now, let's see how we can use the framework to evolve an image.
+We'll take a look at each of these functions in detail later, but for now, let's take a step back and define the objective of our problem.
 
 # Understanding the Objective
 
@@ -161,19 +182,20 @@ We'll define the triangles by their three vertices. **Each vertex can be encoded
 
 A series of these three-vertices-and-a-grayscale-value groupings is all the information we need create a low-poly image. We'll call these groupings "points" and an Array of them will represent each members' _genes_. Each member of the population will have a distinct set of these points and the algorithm will optimize for a member whose points, or genes, are more _fit_.
 
-Note here that we don't necessarily know what the _most_ fit member would look before the algorithm begins searching. The algorithm only knows when a member is more fit—it approximates the target image better—than all other members seen thus far. The algorithm is searching for _a_ solution, not a specific solution.
-
 > ☝️ **Why Points instead of Triangles?**\
-> As we'll see later, we'll be using what's called [_Delaunay triangulation_](https://en.wikipedia.org/wiki/Delaunay_triangulation) to create triangles from a member's points/genes, rather than define triangles directly. Evolving points is a b/it simpler than evolving triangles, and it also allows us to use the same algorithm to evolve other shapes, like squares or circles.
+> As we'll see later, we'll be using what's called [_Delaunay triangulation_](https://en.wikipedia.org/wiki/Delaunay_triangulation) to create triangles from a member's points/genes, rather than define triangles directly. Delaunay Triangulation is a technique that takes a set of points and uses them as vertices to creates a set of non-overlapping triangles. This is a creative decision as much as it is a technical one. I began by evolving triangles directly, but found that I didn't like the results as much as when I evolved points.
 
 Lastly, we need to define our _constraints_, or the boundaries of the search space. In our case (mostly due to the arbitrary limit of my laptop's processing power), **we will limit the height and width of the image to 100x100 pixels and the color space to 8-bit grayscale**. Independently, **we will also limit each members' genes to be 100 points**. 
 
 > 🗺️ **Quantifying the Search Space**\
-> With each point each having an `(x,y)` coordinate range of `(0..100, 0..100)` and a grayscale value range of `0..255`, each point can be in one of `101 * 101 * 256 = 2,626,816` possible states. And, since each member has 100 of these as its genes, this leads to a search space of `(101 * 101 * 256)**100` dimensions, which is an enormously large, but in practice, quite small for an evolutionary algorithm.
+> With each point each having an `(x,y)` coordinate range of `(0..100, 0..100)` and a grayscale value range of `0..255`, each point can be in one of `101 * 101 * 256 = 2,626,816` possible states (roughly speaking). And, since each member has 100 of these as its genes, this leads to a search space of `(101 * 101 * 256)**100` dimensions, which is an enormously large, but in practice, quite small for an evolutionary algorithm. 
 
-Now we have our objective: we want to find a set of 100 points, called genes, each with an `(x,y)` coordinate and a grayscale value, that when used to create triangles, approximate a given image. We also know the constraints of the problem: the image is 100x100 pixels and the grayscale values are 8-bit. And finally, we know that the search space is enormous... 
+Now that we've taken a look at the objective, decision variables, and constraints at a high level, let's take a look at how we can represent them in code.
 
-However, we aren't intimidated because we're going to use an evolutionary algorithm to search it for us.
+To recap:
+- **Objective**: Find a set of non-overlapping triangles that approximate the given image
+- **Decision Variables**: Each vertex can be encoded as an `(x,y)` coordinate and a grayscale value
+- **Constraints**: 100x100 pixel image, 8-bit grayscale, 100 points
 
 # Member Representation
 
@@ -362,6 +384,39 @@ This type of data engineering, akin to _feature engineering_ in machine learning
 > ⬜️ **Why the White Background?**\
 > When we create a new `Magick::Image` object to represent a member in the `member_to_image` method, we opt for `white` as the background color. This choice, although arbitrary, influences the performance of the algorithm. For instance, with the grayscale Ruby logo, whose background is largely white, starting with a white background might expedite the convergence on a solution. However, hardcoding this value may bias the algorithm towards reconstructing targets with white backgrounds. The best solution would be to make this choice configurable in order to make this parameter tunable. This is a good example of how the smallest details in the way we model a problem can impact the performance of the algorithm.
 
+# Population Initialization
+
+Often it is the case that completely random population initialization is a good place to start, but we can sometimes quickly see faster results if seed the population with some prior knowledge; similar to choosing a good initial set of weights for a neural network.
+
+In the case of image reconstruction, I found that random initialization lead to a lot of waste in the early generations on distributing the points across the image dimensions. To avoid this, we can instead evenly distribute the points across the `x` and `y` dimensions of the image and then randomly assign a grayscale value to each point.
+
+```ruby
+def init_member
+  PetriDish::Member.new(
+    genes: (0..IMAGE_WIDTH_PX).step(10).map do |x|
+              (0..IMAGE_HEIGHT_PX).step(10).map do |y|
+                Point.new(x, y, GRAYSCALE_VALUES.sample)
+              end
+            end.flatten,
+    fitness_function: ->(_member) { }
+  )
+end
+```
+Let's see what the result looks like if we run this method a few times:
+
+```ruby
+5.times do |i|
+  member_to_image(init_member).write("member#{i}.png")
+end
+```
+
+<div style="text-align:center; margin: 10px auto 10px auto;">
+  <img style="border:1px solid black" src="/assets/images/low_poly_image_generation/init_members.png" />
+  <figcaption>Five non-random members of the population.</figcaption>
+</div>
+
+We can see that the points are evenly distributed across the image dimensions, and that the grayscale values are randomly assigned. Whether or not this is a better starting point than a completely random initialization is a question of experimentation. In the case of image reconstruction and other generative tasks, a random initialization may be better because it allows the algorithm to explore the search space more creatively, though it may take longer to converge on a solution.
+
 # Fitness Function
 
 The fitness function is a function that takes a `Member` and returns a number that represents how well that member solves the problem. In our case, we want to know how well a member approximates the target image.
@@ -372,7 +427,10 @@ Deterministic means that given the same `Member`, the fitness function should al
 
 Discriminative means that the fitness function should be able to discriminate between different members of the population. That is, members with different genes should have different fitness scores. Although fitness function do not have to be strictly discriminative, if many members have the same fitness score, the evolutionary algorithm may have a harder time deciding which members are better.
 
-Lucky for us, the `rmagick` library provides an [`Image#difference`](https://rmagick.github.io/image1.html#distortion_channel) method that fits the bill. `Image#difference` compares two images and returns three numbers that represent how different they are: `mean_erorr_per_pixel`, `normalized_mean_error`, and `normalized_maximum_error`. We'll use the `mean_error_per_pixel` to calculate our fitness score.
+Lucky for us, the `rmagick` library provides an [`Image#difference`](https://rmagick.github.io/image1.html#difference) method that fits the bill. `Image#difference` compares two images and returns three numbers that represent how different they are: `mean_erorr_per_pixel`, `normalized_mean_error`, and `normalized_maximum_error`. We'll use the `normalized_mean_error` to calculate our fitness score.[^normalized_mean_error]
+
+[^normalized_mean_error]: The normalized mean quantization error for any single pixel in the image. This distance measure is normalized to a range between 0 and 1. It is independent of the range of red, green, and blue values in the image.
+
 
 ```ruby
 require 'petri_dish'
@@ -388,21 +446,23 @@ require 'rmagick'
   end
 ```
 
-The fitness function is a lambda that takes a `Member` and returns a fitness score. The number is the inverse of the mean error per pixel between the target image and the image generated from the member, squared. This means that the higher the fitness score, the better the member approximates the target image.
+The fitness function is a lambda that takes a `Member` and returns a fitness score. The number is the inverse of the normalized mean error between the target image and the image generated from the member, squared. This means that the higher the fitness score, the better the member approximates the target image.
 
-> 2️⃣ **Why squared?**\
-> Squaring the mean error per pixel means that the fitness score will increase exponentially as the member gets closer to the target image. This is a good thing because it means that as we get closer to the target, the algorithm will be more sensitive to small changes in the member's genes. Other fitness functions may be directly linear, and others still may require more complex transformations.
+> 🎛️ **Why normalized?**\
+> The normalized mean error is a number between 0 and 1 that represents the average difference between the grayscale values of each pixel in the target image and the member image. This puts the error of every member on the same scale. When comparing members that all have the same dimension and color scale, normalization may be moot, but sneakily, we can reuse this fitness function for other images that may have different dimensions and color scales and generally compare the performance of the algorithm across those different target images.
 
 > 🙃 **Why the inverse?**\
-> The mean error per pixel measures the _error_ of a solution, which we want to _minimize_. However, since evolutionary algorithms are designed to _maximize_ fitness, we take the inverse of the error. As a result, solutions with smaller errors (which are better) will have larger fitness values, and the algorithm will correctly try to maximize fitness, and therefore minimize error.[^inverted-error]
+> When the normalized mean error is inverted (i.e., 1 divided by the normalized mean error), we get a fitness score such that smaller errors (which are closer to 0 after normalization) yield larger fitness values, and larger errors yield smaller fitness values. This means the less "wrong" a member is, the higher its fitness will be.[^inverted-error]
 
-[^inverted-error]: If we don't invert the error, the algorithm will try to maximize the error. In the case of image reconstruction, this will result in an inverted image. This isn't what we're going for here, but it demonstrates the creativity of evolutionary algorithms.
+[^inverted-error]: If we don't invert the error, the algorithm will try to _maximize the differences_ between the member and the target image. In the case of image reconstruction, this will result in an inverted image (black is white and white is black). This isn't what we're going for here, but it demonstrates the different ways we can be creative with evolutionary algorithms.
+
+> 2️⃣ **Why squared?**\
+> In effect, this transformation makes our algorithm very sensitive to the quality of the solutions. Solutions that are closer to the target (i.e., have a larger inverted normalized mean error) are assigned significantly higher fitness scores, and are therefore more likely to be selected for reproduction in the next generation (generally true, but depending on the selection function we define later). This can potentially speed up convergence, but as always, we should be cautious of premature convergence on sub-optimal solutions if there is not enough diversity in the population.
 
 Lastly, we define `#calculate_fitness` as a lambda because the Petri Dish framework requires the `fitness_function` to respond to `#call`. The framework will call this lambda via the `#fitness` method on `Member` in order to memoize and return the fitness score. We use a closure here so that the `target_image` is available to the lambda when it's called.
 
 > 📫 **Closures**\
 > _Closures_ are a powerful feature of Ruby and other languages. They allow us to define a function that can be called later, but that also has access to the variables that were in scope when the function was defined. It's like putting a note inside an envelope for the function to open later. In our case, we want to define a function that can be called later by the Petri Dish framework, but that also has access to the `target_image` that we defined earlier.
-
 
 Now that we have a way to represent a member of the population and a way to evaluate the fitness of a member, we can start to evolve the population by defining the evolutionary operators.
 
@@ -457,7 +517,7 @@ Here's what that looks like:
   end
   ```
 
-The proportional fitness is calculated by dividing the member's fitness by the total population fitness, like before. Then, we raise a random number between 0 and 1 to the inverse of the proportional fitness in order to bias the selection towards members with higher fitness scores. The `Enumberable#max_by(2)` method is used to select two members with the highest result from the block.
+The proportional fitness is calculated by dividing the member's fitness by the total population fitness, like before. Then, we raise a random number between 0 and 1 to the inverse of the proportional fitness in order to bias the selection towards members with higher fitness scores. The `Enumberable#max_by` method is used to select two members with the highest result from the block.
 
 The maths are a bit annoying to me personally, but nevertheless, the result of all of this is like spinning a roulette wheel where the size of each slice is proportional to the member's fitness. The higher the fitness, the larger the slice, and the more likely the member is to be selected.
 
@@ -679,17 +739,79 @@ The last piece of the configuration we haven't discussed yet is the `population_
 
 Finally, it's time to run the algorithm and see what happens! Let's take a subjective look at the results before we get into the numbers.
 
-## Subjective Results
+{% include low_poly_image_generation/generation_slider.html %}
+
+## Subjective Analysis
+
+<div style="text-align:center">
+  <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/ruby_logo_result.png" />
+  <figcaption>Target image and result</figcaption>
+</div>
 
 After running the algorithm for over 6000 generations, after about an hour, I'm really please with the results!
 
-{% include low_poly_image_generation/generation_slider.html %}
+I'm surprised by the details the algorithm was able to replicate. For example, the curvature of the top of the ruby is really well defined, given that we're working with only straight lines. Also, the highlights along the gem's facets were captured well. If I squint, I have a hard time distinguishing the target image from the result. With that said, there's clearly some points stuck in the upper left corner that are shading part of the background the wrong color, but that said, I think it's those points contributing to the curvature I mentioned earlier.
 
-<div style="text-align:center">
+I thought that the algorithm made a lot of early success, and by generation 120, I was already impressed by the progress. As the algorithm continued to run, I felt the gains were diminishing, which is to be expected from an evolutionary algorithm. After about generation 2000, I felt like the algorithm was just making small tweaks to the image, but not really improving it, although it is clear that some refinements were being made.
+
+<div style="text-align:center; margin: 10px auto 10px auto;">
   <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/skip_montage.png" />
   <figcaption>Output of the <code>highest_fitness_callback</code> calls show a progressively more refined low-poly representation</figcaption>
 </div>
 
+The biggest improvements to the image after the early generations appear to be in the grayscale values, rather than the positions of the points. This makes sense because the position of the points only really matter in that the resulting triangle contributes to the grayscale value of the pixels it covers. That said, the position of the points do appear to be improving, as evidenced by the edges of the Ruby logo becoming more defined.
+
+In terms of the algorithm's performance, I would like to continue tuning the hyperparameters to see if I can get the algorithm to converge faster. Without diving into the numbers yet, we can intuit how changes in the things like the `population_size`, `mutation_rate`, and `elitism_rate` might affect the performance of the algorithm rather dramatically. And, we can probably get a sense for how well our hyperparameter tuning is going by looking at the early generation's output images. For example, the current configuration reached generation 120 (show above) after just a minute and thirteen seconds.[^dynamic_hyperparameters]
+
+[^dynamic_hyperparameters]: It's also possible to dynamically change the hyperparameters over time. For example, we could start with a high mutation rate to increase diversity, and then lower the mutation rate over time to increase exploitation.
+
+## Data Analysis
+
+Now that we've taken a subjective look at the results, let's take an objective look at the numbers. We're going to treat these numbers as a baseline, since we've only done one run and there nothing to character performance against.[^additional_runs] Additionally, we're going to look at the numbers from the perspective of the algorithm's performance, rather than the performance of the Ruby code itself (namely using generation count as our time (`t`) instead of wall time or CPU time).[^ruby-performance]
+
+[^additional_runs]: Hi, Thomas here. I really wanted to finish this blog post. So as much as I want to write up my experience with tweaking the performance and hyperparameters, I'm going to leave that for another day. I hope you understand.
+
+[^ruby-performance]: Me again. CPU and memory performance tuning is an important aspect of developing evolutionary algorithms, especially considering that they are known for being resource intensive, but I'm going to leave that for another day as well. You're welcome.
+
+### Log Data
+
+Using the logs as a data source, let's start by looking at a plot of the highest fitness score of any population over time. The fitness was determined by the inverse of the normalized mean error between the target image and the image generated from the member, squared. The higher the fitness, the better the member approximates the target image.
+
+<div style="text-align:center; margin: 10px auto 10px auto;">
+  <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/highest_fitness_over_time.png" />
+  <figcaption>Fitness of the fittest member of the population over time.</figcaption>
+</div>
+
+We can see that the fitness of the fittest member of the population trends heavily positive over time somewhat linearly but with a steeper slope at the beginning. This is to be expected because the algorithm starts with a lot to gain from its initial, somewhat random, initial state.
+
+We can also see that the fitness of the fittest member of the population is not monotonically increasing, i.e. it does not always increase from one generation to the next. This is because the algorithm is not guaranteed to find a better solution in each generation. We can visualize this by plotting the change in highest fitness over time, which I called _velocity_, but can also be considered _efficiency_.
+
+<div style="text-align:center; margin: 10px auto 10px auto;">
+  <img style="border: 1px solid gray; padding: 20px" src="/assets/images/low_poly_image_generation/highest_fitness_and_fitness_growth_over_generations.png" />
+  <figcaption>Velocity of the fittest member of the population over time.</figcaption>
+</div>
+
+Here, we can see a lot of zero-efficiency/zero-velocity generations, where the fitness of the fittest member of the population did not change from the previous generation, but mostly after about the 1000th generation. This is to be expected because the algorithm is converging on a solution, and therefore, the fitness of the fittest member of the population will not change much from one generation to the next.
+
+We could this metric to improve our end condition function, i.e. stop the algorithm when the velocity drops below a certain threshold, rather than blindly after a certain number generations. We can also use "velocity" to compare the performance of different configurations; the faster the velocity drops, the faster the algorithm converges. 
+
+That said, convergence on a solution doesn't always mean that the solution is the best solution, so we should be careful not to prematurely stop the algorithm. For example, at around generation 4500, we see another significant spike in velocity even after many generations of little-or-no improvement. This is because the algorithm found a better solution than it had previously.
+
+### Image Data
+
+Let's now switch our focus by looking at the output images themselves. We've configured the `highest_fitness_callback` to save the image of the fittest member of the population when it's found. We analyze these images as data, just like we did with the logs.
+
+```ruby
+config.highest_fitness_callback = ->(member) { save_image(member_to_image(member)) }
+```
+<div style="text-align:center; margin: 10px auto 10px auto;">
+  <img style="border: 1px solid gray; padding: 20px;" src="/assets/images/low_poly_image_generation/every_1000_generations.png" />
+  <figcaption>The first and last fittest member of every 1000 generations.</figcaption>
+</div>
+
+To my subjective eye, there was little to be gained after generation 2000, but we do know that the algorithm continued to improve the fitness of the fittest member of the population, although perhaps not in a visually significant way. Is generation 6198 at a fitness score of `2857.08` really `60%` better than generation 2194 at a fitness score of `1700.74`?
+
+
 ## Notes
-- Use the inverse normalized error instead
-- Non-random initialization
+- Add seed configuration
+- Tailcall recursion rabbit hole/limitations of Ruby
