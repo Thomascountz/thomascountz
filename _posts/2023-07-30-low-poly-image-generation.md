@@ -156,6 +156,8 @@ The Petri Dish framework exposes the [`PetriDish::Configuration#configure`](http
 
 The core configuration options that we're interested in for this post are:
 
+<div style="overflow-x:auto;">
+
 | Parameter                    | Description                                                                                         |
 | ---------------------------- | --------------------------------------------------------------------------------------------------- |
 | `fitness_function`           | A function used to calculate the fitness of an individual                                           |
@@ -165,6 +167,8 @@ The core configuration options that we're interested in for this post are:
 | `mutation_rate`              | The chance that a gene will change during mutation                                                  |
 | `max_generations`            | The maximum number of generations to run the evolution for                                          |
 | `end_condition_function`     | A function that determines whether the evolution process should stop premature of `max_generations` |
+
+</div>
 
 We'll take a look at each of these functions in detail later, but for now, let's take a step back and define the objective of our problem.
 
