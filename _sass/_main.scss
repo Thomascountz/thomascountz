@@ -167,25 +167,31 @@ main {
 
 
 @media screen and (max-width: 45rem ) {
-header li {
-    display: inline;
-	margin-right: 1rem;
-}
-.logo {
-	padding-bottom: 1rem;
-}
-header ul {
-	border-bottom: 1px solid #edf2f7;
-	padding-bottom: 2rem;
-}
-nav ul {
-    border-right: 0px;
-}
+	header li {
+		display: inline;
+		margin-right: 1rem;
+	}
 
-.photos ul {
-	margin-top: 0.5rem;
-}
+	.logo {
+		padding-bottom: 1rem;
+	}
 
+	header ul {
+		border-bottom: 1px solid #edf2f7;
+		padding-bottom: 2rem;
+	}
+
+	nav ul {
+	 border-right: 0px;
+	}
+
+	.photos ul {
+		margin-top: 0.5rem;
+	}
+
+	table {
+		overflow-x: auto;
+	}
 }
 
 section {
@@ -198,8 +204,9 @@ section {
 }
 
 figcaption {
-    font-size: smaller;
+	font-size: smaller;
 }
+
 /*
 
     Name:       Base16 Default Light
