@@ -274,3 +274,9 @@ figcaption {
 .highlight .vg { color: #ac4142 } /* Name.Variable.Global */
 .highlight .vi { color: #ac4142 } /* Name.Variable.Instance */
 .highlight .il { color: #d28445 } /* Literal.Number.Integer.Long */
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
+}
