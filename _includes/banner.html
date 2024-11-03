@@ -1,0 +1,23 @@
+<table class="header">
+    <tr>
+      <th class="width-min">Tags</th>
+
+      <td class="width-auto">
+        {% for tag in page.tags %}
+          <a href="/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      </td>
+
+      <th class="width-min">Date</th>
+      <td class="width-auto" style="white-space:nowrap;"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time></td>
+    </tr>
+
+  <tr>
+    <td colspan="4" rowspan="1" class="width-auto" style="text-align:left;">
+        <h1 class="title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+            <span class="subtitle">{{ page.subtitle }}</span>
+        {% endif %}
+    </td>
+  </tr>
+</table>

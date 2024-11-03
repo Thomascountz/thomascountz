@@ -5,7 +5,7 @@ layout: default
 {% assign featured_posts = site.posts | where:'featured', true %}
 
 <section class="posts" style="padding-top:0.5rem;padding-bottom:0.5rem;">
-  <h3>Featured</h3>
+  <h3 style="margin-top:var(--line-height);">Featured</h3>
   <ul class="featured">
     {% for post in featured_posts %}
     <li>

@@ -3,10 +3,7 @@ layout: default
 ---
 
 <section class="post">
-  <div class="title">
-    <h2>{{ page.title }}</h2>
-    <h4>{{ page.subtitle }}</h4>
-  </div>
+  {% include banner.html %}
   {{ content }}
   <span class="meta">
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time> &middot; {% for tag in page.tags %}

@@ -1,9 +1,13 @@
+.text-sm {
+    font-size: calc(var(--font-size) * 0.80);
+}
+
 header a {
     text-decoration: none;
 }
 
 header a.active {
-    font-weight: bold;
+    font-weight: var(--font-weight-bold)
 }
 
 .posts li {
@@ -29,4 +33,38 @@ img {
     width: initial;
     max-width: 80%;
     margin: 0 auto;
+}
+
+pre {
+    margin: var(--line-height) 0;
+    padding: var(--line-height);
+    border: var(--border-thickness) solid var(--text-color)
+}
+
+code {
+  font-weight: initial;
+}
+
+.titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+nav {
+    margin-bottom: var(--line-height);
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: var(--font-weight-normal);
+    display: flex;
+    gap: var(--line-height); /* Adjust the gap between links as needed */
+}
+
+nav a {
+    margin-top: var(--line-height);
+}
+
+.logo {
+    line-height: var(--line-height);
+    text-align: left;
 }
