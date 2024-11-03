@@ -21,10 +21,6 @@ highlighter: rouge
 exclude:
   - .jekyll-cache
 
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag

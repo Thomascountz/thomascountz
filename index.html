@@ -4,15 +4,15 @@ layout: default
 
 {% assign featured_posts = site.posts | where:'featured', true %}
 
-<section class="posts" style="border: 2px solid black;border-radius:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">
+<section class="posts" style="padding-top:0.5rem;padding-bottom:0.5rem;">
   <h3>Featured</h3>
   <ul class="featured">
     {% for post in featured_posts %}
     <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a
-      ><time datetime="{{ post.date | date_to_xmlschema }}"
-        >{{ post.date | date: "%m-%d-%Y" }}</time
-      >
+      <a href="{{ site.baseurl }}{{ post.url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
+          &nbsp;{{ post.title }}
+      </a>
     </li>
     {% endfor %}
   </ul>
@@ -23,10 +23,10 @@ layout: default
   <ul>
     {% for post in site.posts %}
     <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a
-      ><time datetime="{{ post.date | date_to_xmlschema }}"
-        >{{ post.date | date: "%m-%d-%Y" }}</time
-      >
+      <a href="{{ site.baseurl }}{{ post.url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
+          &nbsp;{{ post.title }}
+      </a>
     </li>
     {% endfor %}
   </ul>

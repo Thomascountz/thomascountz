@@ -1,0 +1,32 @@
+header a {
+    text-decoration: none;
+}
+
+header a.active {
+    font-weight: bold;
+}
+
+.posts li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posts li a {
+    text-decoration: none;
+}
+
+.posts li a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: var(--border-thickness);
+}
+
+.posts li time {
+    font-variant-numeric: tabular-nums;
+}
+
+img {
+    width: initial;
+    max-width: 80%;
+    margin: 0 auto;
+}
