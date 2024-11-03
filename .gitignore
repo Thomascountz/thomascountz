@@ -1,8 +1,11 @@
-tmp
 *.rdb
-.env
-.sass-cache
 .DS_Store
-.jekyll-cache
+.env
 .git
+.jekyll-cache
+.mise.toml
+.sass-cache
+.zed
 _site/
+tmp
+vendor/bundle
