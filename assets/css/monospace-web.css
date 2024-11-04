@@ -69,7 +69,7 @@ body {
     font-size: 14px;
   }
   body {
-    padding: var(--line-height) 1ch;
+    padding: var(--line-height);
   }
 }
 

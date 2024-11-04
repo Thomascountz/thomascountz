@@ -1,3 +1,13 @@
+@media screen and (max-width: 480px) {
+    table:not(.header) {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: var(--line-height) 0;
+        padding: var(--line-height);
+        border: var(--border-thickness) solid var(--text-color)
+    }
+}
 .text-sm {
     font-size: calc(var(--font-size) * 0.80);
 }
