@@ -58,7 +58,7 @@ body {
   position: relative;
   width: 100%;
   margin: 0;
-  padding: var(--line-height) 2ch;
+  padding: var(--line-height);
   max-width: calc(min(80ch, round(down, 100%, 1ch)));
   line-height: var(--line-height);
   overflow-x: hidden;
@@ -289,10 +289,6 @@ li {
 
 li::marker {
   line-height: 0;
-}
-
-::-webkit-scrollbar {
-    height: var(--line-height);
 }
 
 input, button, textarea {
