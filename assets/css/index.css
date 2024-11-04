@@ -1,3 +1,43 @@
+@font-face {
+    font-family: "ia_writer_duospacebolditalic";
+    src:
+        url("../fonts/iawriterduospace/iawriterduospace-bolditalic-webfont.woff2") format("woff2"),
+        url("../fonts/iawriterduospace/iawriterduospace-bolditalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ia_writer_duospacebold";
+    src:
+        url("../fonts/iawriterduospace/iawriterduospace-bold-webfont.woff2") format("woff2"),
+        url("../fonts/iawriterduospace/iawriterduospace-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ia_writer_duospaceRgIt";
+    src:
+        url("../fonts/iawriterduospace/iawriterduospace-regularitalic-webfont.woff2") format("woff2"),
+        url("../fonts/iawriterduospace/iawriterduospace-regularitalic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ia_writer_duospaceregular";
+    src:
+        url("../fonts/iawriterduospace/iawriterduospace-regular-webfont.woff2") format("woff2"),
+        url("../fonts/iawriterduospace/iawriterduospace-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --font-family: "ia_writer_duospaceregular", "ia_writer_duospaceRgIt", "ia_writer_duospacebold", "ia_writer_duospacebolditalic", monospace;
+}
+
 @media screen and (max-width: 480px) {
     table:not(.header) {
         display: block;
