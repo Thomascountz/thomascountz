@@ -58,21 +58,21 @@
   <div class="data-container">
     <div class="info">
       <span class="label">Generation:</span>
-      <span id="generation" class="value">0000</span>
+      <span class="generation value">0000</span>
     </div>
     <div class="info">
       <span class="label">Max Fitness:</span>
-      <span id="fitness" class="value">0078.1640</span>
+      <span class="fitness value">0078.1640</span>
     </div>
     <div class="info">
       <span class="label">Time (seconds):</span>
-      <span id="timeInSeconds" class="value">0001.03</span>
+      <span class="timeInSeconds value">0001.03</span>
     </div>
   </div>
-  <div id="slideContainer">
-    <img id="slide" src="/assets/images/low_poly_image_generation/out/gen-0000.png">
+  <div class="slideContainer">
+    <img class="slide" src="/assets/images/low_poly_image_generation/out/gen-0000.png">
   </div>
-  <input type="range" min="1" max="6128" value="1" class="slider" id="myRange">
+  <input type="range" min="1" max="6128" value="1" class="slider">
 </div>
 
 <script>
@@ -137,15 +137,23 @@
     return img;
   });
 
-  document.getElementById("myRange").max = generations.length;
+  document.querySelectorAll('.slider-container').forEach(container => {
+    var slider = container.querySelector('.slider');
+    var slide = container.querySelector('.slide');
+    var generation = container.querySelector('.generation');
+    var fitness = container.querySelector('.fitness');
+    var timeInSecondsElem = container.querySelector('.timeInSeconds');
 
-  document.getElementById("myRange").oninput = function () {
-    document.getElementById("slide").src = generations[this.value - 1].src;
-    var genNumber = generationNumbers[this.value - 1];
-    var fitNumber = fitnessNumbers[this.value - 1];
-    var timeInSecondsNumber = timeInSeconds[this.value - 1];
-    document.getElementById("generation").textContent = genNumber;
-    document.getElementById("fitness").textContent = fitNumber;
-    document.getElementById("timeInSeconds").textContent = timeInSecondsNumber;
-  };
+    slider.max = generations.length;
+
+    slider.oninput = function () {
+      slide.src = generations[this.value - 1].src;
+      var genNumber = generationNumbers[this.value - 1];
+      var fitNumber = fitnessNumbers[this.value - 1];
+      var timeInSecondsNumber = timeInSeconds[this.value - 1];
+      generation.textContent = genNumber;
+      fitness.textContent = fitNumber;
+      timeInSecondsElem.textContent = timeInSecondsNumber;
+    };
+  });
 </script>
