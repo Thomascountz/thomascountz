@@ -99,6 +99,11 @@ code {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.titlebar h1 {
+    margin-bottom: initial;
 }
 
 nav {
