@@ -124,3 +124,23 @@ nav a {
     line-height: var(--line-height);
     text-align: left;
 }
+
+.footnotes > ol {
+    counter-reset: footnote-counter;
+    list-style: none;
+}
+
+.footnotes > ol > li {
+    counter-increment: footnote-counter;
+    margin-bottom: var(--line-height);
+}
+
+.footnotes > ol > li::before {
+    font-weight: var(--font-weight-medium);
+    content: counter(footnote-counter) ". ";
+    font-weight: bold;
+}
+
+.footnotes p {
+    display: inline;
+}

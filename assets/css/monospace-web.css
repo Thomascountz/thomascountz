@@ -9,7 +9,7 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
 
 :root {
     --font-family: "JetBrains Mono", monospace;
-    --line-height: 1.2rem;
+    --line-height: 1.4rem;
     --border-thickness: 2px;
     --text-color: var(--dark);
     --text-color-alt: #666;
@@ -20,14 +20,14 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
     --font-weight-medium: 600;
     --font-weight-bold: 800;
 
-    --font-size: 16px;
+    --font-size: 18px;
 
     font-family: var(--font-family);
     font-optical-sizing: auto;
     font-weight: var(--font-weight-normal);
     font-style: normal;
     font-variant-numeric: tabular-nums lining-nums;
-    font-size: 16px;
+    font-size: var(--font-size);
 }
 
 @media (prefers-color-scheme: dark) {
