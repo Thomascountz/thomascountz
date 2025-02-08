@@ -1,0 +1,24 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title }} - Memos</title>
+    <description>{{ site.description }} - Microblog Feed</description>
+    <link>{{ site.url }}/memos</link>
+    <atom:link href="{{ site.url }}/memos.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for memo in site.memos limit:10 %}
+      <item>
+        <title>{{ memo.title | xml_escape }}</title>
+        <description>{{ memo.content | xml_escape }}</description>
+        <pubDate>{{ memo.date | date_to_rfc822 }}</pubDate>
+        <link>{{ site.url }}{{ memo.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}{{ memo.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

@@ -190,6 +190,15 @@ th {
     text-align: right;
 }
 
+.header a {
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: var(--border-thickness);
+}
+
 p {
     word-break: break-word;
     word-wrap: break-word;

@@ -9,7 +9,7 @@ title: Search
 </div>
 
 <!-- Script pointing to search-script.js -->
-<script src="/search.js" type="text/javascript"></script>
+<script src="/assets/js/search-script.min.js" type="text/javascript"></script>
 
 <!-- Configuration -->
 <script type="text/javascript">
