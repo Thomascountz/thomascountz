@@ -197,23 +197,20 @@ nav a {
 
 .memo-header {
     border-bottom: var(--border-thickness) solid var(--text-color-alt);
-    padding: calc(var(--line-height) * 0.5);
+    padding: calc(var(--line-height) * 0.25) calc(var(--line-height) * 0.5);
 }
 
 .memos .memo-header {
     background-color: var(--background-color-alt);
 }
 
-.memo-header a:hover {
-    text-decoration: underline;
-}
-
+.memo-header a:hover,
 .memo-header:hover .memo-link {
     text-decoration: underline;
 }
 
 .memo img {
-    max-width: calc(min(60ch, round(down, 100%, 1ch)));
+    max-width: calc(min(60ch, 100% - 1ch));
 }
 
 .memo-content {
