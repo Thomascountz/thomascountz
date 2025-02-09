@@ -167,11 +167,6 @@ nav a {
 .memos .memo {
     margin-bottom: var(--line-height);
     border: var(--border-thickness) solid var(--text-color-alt);
-    padding: calc(var(--line-height) * 0.5);
-}
-
-.memos .memo:last-child {
-    /* border-bottom: none; */
 }
 
 .memo {
@@ -202,10 +197,18 @@ nav a {
 
 .memo-header {
     border-bottom: var(--border-thickness) solid var(--text-color-alt);
-    padding-bottom: calc(var(--line-height) * 0.5);
+    padding: calc(var(--line-height) * 0.5);
+}
+
+.memos .memo-header:hover {
+    background-color: var(--background-color-alt);
 }
 
 .memo-header a:hover {
+    text-decoration: underline;
+}
+
+.memo-header:hover .memo-link {
     text-decoration: underline;
 }
 
