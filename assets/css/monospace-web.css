@@ -10,7 +10,7 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
 :root {
     --font-family: "JetBrains Mono", monospace;
     --line-height: 1.4rem;
-    --border-thickness: 2px;
+    --border-thickness: 1px;
     --text-color: var(--dark);
     --text-color-alt: #666;
     --background-color: var(--light);
