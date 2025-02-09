@@ -200,7 +200,7 @@ nav a {
     padding: calc(var(--line-height) * 0.5);
 }
 
-.memos .memo-header:hover {
+.memos .memo-header {
     background-color: var(--background-color-alt);
 }
 
