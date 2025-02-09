@@ -20,7 +20,7 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
     --font-weight-medium: 600;
     --font-weight-bold: 800;
 
-    --font-size: 18px;
+    --font-size: 16px;
 
     font-family: var(--font-family);
     font-optical-sizing: auto;
