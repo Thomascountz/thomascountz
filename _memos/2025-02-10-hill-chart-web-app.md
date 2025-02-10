@@ -6,7 +6,7 @@ tags:
 - memo
 - javascript
 ---
-I built an [interactive tool for visualizing task progress](hillchart.countzresearch.com).
+I built an [interactive tool for visualizing task progress](https://hillchart.countzresearch.com).
 
 ![Screenshot of Hill Chart](/assets/images/memos/hillchart.jpeg)
 
@@ -18,6 +18,6 @@ I appreciate hill charts because they embrace the fuzziness of task-based work. 
 
 This tool runs in the browser via Github Pages and is built with plain JavaScript, d3.js, and is styled with TailwindCSS. You can explore the code by right-clicking → View Source or checking out the GitHub repo.[^2]
 
-[^1]: https://basecamp.com/hill-charts
+[^1]: [https://basecamp.com/hill-charts](https://basecamp.com/hill-charts)
 
-[^2]: https://github.com/Thomascountz/hillchart/
+[^2]: [https://github.com/Thomascountz/hillchart/](https://github.com/Thomascountz/hillchart/)
