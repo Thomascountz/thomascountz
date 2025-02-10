@@ -3,8 +3,22 @@ layout: default
 ---
 
 {% assign featured_posts = site.posts | where:'featured', true %}
+{% assign latest_memo = site.memos.last %}
 
-<section class="posts" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+
+<table class="latest-memo header">
+  <tr>
+    <td class="memo-date width-auto">{{ latest_memo.date | date: "%m-%d-%Y" }}</td>
+    <th class="memo-label width-min">Latest Memo</th>
+  </tr>
+  <tr>
+    <td colspan="2" rowspan="1" class="width-auto memo-cell" onclick="window.location.href='{{ latest_memo.url }}';">
+      <a class="memo-link" href="{{ latest_memo.url }}">{{ latest_memo.title }}</a>
+    </td>
+  </tr>
+</table>
+
+<section class="posts">
   <h3 style="margin-top:var(--line-height);">Featured</h3>
   <ul class="featured">
     {% for post in featured_posts %}

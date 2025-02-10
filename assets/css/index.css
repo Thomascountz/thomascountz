@@ -160,6 +160,38 @@ nav a {
     text-decoration: underline;
 }
 
+.latest-memo.header {
+    text-transform: uppercase;
+}
+
+.latest-memo.header td.width-auto {
+    white-space: nowrap;
+}
+
+.latest-memo.header th.width-min {
+    white-space: nowrap;
+}
+
+.latest-memo.header td[colspan="2"] {
+    text-align: left;
+}
+
+.latest-memo .memo-label {
+    background-color: var(--background-color-alt);
+}
+
+.latest-memo .memo-label {
+    text-align: left;
+}
+
+.latest-memo .memo-cell:hover {
+    cursor: pointer;
+}
+
+.latest-memo .memo-cell:hover .memo-link {
+    text-decoration: underline;
+}
+
 .memos {
     margin: 0 auto;
 }
