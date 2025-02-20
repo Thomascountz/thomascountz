@@ -16,7 +16,7 @@ tags:
 
 In Ruby, block-local numbered parameters (`_1`, `_2`, etc.) provide a concise way to reference block arguments without explicit naming. They have received renewed attention recently with the [introduction of the `it` parameter](https://bugs.ruby-lang.org/issues/18980) in Ruby 3.4.
 
-Though they serve a simalar purpose, numbered parameters are designed to be read-only, while `it` is intentionally mutable for backward compatibility reasons.
+Though they serve a similar purpose, numbered parameters are designed to be read-only, while `it` is intentionally mutable for backward compatibility reasons.
 
 In [Bug #21117](https://bugs.ruby-lang.org/issues/21117), radarek (Radosław Bułat) identified inconsistencies in how Ruby handles assignments to `_1` and `it`. Most concerning was that `_1` could be modified in specific cases, violating its intended immutability.
 
@@ -28,7 +28,7 @@ irb(main):001> [1, 2, 3].each { _1 = _1 + 1; p _1 }
      |                  ^~ Can't assign to numbered parameter _1
 ```
 
-However, combined assignmentoOperators work without error:
+However, combined assignment operators work without error:
 ```ruby
 irb(main):002> [1, 2, 3].each { _1 += 1; p _1 }
 2
