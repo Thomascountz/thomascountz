@@ -1,6 +1,6 @@
 ---
 layout: memo
-title: 'Breakdown of the Fix for Ruby Bug #21117'
+title: 'Ruby Bug #21117'
 date: '2025-02-20'
 tags:
 - memo
