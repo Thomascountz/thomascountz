@@ -10,13 +10,19 @@ Outside of my work, I enjoy exploring my interests in a wide range of topics. Fr
 My career is guided by three core principles: to create, to learn, and to share.
 
 
-## Some things I've done:
+* ./public
+  * speaking
+    * 2025
+      * Ruby Community Conf: [_From Legacy to Latest: ...Rails 8.0 Overnight_](https://www.youtube.com/watch?v=kgVgcNtN5mc)
+    * 2023
+      * RailsConf: [_Merged PRs: An Untapped Resource..._](https://www.youtube.com/watch?v=zLSetis6mec)
+    * 2022
+      * RailsConf: [_Leveling Up from Planning to Production_](https://www.youtube.com/watch?v=4XkPMWiTRMA)
+  * podcasts
+    * 2021-2022
+      * Co-host of [Collaborative Craft Podcast](https://8thlight.com/blog/collaborative-craft/)
+{: .tree}
 
-* Speaker
-  * RailsConf 2023: [_Merged PRs: An Untapped Resource..._](https://www.youtube.com/watch?v=zLSetis6mec)
-  * RailsConf 2022: [_Leveling Up from Planning to Production_](https://www.youtube.com/watch?v=4XkPMWiTRMA)
-* Podcasts
-  * Former co-host of the [Collaborative Craft Podcast](https://8thlight.com/blog/collaborative-craft/) (2022).
 
 ---
 
