@@ -1,6 +1,6 @@
 ---
 layout: memo
-title: "Cascii: A Local-First ASCII Diagramming Tool"
+title: "Cascii: ASCII Diagram Tool"
 date: '2025-03-18'
 tags:
 - memo
