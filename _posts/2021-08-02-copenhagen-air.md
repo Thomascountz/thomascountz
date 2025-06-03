@@ -6,7 +6,7 @@ layout: post
 tags: ["data", "python"]
 featured: true
 ---
-*Dataset retreived from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*
+*Dataset retrieved from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*
 
 The Jupyter notebook used to do this analysis [is available here as a Binder](https://mybinder.org/v2/gist/Thomascountz/7ff85c4f5543fbfc2aae5a8fdfbdd586/HEAD) and [here as a Gist](https://gist.github.com/Thomascountz/7ff85c4f5543fbfc2aae5a8fdfbdd586) for you to explore!
 
@@ -164,7 +164,7 @@ route_data = pd.DataFrame(decoded_polyline, columns=["x","y"])
 route = gpd.GeoDataFrame(route_data, geometry=gpd.points_from_xy(route_data['x'], route_data['y']), crs=cleaned_data.crs)
 ```
 
-We can then use the route data to overlay onto our original map. We do this by using by using a spacial index build by GeoPandas by using `RTree` to quickly query based on a spacial predicate. In this case, we're looking for all data points that are covered by a box that fits around our route. 
+We can then use the route data to overlay onto our original map. We do this by using by using a spacial index build by GeoPandas by using `RTree` to quickly query based on a spacial predicate. In this case, we're looking for all data points that are covered by a box that fits around our route.
 
 ```
 route_boundary = shapely.geometry.box(*route.total_bounds).buffer(0.01)
