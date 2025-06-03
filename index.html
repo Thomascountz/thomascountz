@@ -19,27 +19,17 @@ layout: default
 </table>
 
 <section class="posts">
-  <h3 style="margin-top:var(--line-height);">Featured</h3>
-  <ul class="featured">
-    {% for post in featured_posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
-          &nbsp;{{ post.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section class="posts">
-  <h3>Archive</h3>
   <ul>
     {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <li>
+        <a href="{{ site.baseurl }}{{ post.url }}">
           <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
-          &nbsp;{{ post.title }}
+          {% if post.featured == true %}
+            *
+          {% else %}
+            &nbsp;
+          {% endif %}
+          {{ post.title }}
       </a>
     </li>
     {% endfor %}
