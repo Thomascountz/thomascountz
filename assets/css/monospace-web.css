@@ -47,6 +47,10 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
     margin-top: var(--line-height);
 }
 
+br {
+    margin: 0;
+}
+
 html {
     display: flex;
     width: 100%;
@@ -241,6 +245,20 @@ details[open] ::marker {
 }
 
 details :last-child {
+    margin-bottom: 0;
+}
+
+.quote {
+    border-left: calc(var(--border-thickness) * 3) solid var(--text-color-alt);
+    padding-left: 2ch;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: var(--line-height);
+    font-style: italic;
+    color: var(--text-color-alt);
+}
+
+.quote > *:last-child {
     margin-bottom: 0;
 }
 
