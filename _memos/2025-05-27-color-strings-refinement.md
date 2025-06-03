@@ -4,7 +4,7 @@ title: Color Strings Refinement
 date: '2025-05-27'
 tags:
 - memo
--
+- ruby
 ---
 
 ```ruby

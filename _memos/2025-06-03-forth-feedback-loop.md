@@ -4,6 +4,7 @@ title: Forth Feedback Loop
 date: '2025-06-03'
 tags:
 - memo
+- forth
 ---
 
 Inspired by [Andreas Wagner's `ecr` word](https://youtu.be/mvrE2ZGe-rs?si=xtAowOuaxtU9B3_D&t=1060), I created the word `go`:
