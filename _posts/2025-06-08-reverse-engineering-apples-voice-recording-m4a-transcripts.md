@@ -5,7 +5,7 @@ date: '2025-06-08'
 tags: ["ruby","reverse-engineering"]
 ---
 
-Like having thoughts in the shower and working on trains, I usually get some good thinking done while walking my dog in the morning. To not lose track of all this good thinking, I started recording voice notes on my iPhone using Apple's _Voice Memos_ app.
+Like having thoughts in the shower and working on trains, I usually get some good thinking done while walking my dog in the morning. To not lose track of all this good thinking, I've started recording voice notes on my iPhone using Apple's _Voice Memos_ app.
 
 After recording, the app automatically generates transcriptions, allowing me to more easily make use of my memos. Unfortunately (Apple being Apple), you can't access these transcripts from anywhere outside the Voice Memos app.
 
