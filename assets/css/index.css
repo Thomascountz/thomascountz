@@ -45,8 +45,7 @@
         overflow-x: auto;
         white-space: nowrap;
         margin: var(--line-height) 0;
-        padding: var(--line-height);
-        border: var(--border-thickness) solid var(--text-color);
+        -webkit-overflow-scrolling: touch;
     }
 }
 .text-sm {
@@ -97,6 +96,11 @@ pre {
 code {
     font-weight: initial;
     color: #01a0e4 !important;
+}
+
+mark {
+    background-color: var(--background-color-flip);
+    color: var(--text-color-flip);
 }
 
 .titlebar {

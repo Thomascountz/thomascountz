@@ -12,8 +12,10 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
     --line-height: 1.4rem;
     --border-thickness: 1px;
     --text-color: var(--dark);
+    --text-color-flip: var(--light);
     --text-color-alt: #666;
     --background-color: var(--light);
+    --background-color-flip: var(--dark);
     --background-color-alt: #eee;
 
     --font-weight-normal: 500;
@@ -33,8 +35,10 @@ Sourced from: https://github.com/owickstrom/the-monospace-web/
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: var(--light);
+        --text-color-flip: var(--dark);
         --text-color-alt: #aaa;
         --background-color: var(--dark);
+        --background-color-flip: var(--light);
         --background-color-alt: #111;
     }
 }
@@ -95,7 +99,7 @@ h1 {
     text-transform: uppercase;
 }
 h2 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
 }
 
@@ -227,16 +231,13 @@ summary {
     font-weight: var(--font-weight-medium);
     cursor: pointer;
 }
-details[open] summary {
-    margin-bottom: var(--line-height);
-}
 
-details ::marker {
+summary ::marker {
     display: inline-block;
     content: "▶";
     margin: 0;
 }
-details[open] ::marker {
+summary[open] ::marker {
     content: "▼";
 }
 
