@@ -38,7 +38,7 @@ Everything is _just about_ working smoothly, but there's that _one little hiccup
 
 Copying-and-pasting isn't a big deal, I know. But it is _just enough_ of a deal to stop me from making use of transcriptions—which have become more valuable to me than the audio itself.
 
-Plus, if there's anything we programmers know how to do, it's how to write complicated automatons to avoid copying-and-pasting.
+Plus, if there's anything we programmers know how to do best, it's how to write complicated automatons to avoid copying-and-pasting.
 
 ## Step 1: Find the Transcripts
 
