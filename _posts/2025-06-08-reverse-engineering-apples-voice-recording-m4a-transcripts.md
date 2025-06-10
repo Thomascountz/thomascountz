@@ -34,11 +34,11 @@ Unfortunately, nature has to restore the balance of so much winning by introduci
 
 This is an example of the worst kind of problem.
 
-Everything is _just about_ working smoothly, but there's that _one little hiccup_ ~~that reminds you that your devices aren't really yours and neither is your data~~ that introduces friction and takes you out of flow.
+Everything is _just about_ working smoothly, but there's that _one little hiccup_ ~~that reminds you that your devices aren't really yours and neither is your data~~ that introduces friction to a workflow.
 
 Copying-and-pasting isn't a big deal, I know. But it is _just enough_ of a deal to stop me from making use of transcriptions—which have become more valuable to me than the audio itself.
 
-Plus, I'm a programmer... If there's anything we know how to do, it's how to write complicated automatons to avoid copying-and-pasting.
+Plus, if there's anything we programmers know how to do, it's how to write complicated automatons to avoid copying-and-pasting.
 
 ## Step 1: Find the Transcripts
 
