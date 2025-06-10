@@ -48,7 +48,7 @@ Not too long ago, I was looking for a way to extract text from _Apple Notes_ (se
 ~/Library/Group Containers/group.com.apple.notes/NoteStore.sqlite
 ```
 
-Thanks to the authors of tools like [apple-notes-to-sqlite](https://github.com/dogsheep/apple-notes-to-sqlite), I didn't have to decipher proprietary database schemas or parse their strange formats myself; they'd already done the hard part and open sourced their work.
+Thanks to authors of tools like [apple-notes-to-sqlite](https://github.com/dogsheep/apple-notes-to-sqlite), I didn't have to decipher the complicated database schemas in order to get to my _Notes_.
 
 I hoped the same would be true for _Voice Memos_: 1) transcripts would be stored in a SQLite database and 2) open source tools would exist for extracting them.
 
