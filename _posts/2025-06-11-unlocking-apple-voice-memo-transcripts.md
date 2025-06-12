@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Unlocking Apple Voice Memo Transcripts
-subtitle: A deep dive into finding and parsing the hidden transcription data within Apple's .m4a voice recordings using command-line tools and Ruby
+title: Where Does Apple Hide Your Voice Memo Transcripts?
+subtitle: How I discovered the transcripts Apple buries inside .m4a audio files
 date: '2025-06-08'
 tags: ["ruby","reverse-engineering"]
 ---
