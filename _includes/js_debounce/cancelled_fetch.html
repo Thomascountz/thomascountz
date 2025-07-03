@@ -1,0 +1,61 @@
+<input type="text" id="apiInput" placeholder="Type to search products..." />
+<ul
+  style="min-height: 8em; width: calc(round(down, 100%, 1ch)); border: var(--border-thickness) solid var(--text-color)"
+  id="apiOutput"
+></ul>
+
+<script>
+  const apiInput = document.getElementById("apiInput");
+  const apiOutput = document.getElementById("apiOutput");
+
+  let timerId;
+  let controller;
+
+  apiInput.addEventListener("input", (event) => {
+    const query = event.target.value;
+
+    clearTimeout(timerId);
+    if (controller) {
+      controller.abort();
+    }
+
+    if (!query || query.trim() === "") {
+      apiOutput.innerHTML = "";
+      return;
+    }
+
+    apiOutput.innerHTML = "<li>Debouncing...</li>";
+
+    timerId = setTimeout(async () => {
+      try {
+        controller = new AbortController();
+        apiOutput.innerHTML = "<li>Fetching...</li>";
+
+        const response = await fetch(`https://dummyjson.com/products/search?q=${query}&delay=1000`, {
+          signal: controller.signal,
+        });
+
+        const data = await response.json();
+        apiOutput.innerHTML = "";
+
+        if (data.products && data.products.length > 0) {
+          const productsToShow = data.products.slice(0, 5);
+          for (const product of productsToShow) {
+            const li = document.createElement("li");
+            li.textContent = product.title;
+            apiOutput.appendChild(li);
+          }
+        } else {
+          apiOutput.innerHTML = "<li>No products found.</li>";
+        }
+      } catch (error) {
+        if (error.name == "AbortError") {
+          apiOutput.innerHTML = "<li>Request cancelled.</li>";
+        } else {
+          apiOutput.innerHTML = "<li>Error fetching data.</li>";
+          console.error(error);
+        }
+      }
+    }, 750);
+  });
+</script>

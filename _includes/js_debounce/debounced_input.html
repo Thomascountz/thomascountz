@@ -1,0 +1,80 @@
+
+<div>
+  <label for="delay">Debounce Delay: <span id="delay-value">500</span>ms</label>
+  <input type="range" id="delay" min="0" max="1000" value="500" step="25">
+  <input type="text" id="textInput" placeholder="Type something..." >
+</div>
+
+<div id="output-container" style="margin-top: 1rem; margin-bottom: 1rem; min-height: 24px;">
+  <input type="text" id="outputText" readonly disabled style="box-sizing: border-box;">
+  <input type="range" id="countdown-visualizer" min="0" max="1000" value="0" step="25" disabled style="display: none;">
+</div>
+
+
+ <script>
+   function debounceWithVisualization(callback, delay, visualizationCallback) {
+     let timerId;
+     let countdownTimer;
+
+     return (...args) => {
+       clearTimeout(timerId);
+       clearInterval(countdownTimer);
+
+       visualizationCallback(delay, true);
+
+       let remaining = delay;
+       const interval = 10;
+
+       countdownTimer = setInterval(() => {
+         remaining -= interval;
+         if (remaining >= 0) {
+           visualizationCallback(remaining, true);
+         } else {
+           clearInterval(countdownTimer);
+         }
+       }, interval);
+
+       timerId = setTimeout(() => {
+         clearInterval(countdownTimer);
+         visualizationCallback(0, false);
+         callback(...args);
+       }, delay);
+     };
+   }
+
+   const textInput = document.getElementById('textInput');
+   const outputText = document.getElementById('outputText');
+   const delayInput = document.getElementById('delay');
+   const delayValue = document.getElementById('delay-value');
+   const countdownVisualizer = document.getElementById('countdown-visualizer');
+
+   function updateOutput(text) {
+     outputText.value = text;
+   }
+
+   function updateVisualization(remaining, isRunning) {
+     if (isRunning) {
+       outputText.style.display = 'none';
+       countdownVisualizer.style.display = 'block';
+       countdownVisualizer.value = remaining;
+     } else {
+       countdownVisualizer.style.display = 'none';
+       outputText.style.display = 'block';
+     }
+   }
+
+   let debouncedUpdate = debounceWithVisualization(updateOutput, delayInput.value, updateVisualization);
+
+   textInput.addEventListener('input', (event) => {
+     debouncedUpdate(event.target.value);
+   });
+
+   delayInput.addEventListener('input', (event) => {
+     const newDelay = event.target.value;
+     delayValue.textContent = newDelay;
+     countdownVisualizer.max = newDelay;
+     debouncedUpdate = debounceWithVisualization(updateOutput, newDelay, updateVisualization);
+   });
+
+   countdownVisualizer.max = delayInput.value;
+ </script>
