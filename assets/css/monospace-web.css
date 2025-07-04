@@ -66,7 +66,7 @@ body {
     position: relative;
     width: 100%;
     margin: 0;
-    padding: var(--line-height);
+    padding: 2px;
     max-width: calc(min(80ch, round(down, 100%, 1ch)));
     line-height: var(--line-height);
     overflow-x: hidden;
@@ -75,9 +75,6 @@ body {
 @media screen and (max-width: 480px) {
     :root {
         font-size: 14px;
-    }
-    body {
-        padding: var(--line-height);
     }
 }
 
