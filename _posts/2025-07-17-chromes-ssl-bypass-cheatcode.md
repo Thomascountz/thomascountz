@@ -167,6 +167,6 @@ Despite the excavation, I wasn't able to find the exact reason for the bypass co
 
 ![thisisunsafe has been rising in popularity since its introduction in 2018](/assets/images/thisisunsafe_trends.png)
 
-SSL-everywhere has been a net-positive for the web, but it's hard to articulate the risks of broken SSL to everyday users. A popular bypass code might not supply enough friction to prevent misuse, and I'm curious to know it's benefits over using the `--unsafely-treat-insecure-origin-as-secure` flag or other methods of bypassing SSL errors.
+SSL-everywhere has been a net-positive for the web, but it's hard to articulate the risks of broken SSL to everyday users. A popular bypass code might not supply enough friction to prevent misuse, and I'm curious to know what benefits it has over using the `--unsafely-treat-insecure-origin-as-secure` flag.
 
 What do you think?
