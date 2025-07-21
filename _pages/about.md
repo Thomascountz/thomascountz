@@ -3,12 +3,11 @@ layout: page
 title: About
 ---
 
-I work at Zendesk as a Senior Engineer on the Ruby Platform Core team, where I focus on infrastructure support for Ruby and Rails across the organization.
+I work at Zendesk as a Senior Engineer and Tech Lead on the Ruby Platform Core team, overseeing the infrastructure that powers Ruby and Rails across our products and services.
 
-Outside of my work, I enjoy exploring my interests in a wide range of topics. From programming for the web to designing and building electronics, from 3D-printing to open source data science, I share my experiments and discoveries here on my blog and on [Github](https://github.com/thomascountz).
+On this blog, I write about anything that piques my interest—building web applications, tinkering with electronics, experimenting with 3-D printing, or exploring open-source data science.
 
-My career is guided by three core principles: to create, to learn, and to share.
-
+My career is guided by three principles: to create, to learn, and to share.
 
 * ./public
   * speaking
@@ -24,6 +23,4 @@ My career is guided by three core principles: to create, to learn, and to share.
 {: .tree}
 
 
----
-
-[Github](https://github.com/thomascountz) • [Mastodon](https://ruby.social/@thomascountz) • [LinkedIn](https://www.linkedin.com/in/thomas-countz-8b0951135/)
+{% include footer.html %}
