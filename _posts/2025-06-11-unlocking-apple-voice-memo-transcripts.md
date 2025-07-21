@@ -12,10 +12,18 @@ After recording, the app automatically generates transcriptions, allowing me to 
 
 ---
 
-| Just want to see the code? Check out these Gists. |  |
-| --- | --- |
-| [https://gist.github.com/thomascountz/b84b68f](https://gist.github.com/thomascountz/b84b68f0a7c6f2f851ebc5db152b676a) | Ruby  |
-| [https://gist.github.com/thomascountz/287d7dd](https://gist.github.com/thomascountz/287d7dd1e04674d22a6396433937cd29) | Bash  |
+Just want to see the code? Check out these Gists:
+
+<div class="grid">
+
+  <a href="https://gist.github.com/thomascountz/b84b68f0a7c6f2f851ebc5db152b676a" target="_blank" rel="noopener noreferrer" class="button" style="text-align: center;text-decoration:none;">
+    Ruby
+  </a>
+
+  <a href="https://gist.github.com/thomascountz/287d7dd1e04674d22a6396433937cd29" target="_blank" rel="noopener noreferrer" class="button" style="text-align: center;text-decoration:none;">
+    Bash
+  </a>
+</div>
 
 ---
 
