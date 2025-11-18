@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: Routine Complications
 date: '2025-02-15 12:08:18 +0100'
 tags:

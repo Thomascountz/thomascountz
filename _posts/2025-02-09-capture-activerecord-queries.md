@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: Capture Activerecord Queries
 date: '2025-02-09'
 tags: ['memo', 'activerecord', 'rails', 'testing']

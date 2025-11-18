@@ -1,6 +1,5 @@
 require 'date'
 require 'yaml'
-require_relative 'lib/memo_utils'
 
 def slugify(title)
   title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
@@ -37,7 +36,7 @@ task :memo do
   title = ENV['title'] || abort('Please provide a title with title=')
   slug = slugify(title)
   date = Date.today.strftime('%Y-%m-%d')
-  filename = File.join('_memos', "#{date}-#{slug}.md")
+  filename = File.join('_posts', "#{date}-#{slug}.md")
 
   if File.exist?(filename)
     abort("Error: #{filename} already exists!")
@@ -45,7 +44,7 @@ task :memo do
 
   puts "Creating new memo: #{filename}"
   front_matter = {
-    'layout' => 'memo',
+    'layout' => 'post',
     'title' => title,
     'date' => Date.today.to_s,
     'tags' => ["memo"].append(ENV['tags']&.split(',')),
@@ -60,7 +59,7 @@ task :memo do
 end
 
 # rake copy_memo[<filepath>]
-desc 'Copy markdown content to _memos directory'
+desc 'Copy markdown content to _posts directory'
 task :copy_memo do |t, args|
   filepath = ENV['filepath'] || abort('Please provide a filepath with filepath=')
   abort("Error: File #{filepath} does not exist!") unless File.exist?(filepath)
@@ -68,7 +67,7 @@ task :copy_memo do |t, args|
   title = extract_title_from_filename(filepath)
   slug = slugify(title)
   ctime = File.ctime(filepath).strftime('%Y-%m-%d')
-  filename = File.join('_memos', "#{ctime}-#{slug}.md")
+  filename = File.join('_posts', "#{ctime}-#{slug}.md")
 
   abort("Error: #{filename} already exists!") if File.exist?(filename)
 

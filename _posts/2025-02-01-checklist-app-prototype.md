@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: Checklist App Prototype
 tags: [memo, app, javascript]
 date: '2025-02-01'

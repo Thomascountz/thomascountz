@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: Forth Feedback Loop
 date: '2025-06-03'
 tags:

@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: "Cascii: ASCII Diagram Tool"
 date: '2025-03-18'
 tags:

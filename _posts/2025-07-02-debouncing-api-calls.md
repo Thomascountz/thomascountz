@@ -3,6 +3,7 @@ layout: post
 title: Debouncing API Calls
 date: '2025-07-02'
 tags: [javascript, api, performance]
+featured: true
 ---
 
 {% include js_debounce/debounced_input.html %}
@@ -91,5 +92,3 @@ Finally, it starts a new timer. When the timer expires, it calls `fetch`. And wh
 So, as before, if the user types again before the timer expires, the timer is restarted before a new `fetch` request is made.
 
 In addition to this, if the user types again _while the previous `fetch` is still in progress_, that request is cancelled, the new input is debounced, and then finally, a new `fetch` request is made with the latest input.
-
-

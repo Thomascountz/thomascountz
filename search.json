@@ -11,15 +11,5 @@ layout: null
       "tags"     : "{{ post.tags | join: ', ' }}",
       "date"     : "{{ post.date }}"
     }{% unless forloop.last %},{% endunless %}
-  {% endfor %},
-  {% for memo in site.memos %}
-    {
-      "title"    : "{{ memo.title | strip_html | escape }}",
-      "description" : "{{ memo.description | escape }}",
-      "url"      : "{{ site.baseurl }}{{ memo.url }}",
-      "category" : "{{ memo.categories | join: ', ' }}",
-      "tags"     : "{{ memo.tags | join: ', ' }}",
-      "date"     : "{{ memo.date }}"
-    }{% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

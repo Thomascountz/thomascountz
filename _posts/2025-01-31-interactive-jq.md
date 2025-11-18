@@ -1,5 +1,5 @@
 ---
-layout: memo
+layout: post
 title: Interactive jq
 date: '2025-01-31'
 tags: [memo, jq, fzf, bash]

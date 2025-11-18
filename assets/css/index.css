@@ -205,9 +205,6 @@ nav a {
 
 .latest-memo .memo-label {
     background-color: var(--background-color-alt);
-}
-
-.latest-memo .memo-label {
     text-align: left;
 }
 
