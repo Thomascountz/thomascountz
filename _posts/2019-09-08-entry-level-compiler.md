@@ -257,7 +257,7 @@ Bold      := <UNDERSCORE> <UNDERSCORE> <TEXT> <UNDERSCORE> <UNDERSCORE>
 Text      := <TEXT>
 ```
 
-Here, we use | to indicate a logical OR, so now we have a Paragraph node that can be made up of zero or more Emphasis child nodes, **or** zero or more Bold child nodes,** or** zero or more Text child nodes. And now we know what sequence of tokens the Bold and Text nodes are made up from themselves.
+Here, we use `|` to indicate a logical OR, so now we have a Paragraph node that can be made up of zero or more Emphasis child nodes, **or** zero or more Bold child nodes,** or** zero or more Text child nodes. And now we know what sequence of tokens the Bold and Text nodes are made up from themselves.
 
 However, this grammar isn’t quite correct. The way it’s written now, each Paragraph can have children made up of only one type of node. We need a way to represent AND/OR. *i.e.* a Paragraph can have children of zero or more Emphasis nodes, and/or zero or more Bold nodes, and/or zero or more Text nodes.
 
