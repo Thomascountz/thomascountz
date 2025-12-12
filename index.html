@@ -20,7 +20,7 @@ layout: default
     {% for entry in timeline %}
       <li>
         <a href="{{ site.baseurl }}{{ entry.url }}">
-          <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%m-%d-%Y" }}</time>
+          <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%Y-%m-%d" }}</time>
           {% if entry.featured == true %}
             *
           {% elsif entry.tags contains 'memo' %}
