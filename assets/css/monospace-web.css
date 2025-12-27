@@ -105,7 +105,6 @@ hr {
     position: relative;
     display: block;
     height: var(--line-height);
-    margin: calc(var(--line-height) * 1.5) 0;
     border: none;
     color: var(--text-color);
 }
@@ -116,7 +115,7 @@ hr:after {
     top: calc(var(--line-height) / 2 - var(--border-thickness));
     left: 0;
     width: 100%;
-    border-top: calc(var(--border-thickness) * 3) double var(--text-color);
+    border-top: var(--border-thickness) solid var(--text-color);
     height: 0;
 }
 
@@ -413,6 +412,9 @@ label input {
     padding-left: 1.5ch;
     margin-left: 1.5ch;
     border-left: var(--border-thickness) solid var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .tree ul li:before {
     position: absolute;

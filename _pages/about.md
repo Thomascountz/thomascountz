@@ -3,24 +3,49 @@ layout: page
 title: About
 ---
 
-I work at Zendesk as a Senior Engineer and Tech Lead on the Ruby infrastructure team, overseeing the systems that power Ruby and Rails across our products and services.
-
-On this site, I write about anything that piques my interest—building web applications, tinkering with electronics, experimenting with 3-D printing, or exploring open-source data science.
+I'm a senior engineer and tech lead on the Ruby infrastructure team at [Zendesk](https://zendesk.com).
 
 My career is guided by three principles: to create, to learn, and to share.
 
-* ./public
-  * speaking
-    * 2025
-      * Ruby Community Conf: [_From Legacy to Latest: ...Rails 8.0 Overnight_](https://www.youtube.com/watch?v=kgVgcNtN5mc)
-      * Kraków Ruby Users Group: [_Dependency Tax_](https://github.com/Krakow-Ruby-Users-Group/krug-presentations/blob/main/2025-04/dependency-tax.pdf)
-    * 2023
-      * RailsConf: [_Merged PRs: An Untapped Resource..._](https://www.youtube.com/watch?v=zLSetis6mec)
-    * 2022
-      * RailsConf: [_Leveling Up from Planning to Production_](https://www.youtube.com/watch?v=4XkPMWiTRMA)
+* 2025
+  * conferences
+    * Kraków Ruby Users Group #4 2025
+      * **[_Dependency Tax: What We're Learning About Managing Gem Upgrades_](https://github.com/Krakow-Ruby-Users-Group/krug-presentations/blob/e38079d39233ddbe5c08a82219b96d04ee6c25ce/2025-04/dependency-tax.pdf)**
+    * Ruby Community Conference 2025 Winter Edition
+      * **[_How Zendesk Upgraded a Monolith to Rails 8.0 Overnight_](https://www.youtube.com/watch?v=kgVgcNtN5mc)**
+    * Zendesk Tech Summit 2025 (Internal)
+      * **_Rails Doesn't Need to Scale; We Do_**
+* 2024
+  * conferences
+    * **[_An Afternoon with Matz (Internal)_](https://ruby.social/@thomascountz/112636553125413019)**
+* 2023
+  * conferences
+    * RailsConf 2023
+      * **[_Merged PRs: An Untapped Resource for Practice and Exploration_](https://www.youtube.com/watch?v=zLSetis6mec)**
+* 2022
+  * conferences
+    * RailsConf 2022
+      * **[_Leveling Up from Planning to Production_](https://www.youtube.com/watch?v=4XkPMWiTRMA)**
   * podcasts
-    * 2021-2022
-      * Co-host of [Collaborative Craft Podcast](https://8thlight.com/blog/collaborative-craft/)
+    * Collaborative Craft
+      * **[Aaron Patterson - Just in Time: Hands-On Learning](https://8thlight.com/insights/podcast-just-in-time-hands-on-learning-with-aaron-patterson)**
+* 2021
+  * podcasts
+    * Collaborative Craft
+      * **[Charity Majors - Into the Unknown Unknowns: Observability](https://8thlight.com/insights/podcast-into-the-unknown-unknowns-observability-with-charity-majors)**
+      * **[Coraline Ehmke - Know Your History: Ethical Source](https://8thlight.com/insights/podcast-know-your-history-ethical-source-with-coraline-ehmke)**
+      * **[Hana Lee - It's a Process: More than Machine Learning](https://8thlight.com/insights/podcast-its-a-process-more-than-machine-learning-with-hana-lee)**
+      * **[Kofi Gumbs - Stealing Fire: Ambitious Side Projects](https://8thlight.com/insights/podcast-stealing-fire-ambitious-side-projects-with-kofi-gumbs)**
+      * **[Eva PenzeyMoog - Tech's Pre-seatbelt Phase](https://8thlight.com/insights/podcast-techs-pre-seatbelt-phase-with-eva-penzeymoog)**
+      * **[Jon Wettersten - How Design Works](https://8thlight.com/insights/podcast-how-design-works-with-jon-wettersten)**
+  * company_blogs
+    * **[Sargable Queries & MUL Indexes; or Why My Query is Slow](https://8thlight.com/insights/sargable-queries-and-mul-indexes-or-why-my-query-is-slow)**
+* 2020
+  * company_blogs
+    * **[Dare to be Good Enough—You'll be Happier for it](https://8thlight.com/insights/dare-to-be-good-enough-youll-be-happier-for-it)**
+* 2019
+  * company_blogs
+    * **[Essential & Relevant: A Unit Test Balancing Act](https://8thlight.com/insights/essential-amp-relevant-a-unit-test-balancing-act)**
 {: .tree}
 
 
