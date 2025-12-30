@@ -2,7 +2,7 @@
 layout: post
 title: Debouncing API Calls
 date: '2025-07-02'
-tags: [javascript, api, performance]
+tags: [javascript, api]
 featured: true
 ---
 

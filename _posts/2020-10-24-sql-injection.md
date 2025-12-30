@@ -2,7 +2,7 @@
 title: SQL Injection Overview
 Author: Thomas Countz
 layout: post
-tags: ["security", "ruby", "java", "elixir", "database", "sql"]
+tags: ["security", "ruby", "java", "elixir", "database"]
 ---
 
 ![](/assets/images/sql_injection/sql-injection-owasp.png)
@@ -310,5 +310,3 @@ Object user = pstmt.executeQuery().getObject(0);
 * [https://www.websec.ca/kb/sql\_injection](https://www.websec.ca/kb/sql_injection)
 
 ![https://xkcd.com/327/](/assets/images/sql_injection/exploits_of_a_mom.png)
-
-

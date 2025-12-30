@@ -2,9 +2,7 @@
 layout: post
 title: Hill Chart Web App
 date: '2025-02-10'
-tags:
-- journal
-- javascript
+tags: [journal, javascript, project]
 ---
 I built an [interactive tool for visualizing task progress](https://hillchart.countzresearch.com).
 

@@ -4,7 +4,7 @@ title: "Cascii: ASCII Diagram Tool"
 date: '2025-03-18'
 tags:
 - journal
-- tools
+
 ---
 
 <img src="/assets/images/journal/monolith_b_ascii_diagram.png" style="max-width:280px" alt="ASCII diagram from my talk, 'From Legacy to Latest: How Zendesk Upgraded a Monolith to Rails 8.0 Overnight' created using Monodraw and Keynote">

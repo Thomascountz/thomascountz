@@ -3,9 +3,7 @@ layout: post
 title: Event Streaming vs Background Jobs
 date: '2025-07-21'
 tags:
-- system design
-- streaming
-- background jobs
+- infrastructure
 ---
 
 I was recently asked the question:

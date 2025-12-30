@@ -2,7 +2,7 @@
 layout: post
 title: ActiveRecord Models to a Mermaid ERD
 date: '2025-01-28'
-tags: [journal, rails, activerecord, mermaid]
+tags: [journal, rails, activerecord]
 ---
 
 Turn your ApplicationRecord models into a Mermaid ERD

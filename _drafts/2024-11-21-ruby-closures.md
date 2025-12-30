@@ -4,281 +4,107 @@ subtitle: Lexical scope, binding environments, and object lifetimes
 author: Thomas Countz
 layout: post
 featured: true
-tags: ["ruby", "programming"]
+tags: ["ruby"]
 ---
 
-## What is a Closure?
+At its core, a closure is a function that carries a backpack.
 
-A closure is a function that captures and remains bound to its surrounding _lexical scope_, even when executed in a different context. This concept, borrowed from functional programming and lambda calculus, gives Ruby the ability to define higher-order functions, encapsulate and share state, and create powerful abstraction for libraries and frameworks.
+That backpack contains all the variables that were in scope when the function was defined. Even if you execute that function in a completely different context later, it can still reach into its backpack and find the variables it captured originally.
 
-> 🔬**Lexical Scope**: Lexical scope refers to the accessibility of variables based on where they're defined in the source code. _Lexical_ scope, specifically, is determined at parse/compile-time (as opposed to _dynamic scope_ which changes during runtime), and is therefore also called _static scope_. This means—before execuing any code—we can determine how Ruby will manage certain variables in memory based on how/where they're defined.
+In Ruby, we use closures constantly—via blocks, `Procs`, and lambdas. But if we slow down and look at the internals, we can see exactly *how* Ruby pulls this off.
 
-## What We're Building
+## The "Magic" Trick
 
-To understand the power of closures, let's build a Ruby gem that provides an API for callbacks, similar to `before_`, `after_`, and `around_` hooks in Rails. We'll create a naive solution without using closures first and evaluate it quantitatively on what we can observe and qualitatively in terms of things like extensibility, readability, etc. Then, we'll refactor the code to use closures in order to see what there is to gain by using them.
-
-## Our Simple Gem
-
-```ruby
-def greet(name)
-  -> { puts "Hello, #{name}!" }
-end
-
-hello_world = greet("World")
-
-# Later...
-hello_world.call  # => Hello, World!
-```
-
-In the example above, the `greet` method returns a closure in the form of a _lambda_. In Ruby, lambdas, procs, and blocks are all types of closures.
-
-When we call `greet("World")`, it creates a closure (lambda) that wraps a piece of code that can be executed later by calling `#call`. Not only that, that piece of code captured a reference to the `name` variable, which means the closure to make use of it whenever its executed later. All this, despite the scope of the `#greet` method having already ended.
-
-Once a method exits/returns in Ruby, its local variables—including its parameters—are marked as _unreachable_ and are subject to garbage collection. This is because they are no longer needed. But if used in a closure, they're kept alive because there remains a reference to them.
-
-As a quick example:
-
-```ruby
-def greet(name)
-  puts "Hello, #{name}!"
-end
-
-greet("World")
-```
-
-In this example, the `name` variable is only accessible within the `#greet` method. Once the method exits, the variable is no longer accessible. If we take a look at which variables are accessible in the current scope, we'll see that `name` is not longer available:
-
-```ruby
-```
-
-And this makes sense. Why would we (i.e. Ruby) use up memory to keep track of a variable that will never be used again?
-
-> 🐑 **Lambdas**: In programming, a lambda is building block of functional-style programming. It's a way to define an _anonymous functions_, which can be passed around as an argument or stored in variables. In Ruby, even if you haven't created a lambda explicitly, you've likely used them in Ruby when passing blocks to methods like `each` or `map`.
-
-> ✌️ **Lambdas vs. Procs**: In Ruby, the `Kernel#lambda` method (and the [Lambda Proc Literal](https://ruby-doc.org/3.3.6/syntax/literals_rdoc.html#label-Lambda+Proc+Literals), `->`) returns a `Proc`, just like `Proc.new`. However they have subtle differences in how they handle arguments and return values. A `lambda` enforces strict arity (argument count) and returns control to the caller, while procs are more lenient and return control to the enclosing scope. Throughout this blog post, I will be using Lambdas to demonstrate closures. See the [Lambda and non-lambda semantics](https://ruby-doc.org/3.3.6/Proc.html#class-Proc-label-Lambda+and+non-lambda+semantics) section of the Ruby documentation for more information.
-
-## The Implementation: Behind the Scenes
-
-Closures in Ruby involve several layers of complexity. Their implementation relies on **lexical scope analysis**, **binding environments**, and **lifetime management**. Each layer plays a critical role in making closures both powerful and practical.
-
-### 1. Lexical Scope Analysis: Knowing What to Capture
-
-Ruby determines what variables a closure needs to capture through **lexical scope analysis**, which happens during parsing. Simply put, Ruby identifies which variables are accessible based on the code's structure and where the closure is defined.
+Let’s look at a classic counter.
 
 ```ruby
 def create_counter
   count = 0
   -> { count += 1 }
 end
+
+my_counter = create_counter
 ```
 
-When Ruby encounters the lambda, it analyzes its surrounding context and decides that `count` must be captured because it’s defined outside the closure but referenced within it.
+If we were thinking strictly in terms of standard stack frames, `create_counter` runs, sets `count` to `0`, and returns. Once that method returns, its local variables *should* be popped off the stack and disappear.
 
-We can visualize this process using Ruby's `Prism` parser:
+But they don’t.
 
 ```ruby
-require 'prism'
-
-code = <<~RUBY
-  def create_counter
-    count = 0
-    -> { count += 1 }
-  end
-RUBY
-
-puts Prism.parse(code).value
+puts my_counter.call # => 1
+puts my_counter.call # => 2
 ```
 
-The parser identifies variables that need to be captured (count in this case) and marks them for inclusion in the closure's binding environment by setting the depth to 1:
+The lambda held onto `count`. To see how, we need to look at how Ruby parses (Prism) and compiles (YARV) this code.
+
+## 1. The AST: Measuring the Depth
+
+Before Ruby runs code, it uses the **Prism** parser to turn your code into an Abstract Syntax Tree (AST). This is the step where Ruby realizes that the variable inside the lambda actually belongs to the scope outside of it.
+
+If we inspect the AST for our counter code, Prism gives us a map of exactly where everything lives:
 
 ```ruby
-@ LambdaNode (location: (3,2)-(3,19))
+# ... inside the LambdaNode ...
+@ LocalVariableOperatorWriteNode (location: (3,7)-(3,17))
 ├── flags: newline
-├── locals: []
-├── operator_loc: (3,2)-(3,4) = "->"
-├── opening_loc: (3,5)-(3,6) = "{"
-├── closing_loc: (3,18)-(3,19) = "}"
-├── parameters: ∅
-└── body:
-    @ StatementsNode (location: (3,7)-(3,17))
-    ├── flags: ∅
-    └── body: (length: 1)
-        └── @ LocalVariableOperatorWriteNode (location: (3,7)-(3,17))
-            ├── flags: newline
-            ├── name_loc: (3,7)-(3,12) = "count"
-            ├── binary_operator_loc: (3,13)-(3,15) = "+="
-            ├── value:
-            │   @ IntegerNode (location: (3,16)-(3,17))
-            │   ├── flags: static_literal, decimal
-            │   └── value: 1
-            ├── name: :count
-            ├── binary_operator: :+
-            └── depth: 1  # Indicates `count` comes from one scope above
+├── name_loc: (3,7)-(3,12) = "count"
+├── binary_operator_loc: (3,13)-(3,15) = "+="
+├── value:
+│   @ IntegerNode (location: (3,16)-(3,17))
+│   ├── flags: static_literal, decimal
+│   └── value: 1
+├── name: :count
+├── binary_operator: :+
+└── depth: 1  <----------------- RIGHT HERE
 ```
 
-The `depth: 1` indicates that the `count` variable is from an outer scope (the `create_counter` method's scope). This is how Prism tracks variables that need to be captured in the closure's binding. A depth of 1 means it's looking one scope level up from the current scope.
+That `depth: 1` shows that the parser has identified `count` as a variable that lives *one level up* from the lambda itself.
 
-> "Depth" refers to the number of visible scopes that Prism has to go up to find the declaration of a local variable. Note that this follows the same scoping rules as Ruby, so a local variable is only visible in the scope it is declared in and in blocks nested in that scope.[^1]
+*   `depth: 0`: Variables local to the lambda itself
+*   `depth: 1`: Variables in the surrounding scope (the method)
 
-[^1]: https://github.com/ruby/prism/blob/main/docs/local_variable_depth.md
 
-### 2. The Binding Environment: A Snapshot of Context
+## 2. The Bytecode: Reaching Up the Stack
 
-Closures don't just copy variables—they maintain _live references_ to them via a binding environment as pointers to their address in memory. This allows closures to both read and modify captured variables.
+When Ruby compiles this AST into bytecode for the VM (YARV), that `depth: 1` is translated directly into an instruction.
 
-```ruby
-count = 0
-increment = -> { count += 1 }
-get_count = -> { count }
+We can view the compiled bytecode using `RubyVM::InstructionSequence`. The output tells us exactly how the VM handles memory.
 
-increment.call.object_id  # => 60
-count.object_id # => 60
-get_count.call.object_id  # => 60
+First, look at the parent stake frame where, `create_counter` is defined. It's local table contains `count` at index `0`, set using the `setlocal_WC_0` instruction:
+
+```text
+== disasm: #<ISeq:create_counter@<compiled>:1 (1,0)-(4,3)>
+local table (size: 1, argc: 0 [opts: 0, rest: -1, post: 0, block: -1, kw: -1@-1, kwrest: -1])
+[ 1] count@0
+
+ putobject_INT2FIX_0_                                             (   2)[LiCa]
+ setlocal_WC_0                          count@0
+ putspecialobject                       1                         (   3)[Li]
+ send                                   <calldata!mid:lambda, argc:0, FCALL>, block in create_counter
+ leave                                                            (   4)[Re]
 ```
 
-Both `increment` and `get_count` share the same `count` variable through the binding environment. Ruby ensures these references remain valid, even after the original scope exits.
+Now, look at the stack frame for the the lambda. When it wants to increment `count`, it uses a different instruction:
 
-You can introspect the binding environment using `binding`:
+```text
+== disasm: #<ISeq:block in create_counter@<compiled>:3 (3,4)-(3,19)>
 
-```ruby
-def binding_example
-  local_var = "You can trust me, I'm a local!"
-  -> { binding }
-end
-
-closure_binding = binding_example.call
-puts closure_binding.local_variables  # => [:local_var]
-puts closure_binding.eval("local_var")  # => "You can trust me, I'm a local!"
+ getlocal_WC_1                          count@0                   (   3)[LiBc]
+ putobject_INT2FIX_1_
+ opt_plus                               <calldata!mid:+, argc:1, ARGS_SIMPLE>[CcCr]
+ dup
+ setlocal_WC_1                          count@0
+ leave                                  [Br]
 ```
 
-The binding environment, accessible through `binding`, provides a snapshot of the closure's context, including local variables and methods. Using it here, we can see that the closure retains access to the `local_var` variable, even though the scope in which it was defined (the `binding_example` method) has exited.
+This is the mechanics of the closure: `getlocal_WC_1` and `setlocal_WC_1`.
 
-This mechanism creates the variable binding behavior as if we passed the `local_var` variable into the lambda function, i.e., the lambda function has local access the variable as if it were passed in as an argument.
+`WC_0` and `WC_1` are specializations of the `getlocal` and `setlocal` instructions that tell the VM where to look for variables. Because getting a variable from the current frame and the parent frame are so common, these optimizations exist to speed things up.
 
-```ruby
-def binding_example
-  ->(local_var) { binding }
-end
+Because the lambda relies on `count@0` from its parent frame's local table (`[get|set]local_WC_1`), Ruby's GC knows it must preserve that variable, even if it would normally be marked after going out of scope. It can't just throw away the `create_counter` stack frame when the method exits, because the lambda still has a live reference pointing to it.
 
-closure_binding = binding_example.call("You can trust me, I'm a local!")
-puts closure_binding.local_variables  # => [:local_var]
-puts closure_binding.eval("local_var")  # => "You can trust me, I'm a local!"
-```
-
-### 3. Lifetime Management: Preventing Premature Cleanup
+## Why This Matters
 
 The implication of closures retaining access to variables is that they can keep those variables alive longer than expected. This means that while local variables in a method are typically marked for garbage collection when the method exits, variables captured by a closure remain alive as long as the closure itself is accessible.
 
-#### Example
-
-```ruby
-def create_rememberer
-  data = "important info"
-  -> { data }  # data lives as long as this closure
-end
-
-GC.start  # Trigger garbage collection
-
-puts create_rememberer.call
-```
-
-Ruby's GC won’t clean up `data` because the closure still references it. You can confirm this behavior with `ObjectSpace`:
-
-```ruby
-require 'objspace'
-
-closure = create_rememberer
-puts ObjectSpace.reachable_objects_from(closure)  # Shows `data` is retained
-```
-
-
-## Practical Implications of Ruby's Closure Design
-
-### Shared State and Thread Safety
-
-Closures with shared state can lead to subtle bugs in concurrent programs:
-
-```ruby
-def create_shared_counter
-  count = 0
-  increment = -> { count += 1 }
-  get_count = -> { count }
-  [increment, get_count]
-end
-
-increment, get_count = create_shared_counter
-increment.call
-puts get_count.call  # => 1
-```
-
-In multi-threaded environments, this shared state requires synchronization to avoid race conditions.
-
-### Memory Management and Efficiency
-
-Because closures retain captured variables, they can unintentionally increase memory usage if they hold references to large objects:
-
-```ruby
-# Inefficient
-def inefficient
-  large_data = "x" * 1_000_000
-  -> { large_data.length }
-end
-
-# Better
-def efficient
-  length = ("x" * 1_000_000).length
-  -> { length }
-end
-```
-
-Optimizing what closures capture can reduce memory overhead.
-
-
-Closures enable elegant patterns like memoization and encapsulation:
-
-```ruby
-# Memoization
-def memoize
-  cache = {}
-  ->(key) { cache[key] ||= yield(key) }
-end
-
-fib = memoize do |n|
-  n < 2 ? n : fib.call(n - 1) + fib.call(n - 2)
-end
-```
-
-Closures make it easy to encapsulate private state:
-
-```ruby
-def create_secure_counter
-  count = 0
-  secret = Object.new
-
-  increment = ->(token) {
-    raise "Invalid token" unless token.equal?(secret)
-    count += 1
-  }
-
-  [increment, secret]
-end
-```
-
-## Performance Trade-offs
-
-Closures involve more overhead than regular methods due to:
-1. Lexical scope analysis.
-2. Binding environment creation.
-3. Variable indirection mechanisms.
-4. Heap allocation for captured variables.
-
-Despite this, closures’ expressiveness often justifies their cost. The key is understanding when and how to use them effectively.
-
-## Conclusion
-
-Ruby’s closure implementation strikes a balance between power and practicality. By understanding the underlying mechanisms, you can:
-- Write more efficient code.
-- Debug closure-related issues with ease.
-- Leverage closures for elegant, reusable patterns.
-
-Remember: closures are more than just functions—they're functions **with memory**. Use them wisely, and they’ll become one of your most powerful tools.
+Practically speaking, it's worth being mindful of what data you capture in a closure

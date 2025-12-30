@@ -4,7 +4,7 @@ title: Run Commands on File Change
 date: '2025-03-17'
 tags:
 - journal
-- tip
+
 ---
 
 I use [`entr`](https://github.com/eradman/entr) to run commands automatically when files change. Here's how I use it to run tests.

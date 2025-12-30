@@ -2,7 +2,7 @@
 title: MLOps for Web Devs - Fastai2, Flask, Docker, & Heroku
 author: Thomas Countz
 layout: post
-tags: ["machine learning", "mlops", "fastai2", "python", "devops", "deployment", "heroku", "docker"]
+tags: ["machine learning", "python", "docker", "infrastructure"]
 ---
 
 You've built your [fastai2](https://fastai.com) model and now you want to expose it via an API. There are tools like [Render](https://render.com), [Google App Engine](https://cloud.google.com/appengine),  [AWS Lambda](https://aws.amazon.com/lambda/), [Amazon SageMaker](https://aws.amazon.com/sagemaker/), and [Microsoft Azure Functions](https://azure.microsoft.com/en-us/services/functions/) that you may use in different production scenarios, but today, we'll use [Docker](https://docker.com) and [Heroku](https://heroku.com).

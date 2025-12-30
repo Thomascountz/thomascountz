@@ -2,7 +2,7 @@
 title: "Essential & Relevant: A Unit Test Balancing Act"
 author: Thomas Countz
 layout: post
-tags: ["testing", "process"]
+tags: ["testing"]
 featured: true
 ---
 [Originally Published on 8th Light's Blog](https://8thlight.com/blog/thomas-countz/2019/02/19/essential-and-relevant-unit-tests.html)
@@ -171,4 +171,3 @@ end
   ------
 
   When judging when to DRY our unit tests, I've found it important to consider what is **essential** for our setup vs **relevant** to our test reader. There are thousands of pages more about what makes good unit tests, and I find this topic particularly nascent as the focus begins to shift from "_why_ should we TDD" to "_how_ do we TDD well." Being able to articulate what is **essential & relevant** to a test is the key to finding the balance between people like me, who always opposed DRY unit tests, to people who prefer to keep things tidy. There are smells in both directions, but **essential & relevant** is the middle ground.
-

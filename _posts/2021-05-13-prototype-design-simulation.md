@@ -2,7 +2,7 @@
 title: Hexo - Prototyping, Design, Simulation
 author: Thomas Countz
 layout: post
-tags: ["hexo", "hardware", "PCB", "electronics", "LTSpice", "falstad"]
+tags: ["project>hexo", "hardware", "electronics", "project", "design"]
 ---
 
 ![Hexo cycling through six LEDs and landing on number four](/assets/images/hexo_gif.gif)
@@ -78,4 +78,3 @@ In fact, if you want to play with Hexo, you can take a look at the simulation wi
 From bench, to paper, to screen. Back and forth, I’ve iterated and studied Hexo’s design until I felt confident that the circuit would work after I tweaked it a bit. I imagine a similar, if not more rigorous, process would exist for building an original design as well. 
 
 Now that we’ve experimented with prototypes and understood the theory, it’s time to design the physical thing!
-

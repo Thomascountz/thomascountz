@@ -3,7 +3,7 @@ title: A Thought on Practice
 subtitle: A new appreciation for the old
 author: Thomas Countz
 layout: post
-tags: ["process", "learning"]
+tags: ["process"]
 ---
 
 **tl;dr** Do a thing you already know how to do.

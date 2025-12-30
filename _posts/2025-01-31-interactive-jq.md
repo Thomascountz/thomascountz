@@ -2,7 +2,7 @@
 layout: post
 title: Interactive jq
 date: '2025-01-31'
-tags: [journal, jq, fzf, bash]
+tags: [journal, shellscript, project]
 ---
 
 I built an [interactive `jq` TUI](https://gist.github.com/Thomascountz/5ae98a738abb9246b9f7749f53cdddcf) using [`fzf`](https://github.com/junegunn/fzf)!

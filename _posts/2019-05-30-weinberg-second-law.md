@@ -3,7 +3,7 @@ layout: post
 title: "Weinberg's Second Law"
 subtitle: "There's always a problem..."
 author: "Thomas Countz"
-tags: ["process", "consulting"]
+tags: ["process"]
 ---
 <br />
 

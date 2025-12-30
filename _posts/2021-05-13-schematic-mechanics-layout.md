@@ -2,7 +2,7 @@
 title: Hexo - Schematic Capture, Mechanical Design, & PCB Layout
 author: Thomas Countz
 layout: post
-tags: ["hexo", "hardware", "PCB", "electronics", "kicad"]
+tags: ["project>hexo", "hardware", "electronics", "project", "design"]
 ---
 
 ![Final revision of Hexo's schematic](/assets/images/hexo_schematic_final.png)
@@ -53,4 +53,3 @@ Traces are the things that connect the LED to the battery and the battery to the
 There’s an art to PCB layout and there are tools to help make it easier. Like a lot of design, there’s a mix of technical and aesthetic attitudes that lead to a PCB being designed one way or another. When you begin the PCB layout process, you have, what is literally called, a _rats nest_ of traces and components that need to be untangled, taking into account electrical requirements, interference, manufacturability, etc.
 
 Now that Hexo was designed, and (nearly) every decision that could be made, was made, it was time to send the board to the manufacturer. After which, you’ll realize that you made a tiny mistake and hope that either the manufacturer will notice and fix it, or that it was tiny enough to have no impact.
-

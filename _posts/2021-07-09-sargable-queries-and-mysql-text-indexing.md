@@ -2,7 +2,7 @@
 title: Sargable Queries & MUL Indexes; or Why My Query is Slow
 author: Thomas Countz
 layout: post
-tags: ["ruby", "sql", "database", "rails"]
+tags: ["ruby", "database", "rails"]
 featured: true
 ---
 
@@ -221,4 +221,3 @@ You refresh JIRA:
 "Status: Done."
 
 You give a shout out to Brianna and  `⌘-SHIFT-Q`.
-

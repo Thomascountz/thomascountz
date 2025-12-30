@@ -83,3 +83,42 @@ task :copy_journal do |t, args|
   write_journal_file(filename, front_matter, updated_content)
   puts "Journal copied successfully!"
 end
+
+def collect_posts_with_tags
+  Dir.glob('_posts/*.md').map do |file|
+    content = File.read(file)
+    if content =~ /\A---\s*\n(.*?)\n---/m
+      front_matter = YAML.safe_load($1, permitted_classes: [Date])
+      { file: file, tags: (front_matter['tags'] || []).flatten.compact }
+    else
+      { file: file, tags: [] }
+    end
+  end
+end
+
+desc 'List tags (with tag= filter for specific tag, -a to show all posts)'
+task :tags do
+  posts = collect_posts_with_tags
+  tag_counts = posts.flat_map { |p| p[:tags] }.tally.sort_by { |_, count| -count }
+  show_all = ARGV.include?('-a') || ARGV.include?('--all')
+
+  if ENV['tag']
+    tag = ENV['tag']
+    matching_posts = posts.select { |p| p[:tags].include?(tag) }
+
+    if matching_posts.empty?
+      puts "No posts found with tag '#{tag}'"
+    else
+      puts "#{tag} (#{matching_posts.count})"
+      matching_posts.each { |p| puts "  - #{p[:file]}" }
+    end
+  elsif show_all
+    tag_counts.each do |tag, count|
+      puts "#{tag} (#{count})"
+      posts.select { |p| p[:tags].include?(tag) }.each { |p| puts "  - #{p[:file]}" }
+    end
+  else
+    puts "Tags (#{tag_counts.count})"
+    tag_counts.each { |tag, count| puts "  #{count.to_s.rjust(3)}  #{tag}" }
+  end
+end

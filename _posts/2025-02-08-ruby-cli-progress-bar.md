@@ -2,7 +2,7 @@
 layout: post
 title: Ruby CLI Progress Bar
 date: '2025-02-08'
-tags: [journal, ruby, cli]
+tags: [journal, ruby]
 ---
 
 ```ruby

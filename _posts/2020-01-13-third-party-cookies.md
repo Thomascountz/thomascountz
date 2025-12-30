@@ -3,7 +3,7 @@ title: Third-Party Cookies
 author: Thomas Countz
 description: What are cookies and how they so dangerous? Let's take a look at the technical side of cookies and what makes them so useful for good and bad actors, alike.
 layout: post
-tags: ["privacy"]
+tags: ["security"]
 ---
 
 As internet privacy continues to rise in our collective consciousnesses, _cookies_ are caught in the cross-hairs. Cookies aren't always bad, but they can be used to identify you, track your behavior online. Let's take a look at the technical side of cookies and what makes them so useful for good and bad actors, alike.
@@ -55,5 +55,3 @@ TinyFeather provides the kinds of analytics that businesses use to improve their
 ## Mitigation For Users
 
 There are a lot of browsers & browser tools designed to block third-party cookies. Most modern browsers will provide settings to turn off third-party cookies altogether. Because of the emphasis placed on browser cookies as privacy concern, third-party [advertisers have begun to use other pieces of identifiable information](https://www.nytimes.com/2019/07/03/technology/personaltech/fingerprinting-track-devices-what-to-do.html) in order to build profiles on it's targets.
-
-

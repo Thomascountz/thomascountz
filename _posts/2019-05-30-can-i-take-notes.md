@@ -3,7 +3,7 @@ layout: post
 title: "Can I Take Notes?"
 subtitle: "Here's what I'm trying to do to stay on top of things at the client."
 author: "Thomas Countz"
-tags: ["process", "consulting"]
+tags: ["process"]
 ---
 When I need to onboard onto a new client, or even just a new project within the same client, I want to absorb as much as I can, as quickly as I can.
 

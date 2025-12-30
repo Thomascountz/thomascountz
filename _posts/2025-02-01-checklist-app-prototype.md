@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Checklist App Prototype
-tags: [journal, app, javascript]
+tags: [journal, prototype, javascript]
 date: '2025-02-01'
 ---
 

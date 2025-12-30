@@ -1,7 +1,7 @@
 ---
 title: Coordinate Frames in 2D w/ Homogeneous Coordinates + Matplotlib
 author: Thomas Countz
-tags: ["robotics", "linear algebra", "projects"]
+tags: ["robotics"]
 layout: post
 ---
 

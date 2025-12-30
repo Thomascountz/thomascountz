@@ -3,7 +3,7 @@ title: Utilizing Docker for Bundling in a Specific Ruby Environment
 subtitle: A Light-weight Workflow
 author: Thomas Countz
 layout: post
-tags: ["ruby"]
+tags: ["ruby", "docker"]
 ---
 One of the tasks we often find ourselves completing on Zendesk's Core Ruby Engineering team is helping to keep a variety of projects up to date. This can involve running `bundle update` across dozens of repositories, each potentially requiring a different Ruby environment. Although we've developed tooling to accomplish this rather efficiently, there are often edge cases that require us to work in each repository locally. However, installing so many different versions of Ruby locally can be cumbersome and time-consuming.
 

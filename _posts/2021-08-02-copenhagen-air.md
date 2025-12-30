@@ -3,7 +3,7 @@ title: Københavns Luftkvalitet og Cykling
 subtitle: Copenhagen Air Quality and Bicycling
 author: Thomas Countz
 layout: post
-tags: ["data", "python"]
+tags: ["data science", "python", "project"]
 featured: true
 ---
 *Dataset retrieved from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*
@@ -248,5 +248,3 @@ Some interesting ideas:
 - Exposure amounts based on time. The Google Maps API returns a Polyline and duration for each part of the trip!
 - Using machine learning to fill in gaps in data, what about those `-999999` data points or roads that aren't represented at all?
 - Are there correlations between this data and any other data available at https://opendata.dk? Housing prices? Bike parking?
-
-
