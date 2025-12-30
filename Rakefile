@@ -31,8 +31,8 @@ task :post do
   puts "Post created successfully!"
 end
 
-desc 'Create a new memo'
-task :memo do
+desc 'Create a new journal'
+task :journal do
   title = ENV['title'] || abort('Please provide a title with title=')
   slug = slugify(title)
   date = Date.today.strftime('%Y-%m-%d')
@@ -42,12 +42,12 @@ task :memo do
     abort("Error: #{filename} already exists!")
   end
 
-  puts "Creating new memo: #{filename}"
+  puts "Creating new journal: #{filename}"
   front_matter = {
     'layout' => 'post',
     'title' => title,
     'date' => Date.today.to_s,
-    'tags' => ["memo"].append(ENV['tags']&.split(',')),
+    'tags' => ["journal"].append(ENV['tags']&.split(',')),
   }
 
   File.open(filename, 'w') do |file|
@@ -55,12 +55,12 @@ task :memo do
     file.puts('---')
     file.puts
   end
-  puts "Memo created successfully!"
+  puts "Journal created successfully!"
 end
 
-# rake copy_memo[<filepath>]
+# rake copy_journal[<filepath>]
 desc 'Copy markdown content to _posts directory'
-task :copy_memo do |t, args|
+task :copy_journal do |t, args|
   filepath = ENV['filepath'] || abort('Please provide a filepath with filepath=')
   abort("Error: File #{filepath} does not exist!") unless File.exist?(filepath)
 
@@ -71,15 +71,15 @@ task :copy_memo do |t, args|
 
   abort("Error: #{filename} already exists!") if File.exist?(filename)
 
-  puts "Creating new memo: #{filename}"
+  puts "Creating new journal: #{filename}"
 
   front_matter = create_front_matter(title, File.ctime(filepath))
   content_without_front_matter = read_content_without_front_matter(filepath)
 
   source_dir = File.dirname(filepath)
-  dest_image_dir = './assets/images/memos'
+  dest_image_dir = './assets/images/journals'
   updated_content = copy_images_and_update_paths(content_without_front_matter, source_dir, dest_image_dir)
 
-  write_memo_file(filename, front_matter, updated_content)
-  puts "Memo copied successfully!"
+  write_journal_file(filename, front_matter, updated_content)
+  puts "Journal copied successfully!"
 end

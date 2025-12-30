@@ -3,11 +3,11 @@ layout: post
 title: "Cascii: ASCII Diagram Tool"
 date: '2025-03-18'
 tags:
-- memo
+- journal
 - tools
 ---
 
-<img src="/assets/images/memos/monolith_b_ascii_diagram.png" style="max-width:280px" alt="ASCII diagram from my talk, 'From Legacy to Latest: How Zendesk Upgraded a Monolith to Rails 8.0 Overnight' created using Monodraw and Keynote">
+<img src="/assets/images/journal/monolith_b_ascii_diagram.png" style="max-width:280px" alt="ASCII diagram from my talk, 'From Legacy to Latest: How Zendesk Upgraded a Monolith to Rails 8.0 Overnight' created using Monodraw and Keynote">
 
 
 Today, I discovered [https://cascii.app/](https://cascii.app/), "...one of the few well-equipped ASCII diagram builders freely available on the internet."

@@ -3,7 +3,7 @@ layout: post
 title: 'Ruby Bug #21117: Numbered Block Params'
 date: '2025-02-20'
 tags:
-- memo
+- journal
 - ruby
 ---
 

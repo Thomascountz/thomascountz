@@ -3,7 +3,7 @@ layout: post
 title: Color Strings Refinement
 date: '2025-05-27'
 tags:
-- memo
+- journal
 - ruby
 ---
 

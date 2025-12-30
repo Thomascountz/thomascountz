@@ -3,7 +3,7 @@ layout: post
 title: Routine Complications
 date: '2025-02-15 12:08:18 +0100'
 tags:
-- memo
+- journal
 ---
 
 In [_A Life-Saving Checklist_](https://archive.is/0H188), author Atul Gawande describes a patient suffering from an infection introduced by medical equipment. These "line infections" are so common, they're said to be a _routine complication_.

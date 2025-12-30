@@ -116,7 +116,7 @@ Sticking to the commandline, let's use a few more tools for wrangling this text.
 3. [`sed`](https://manpages.debian.org/testing/sed/sed.1.en.html), will remove the prefix and leave just the JSON, and finally,
 4. [`jq`](https://manpages.debian.org/testing/jq/jq.1.en.html), will let us explore and manipulate the payload.
 
-_Author's note: this was a very exploratory and iterative process, especially the `jq` code. I've written a tool called `ijq` to help with this. You can read about it here: [Interactive jq](/memo/2025/01/31/interactive-jq)_
+_Author's note: this was a very exploratory and iterative process, especially the `jq` code. I've written a tool called `ijq` to help with this. You can read about it here: [Interactive jq](/2025/01/31/interactive-jq)_
 
 The first thing I'm interested in is the structure of the JSON.
 

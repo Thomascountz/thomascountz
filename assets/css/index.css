@@ -187,88 +187,88 @@ nav a {
     text-decoration: underline;
 }
 
-.latest-memo.header {
+.latest-journal.header {
     text-transform: uppercase;
 }
 
-.latest-memo.header td.width-auto {
+.latest-journal.header td.width-auto {
     white-space: nowrap;
 }
 
-.latest-memo.header th.width-min {
+.latest-journal.header th.width-min {
     white-space: nowrap;
 }
 
-.latest-memo.header td[colspan="2"] {
+.latest-journal.header td[colspan="2"] {
     text-align: left;
 }
 
-.latest-memo .memo-label {
+.latest-journal .journal-label {
     background-color: var(--background-color-alt);
     text-align: left;
 }
 
-.latest-memo .memo-cell:hover {
+.latest-journal .journal-cell:hover {
     cursor: pointer;
 }
 
-.latest-memo .memo-cell:hover .memo-link {
+.latest-journal .journal-cell:hover .journal-link {
     text-decoration: underline;
 }
 
-.memos {
+.journal {
     margin: 0 auto;
 }
 
-.memos .memo {
+.journal .journal {
     margin-bottom: var(--line-height);
     border: var(--border-thickness) solid var(--text-color-alt);
 }
 
-.memo {
+.journal {
     line-height: calc(var(--line-height) * 0.95);
     margin: 0 auto;
 }
 
-.memo h2 {
+.journal h2 {
     margin: 0;
     font-size: calc(var(--font-size) * 1.15);
 }
 
-.memo-metadata,
-.memo-tags {
+.journal-metadata,
+.journal-tags {
     font-size: 0.8rem;
     color: var(--text-color-alt);
     margin: 0;
 }
 
-.memo-metadata a,
-.memo-tags a {
+.journal-metadata a,
+.journal-tags a {
     color: var(--text-color-alt);
 }
 
-.memo-header a {
+.journal-header a {
     text-decoration: none;
 }
 
-.memo-header {
+.journal-header {
     border-bottom: var(--border-thickness) solid var(--text-color-alt);
     padding: calc(var(--line-height) * 0.25) calc(var(--line-height) * 0.5);
 }
 
-.memos .memo-header {
+.journal .journal-header {
     background-color: var(--background-color-alt);
 }
 
-.memo-header a:hover,
-.memo-header:hover .memo-link {
+.journal-header a:hover,
+.journal-header:hover .journal-link {
     text-decoration: underline;
 }
 
-.memo img {
+.journal img {
     max-width: calc(min(60ch, 100% - 1ch));
 }
 
-.memo-content {
+.journal-content {
     margin: 0 var(--line-height);
 }

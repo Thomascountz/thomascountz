@@ -3,7 +3,7 @@ layout: post
 title: About Change
 date: '2025-07-15'
 tags:
-- memo
+- journal
 - thought
 ---
 

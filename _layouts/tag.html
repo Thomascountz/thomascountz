@@ -13,8 +13,6 @@ layout: default
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time>
             {% if post.featured == true %}
               *
-            {% elsif post.tags contains 'memo' %}
-              &nbsp;
             {% else %}
               &nbsp;
             {% endif %}

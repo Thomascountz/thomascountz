@@ -3,7 +3,7 @@ layout: post
 title: Run Commands on File Change
 date: '2025-03-17'
 tags:
-- memo
+- journal
 - tip
 ---
 

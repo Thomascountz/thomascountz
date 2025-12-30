@@ -3,15 +3,15 @@ layout: default
 ---
 
 {% assign timeline = site.posts | sort: 'date' | reverse %}
-{% assign latest_memo = timeline | find_exp:"memo", "memo.tags contains 'memo'" %}
+{% assign latest_journal = timeline | find_exp:"journal", "journal.tags contains 'journal'" %}
 
 
-<table class="latest-memo header">
+<table class="latest-journal header">
   <tr>
-    <td colspan="2" rowspan="1" class="width-auto memo-cell" onclick="window.location.href='{{ latest_memo.url }}';">
-      <a class="memo-link" href="{{ latest_memo.url }}">{{ latest_memo.title }}</a>
+    <td colspan="2" rowspan="1" class="width-auto journal-cell" onclick="window.location.href='{{ latest_journal.url }}';">
+      <a class="journal-link" href="{{ latest_journal.url }}">{{ latest_journal.title }}</a>
     </td>
-    <th class="memo-label width-min">Latest <a class=memo-link" href="/tag/memo/">Memos</a></th>
+    <th class="journal-label width-min">Latest <a class=journal-link" href="/tag/journal/">Journal</a></th>
   </tr>
 </table>
 
@@ -23,8 +23,6 @@ layout: default
           <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%Y-%m-%d" }}</time>
           {% if entry.featured == true %}
             *
-          {% elsif entry.tags contains 'memo' %}
-            &nbsp;
           {% else %}
             &nbsp;
           {% endif %}

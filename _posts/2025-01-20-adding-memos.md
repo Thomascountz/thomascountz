@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Adding Memos
+title: Adding Journals
 date: '2025-01-20'
-tags: [memo]
+tags: [journal]
 ---
 
 The thing I love most about social media feeds is the immediacy of capturing and sharing thoughts and ideas. Writing on my blog, being built with Jekyll, creates _just_ enough friction for me to overthink what I'm sharing.

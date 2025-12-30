@@ -2,12 +2,12 @@
 layout: post
 title: Interactive jq
 date: '2025-01-31'
-tags: [memo, jq, fzf, bash]
+tags: [journal, jq, fzf, bash]
 ---
 
 I built an [interactive `jq` TUI](https://gist.github.com/Thomascountz/5ae98a738abb9246b9f7749f53cdddcf) using [`fzf`](https://github.com/junegunn/fzf)!
 
-![](/assets/images/memos/ijq.gif)
+![](/assets/images/journal/ijq.gif)
 
 I was searching for an interactive jq editor when I came across [this repo](https://github.com/fiatjaf/awesome-jq), which had an intriguing suggestion:
 

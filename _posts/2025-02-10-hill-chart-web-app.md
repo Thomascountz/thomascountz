@@ -3,12 +3,12 @@ layout: post
 title: Hill Chart Web App
 date: '2025-02-10'
 tags:
-- memo
+- journal
 - javascript
 ---
 I built an [interactive tool for visualizing task progress](https://hillchart.countzresearch.com).
 
-![Screenshot of Hill Chart](/assets/images/memos/hillchart.jpeg)
+![Screenshot of Hill Chart](/assets/images/journal/hillchart.jpeg)
 
 A hill chart is a visual tool for tracking tasks and projects, using the metaphor of going up and down hill to communicate the different phases of work.
 
