@@ -5,7 +5,7 @@ tags: ["ruby"]
 layout: post
 ---
 
-At 8th Light, my team and I are rigorously working on our most important client’s most important project: a command line Battleship gem, called [battle_boats](https://rubygems.org/gems/battle_boats). \s
+At 8th Light, my team and I are rigorously working on our most important client’s most important project:  a command line Battleship gem, called [battle_boats](https://rubygems.org/gems/battle_boats). \s
 
 I recently sat down with my mentors and demo-ed version `0.0.4`, where I added a bit of color in dev mode, and my mentors-as-stakeholders liked it so much, they’ve asked for more color! But how??
 
@@ -161,4 +161,3 @@ Now I can keep my `Colorize` methods away from the `String`'s in the rest of the
 ---
 
 Jokes aside, my exposure to metaprogramming and monkey patching has been fraught with warnings, so I’ve never really investigated the power it gives developers to write expressive code. Of course there are other ways of solving this problem, but given the opportunity to make safe use of this technique was just too exciting to pass up.
-

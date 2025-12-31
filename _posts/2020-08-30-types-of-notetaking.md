@@ -90,7 +90,7 @@ Yellow legal pads are beloved (and hated) by many for their accessibility and ea
 
 **CUT TO**: Thomas is, yet again, digging through the pages of [Building Git by James Coglan](https://shop.jcoglan.com/building-git/) to remember how Ruby's `open3` module exposes child processes to IO streams.
 
-I love diving deep into different topics, often topics that I may not directly visit or use again in my day-to-day work. Take [machine learning](https://www.thomascountz.com/tag/machine%20learning/) for example. When I first studied it, I learned quite a lot! But, just a few months later, when I revisited data science, I felt as though I was back to square one. Not only can I have notes to come back to, I've noticed that my comprehension increases when I'm able to write new information down in my own words.
+I love diving deep into different topics, often topics that I may not directly visit or use again in my day-to-day work. Take [machine learning](https://www.thomascountz.com/tag/machine-learning/) for example. When I first studied it, I learned quite a lot! But, just a few months later, when I revisited data science, I felt as though I was back to square one. Not only can I have notes to come back to, I've noticed that my comprehension increases when I'm able to write new information down in my own words.
 
 My solution to avoid this type of thing is to take long-form reference notes:
 

@@ -4,7 +4,7 @@ subtitle: Experimenting with "Generative AI"
 author: Thomas Countz
 layout: post
 featured: true
-tags: ["ruby", "evolutionary algorithms", "machine learning"]
+tags: ["ruby", "evolutionary-algorithms", "machine-learning"]
 ---
 
 Inspired by biological systems, evolutionary algorithms model the patterns of multi-generational evolution in order to unearth unique ideas. They work by generating a vast number of potential solutions to a particular problem and then pitting them against each other in a process akin natural selection: only the fittest survive. In this way, evolutionary algorithms are able to navigate large ambiguous search spaces in order to find solutions to problems that may be difficult or inefficient to solve using other methods.

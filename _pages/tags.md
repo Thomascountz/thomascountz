@@ -11,8 +11,8 @@ title: Tags
     {% assign tag_name = tag[0] %}
     {% assign tag_posts = tag[1] | sort: "date" | reverse %}
     <li>
-      <a class="tag-link" href="/tag/{{ tag_name | slugify }}/">
-        {{ tag_name | replace:'-', ' ' }} ({{ tag_posts | size }})
+      <a class="tag-link" href="/tag/{{ tag_name }}/">
+        #{{ tag_name }} ({{ tag_posts | size }})
       </a>
       <ul>
         {% for post in tag_posts %}

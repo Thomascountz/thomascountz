@@ -3,7 +3,7 @@ title: Københavns Luftkvalitet og Cykling
 subtitle: Copenhagen Air Quality and Bicycling
 author: Thomas Countz
 layout: post
-tags: ["data science", "python", "project"]
+tags: ["data-science", "python", "project"]
 featured: true
 ---
 *Dataset retrieved from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*

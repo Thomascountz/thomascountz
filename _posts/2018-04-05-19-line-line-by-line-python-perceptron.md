@@ -2,7 +2,7 @@
 title: 19-line Line-by-line Python Perceptron
 author: Thomas Countz
 layout: post
-tags: ["machine learning"]
+tags: ["machine-learning"]
 featured: true
 ---
 
@@ -408,4 +408,3 @@ Next, we’ll refactor our perceptron code, take a look at how we can use our mo
 * [Single-Layer Neural Networks and Gradient Descent](http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html#implementing-the-perceptron-rule-in-python)
 * [10.2: Neural Networks: Perceptron Part 1 — The Nature of Code](https://www.youtube.com/watch?v=ntKn5TPHHAk&t=400s)
 * [Appendix F — Introduction to NumPy](https://sebastianraschka.com/pdf/books/dlb/appendix_f_numpy-intro.pdf) from Introduction to Artificial Neural Networks and Deep Learning A Practical Guide with Applications in Python by Sebastian Raschka
-

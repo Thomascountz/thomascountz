@@ -3,7 +3,7 @@ title: Calculate the Decision Boundary of a Single Perceptron; Visualizing Linea
 subtitle: Learning Machine Learning Journal 5
 author: Thomas Countz
 layout: post
-tags: ["machine learning"]
+tags: ["machine-learning"]
 ---
 
 tl;dr Skip to the [Summary](#summary).

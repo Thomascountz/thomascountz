@@ -3,7 +3,7 @@ title: Perceptron Implementing AND, Part 2
 subtitle: Learning Machine Learning Journal \#2
 author: Thomas Countz
 layout: post
-tags: ["machine learning"]
+tags: ["machine-learning"]
 ---
 
 ![Illustration of a perceptron](/assets/images/perceptron_model_with_names.png)
@@ -408,4 +408,3 @@ This allows us to smooth out the change in our weights, which can prevent oversh
 - [Perceptrons: The First Neural Networks](https://pythonmachinelearning.pro/perceptrons-the-first-neural-networks/)
 
 - [Perceptron — Wikipedia](https://en.wikipedia.org/wiki/Perceptron)
-

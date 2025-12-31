@@ -3,7 +3,7 @@ title: Rocket Lab Telemetry From Video
 subtitle: Using Google's OCR to Collect Rocket Launch Telemetry from a Live Stream
 author: Thomas Countz
 layout: post
-tags: ["project", "ruby", "machine learning", "data science"]
+tags: ["project", "ruby", "machine-learning", "data-science"]
 ---
 
 I'm both excited and saddened to share with you my experience pulling rocket telemetry data from a recorded video live stream of a rocket launch. What I'm sharing with you is going to feature very hacky brute force data munging, security worst practices, and, the data engineer's favorite: Google Sheets.

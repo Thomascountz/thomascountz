@@ -2,7 +2,7 @@
 title: Hexo - Prototyping, Design, Simulation
 author: Thomas Countz
 layout: post
-tags: ["project>hexo", "hardware", "electronics", "project", "design"]
+tags: ["project__hexo", "hardware", "electronics", "project", "design"]
 ---
 
 ![Hexo cycling through six LEDs and landing on number four](/assets/images/hexo_gif.gif)

@@ -2,7 +2,7 @@
 title: Hexo - Schematic Capture, Mechanical Design, & PCB Layout
 author: Thomas Countz
 layout: post
-tags: ["project>hexo", "hardware", "electronics", "project", "design"]
+tags: ["project__hexo", "hardware", "electronics", "project", "design"]
 ---
 
 ![Final revision of Hexo's schematic](/assets/images/hexo_schematic_final.png)

@@ -3,7 +3,7 @@ title: Perceptron Implementing AND, Part 1
 subtitle: Learning Machine Learning Journal \#2
 author: Thomas Countz
 layout: post
-tags: ["machine learning"]
+tags: ["machine-learning"]
 ---
 
 In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks), we got my feet wet learning about perceptrons. Inspired by [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) book, today, the goal is to expand on that knowledge by using the perceptron formula to mimic the behavior of a logical `AND`.
@@ -144,4 +144,3 @@ For simplicity, let’s set`b = 1`, `w1 = -1`, and `w2 = -1`
 - [Perceptrons — the most basic form of a neural network](https://appliedgo.net/perceptron/)
 
 - [Perceptron — Wikipedia](https://en.wikipedia.org/wiki/Perceptron)
-
