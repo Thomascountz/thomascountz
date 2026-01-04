@@ -11,24 +11,14 @@ layout: page
     <td colspan="2" rowspan="1" class="width-auto journal-cell" onclick="window.location.href='{{ latest_journal.url }}';">
       <a class="journal-link" href="{{ latest_journal.url }}">{{ latest_journal.title }}</a>
     </td>
-    <th class="journal-label width-min">Latest <a class=journal-link" href="/tag/journal/">Journal</a></th>
+    <th class="journal-label width-min">Latest <a class="journal-link" href="/tag/journal/">Journal</a></th>
   </tr>
 </table>
 
 <section class="posts">
   <ul>
     {% for entry in timeline %}
-      <li>
-        <a href="{{ site.baseurl }}{{ entry.url }}">
-          <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%Y-%m-%d" }}</time>
-          {% if entry.featured == true %}
-            *
-          {% else %}
-            &nbsp;
-          {% endif %}
-          {{ entry.title }}
-      </a>
-    </li>
+      {% include post_list_item.html post=entry %}
     {% endfor %}
   </ul>
 </section>

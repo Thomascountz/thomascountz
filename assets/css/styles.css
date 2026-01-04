@@ -50,6 +50,34 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: "Atkinson Hyperlegible Mono";
+    src: url("../fonts/atkinson_hyperlegible/AtkinsonHyperlegibleMono-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible Mono";
+    src: url("../fonts/atkinson_hyperlegible/AtkinsonHyperlegibleMono-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible Mono";
+    src: url("../fonts/atkinson_hyperlegible/AtkinsonHyperlegibleMono-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible Mono";
+    src: url("../fonts/atkinson_hyperlegible/AtkinsonHyperlegibleMono-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
 /* ==========================================================================
    2. CSS Variables
    ========================================================================== */
@@ -610,6 +638,7 @@ textarea {
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 button:focus,

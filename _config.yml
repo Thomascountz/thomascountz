@@ -22,7 +22,6 @@ exclude:
   - .jekyll-cache
 
 plugins:
-  - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
 
