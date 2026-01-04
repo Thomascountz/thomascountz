@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+permalink: /about
 ---
 
 I'm a senior engineer and tech lead on the Ruby infrastructure team at [Zendesk](https://zendesk.com).
@@ -47,6 +48,3 @@ My career is guided by three principles: to create, to learn, and to share.
   * company_blogs
     * **[Essential & Relevant: A Unit Test Balancing Act](https://8thlight.com/insights/essential-amp-relevant-a-unit-test-balancing-act)**
 {: .tree}
-
-
-{% include footer.html %}

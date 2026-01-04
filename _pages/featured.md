@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: page
 title: Featured
-permalink: /featured/
+permalink: /featured
 ---
 
 {% assign posts = site.posts | where: 'featured', true %}
 
 <section class="posts">
-<h1>*featured</h1>
+  <h2>*featured</h2>
     <ul>
       {% for post in posts %}
       <li>
@@ -18,5 +18,4 @@ permalink: /featured/
       </li>
       {% endfor %}
     </ul>
-
 </section>

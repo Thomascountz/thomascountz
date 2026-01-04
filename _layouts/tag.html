@@ -5,7 +5,7 @@ layout: default
 {% assign posts = site.posts | where_exp: 'post', 'post.tags contains page.tag' %}
 
 <section class="posts">
-<h1>#{{page.tag}}</h1>
+<h2>#{{page.tag}}</h2>
     <ul>
       {% for post in posts %}
       <li>
