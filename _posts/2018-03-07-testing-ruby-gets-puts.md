@@ -1,11 +1,9 @@
 ---
-title: Testing Ruby’s `gets` & `puts`
-subtitle: Using Dependency Injection, Sensible Defaults, & Duck-Types
-author: Thomas Countz
 layout: post
-tags: ["ruby", "testing"]
+title: "Testing Ruby’s `gets` & `puts`"
+subtitle: "Using Dependency Injection, Sensible Defaults, & Duck-Types"
+tags: [ruby, testing]
 ---
-
 ### The Problem.
 
 You want to TDD some behavior that interacts with the command line:

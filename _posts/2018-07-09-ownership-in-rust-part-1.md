@@ -1,12 +1,10 @@
 ---
-title: Ownership in Rust, Part 1
-subtitle: It’s not my problem.
-author: Thomas Countz
 layout: post
-tags: ["rust"]
+title: "Ownership in Rust, Part 1"
+subtitle: "It’s not my problem."
+tags: [rust]
 featured: true
 ---
-
 [_Ownership in Rust, Part 2_ →](/2018/07/11/ownership-in-rust-part-2)
 
 As a Rubyist, all that I know about memory allocation is that it’s handled by some process called garbage collection and that it’s [Aaron Patterson](https://medium.com/u/64e4f5eee153)’s problem, not mine.

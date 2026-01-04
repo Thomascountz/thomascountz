@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Where Does Apple Hide Your Voice Memo Transcripts?
-subtitle: How I discovered the transcripts Apple buries inside .m4a audio files
-date: '2025-06-08'
-tags: ["ruby","reverse-engineering"]
+title: "Where Does Apple Hide Your Voice Memo Transcripts?"
+subtitle: "How I discovered the transcripts Apple buries inside .m4a audio files"
+date: 2025-06-08
+tags: [ruby, reverse-engineering, release]
+description: "Apple's Voice Memos app automatically transcribes your recordings, but accessing those transcripts isn't straightforward. I explored the .m4a file format and show you how to extract them."
 ---
-
 Much like having thoughts in the shower and working on trains, I often find my best thinking happens while walking my dog in the morning. To not lose track of all this good thinking, I've started recording voice notes on my iPhone using Apple's _Voice Memos_ app.
 
 After recording, the app automatically generates transcriptions, allowing me to easily search, copy, and edit my memos. Unfortunately—Apple being Apple—you can't access these transcripts from anywhere outside the Voice Memos app.

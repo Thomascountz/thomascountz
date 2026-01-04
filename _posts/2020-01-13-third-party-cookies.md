@@ -1,11 +1,9 @@
 ---
-title: Third-Party Cookies
-author: Thomas Countz
-description: What are cookies and how they so dangerous? Let's take a look at the technical side of cookies and what makes them so useful for good and bad actors, alike.
 layout: post
-tags: ["security"]
+title: "Third-Party Cookies"
+tags: [security]
+description: "What are cookies and how they so dangerous? Let's take a look at the technical side of cookies and what makes them so useful for good and bad actors, alike."
 ---
-
 As internet privacy continues to rise in our collective consciousnesses, _cookies_ are caught in the cross-hairs. Cookies aren't always bad, but they can be used to identify you, track your behavior online. Let's take a look at the technical side of cookies and what makes them so useful for good and bad actors, alike.
 
 ## Request-Response Cycle

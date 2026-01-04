@@ -1,10 +1,10 @@
 ---
-title: Københavns Luftkvalitet og Cykling
-subtitle: Copenhagen Air Quality and Bicycling
-author: Thomas Countz
 layout: post
-tags: ["data-science", "python", "project"]
+title: "Københavns Luftkvalitet og Cykling"
+subtitle: "Copenhagen Air Quality and Bicycling"
+tags: [data-science, python, project]
 featured: true
+description: "An exploration of Copenhagen's air quality data through the lens of urban cycling. Using Python, GeoPandas, and the Google Maps API, this analysis examines black carbon, nitrogen dioxide, and ultrafine particle measurements collected by Google Street View vehicles across the city. Includes geospatial data processing, route-based pollution exposure calculations, and visualization of air quality correlations along cycling paths."
 ---
 *Dataset retrieved from: Utrecht University & Google, 2021, via Google Environmental Insights Explorer (August 2021)*
 

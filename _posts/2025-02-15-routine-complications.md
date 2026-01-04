@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Routine Complications
-date: '2025-02-15 12:08:18 +0100'
-tags:
-- journal
+title: "Routine Complications"
+date: 2025-02-15
+tags: [journal]
+description: "Understanding and managing routine complications keeps us honest and responsible, even though we wish things would never go wrong."
 ---
-
 In [_A Life-Saving Checklist_](https://archive.is/0H188), author Atul Gawande describes a patient suffering from an infection introduced by medical equipment. These "line infections" are so common, they're said to be a _routine complication_.
 
 In medical practice, a routine complication refers to an **adverse event or difficulty that is known to occur with some regularity in association with a particular procedure or treatment**. These complications are _expected_ in the sense that they are well-documented and occur with a known frequency, **allowing healthcare providers to anticipate and manage them effectively**.

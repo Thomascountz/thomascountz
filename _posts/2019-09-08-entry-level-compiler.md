@@ -1,12 +1,10 @@
 ---
-title: Entry-level Compiler
-subtitle: Theory Behind Building a Markdown to HTML Compiler
-author: Thomas Countz
-tags: ["project", "ruby"]
 layout: post
+title: "Entry-level Compiler"
+subtitle: "Theory Behind Building a Markdown to HTML Compiler"
+tags: [project, ruby]
 featured: true
 ---
-
   ![markie](/assets/images/markie.jpeg)*markie*
 
   A compiler’s job is to translate one language into another. We use them in computer programming to transform the high-level languages that humans can read and write into something that computers understand.

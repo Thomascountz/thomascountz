@@ -1,10 +1,8 @@
 ---
-title: Arduino Tone for ESP32
-Author: Thomas Countz
 layout: post
-tags: ["hardware", "esp32", "arduino", "firmware"]
+title: "Arduino Tone for ESP32"
+tags: [hardware, esp32, arduino, firmware]
 ---
-
 Arduino has a built-in [`tone()`](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/) library which allows you to send a PWM `frequency` at 50% duty cycle to a specific `pin` in order to generate a tone on a piezoelectric buzzer with an optional `duration`.
 
 ```c

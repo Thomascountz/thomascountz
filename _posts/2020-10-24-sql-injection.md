@@ -1,10 +1,8 @@
 ---
-title: SQL Injection Overview
-Author: Thomas Countz
 layout: post
-tags: ["security", "ruby", "java", "elixir", "database"]
+title: "SQL Injection Overview"
+tags: [security, ruby, java, elixir, database]
 ---
-
 ![](/assets/images/sql_injection/sql-injection-owasp.png)
 
 An SQL Injection **occurs when untrusted input is used directly in the construction of an SQL query**. This attack is commonly executed by introducing a meta character \(such as a comment\) into a data plane in such a way that allows an attacker to add commands to the control plane. Essentially, when building a SQL query from user input, an attacker can insert SQL instructions that cause the application to behave in unintended ways.

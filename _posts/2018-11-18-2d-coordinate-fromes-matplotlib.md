@@ -1,10 +1,8 @@
 ---
-title: Coordinate Frames in 2D w/ Homogeneous Coordinates + Matplotlib
-author: Thomas Countz
-tags: ["robotics"]
 layout: post
+title: "Coordinate Frames in 2D w/ Homogeneous Coordinates + Matplotlib"
+tags: [robotics]
 ---
-
 ![png](/assets/images/coordinate_frames.png)
 
 ```python

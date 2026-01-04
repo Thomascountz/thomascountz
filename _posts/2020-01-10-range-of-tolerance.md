@@ -1,11 +1,9 @@
 ---
-title: Range of Tolerance
-author: Thomas Countz
-date: 2020-01-10
 layout: post
-tags: ["process"]
+title: "Range of Tolerance"
+date: 2020-01-10
+tags: [process]
 ---
-
 [Originally Published in The Pseudocode 001](https://thepseudocode.com/001/range-of-tolerance)
 
 When it comes to working on a team, how do we agree on anything? An office policy, a tool choice, a coding style—not everyone can have everything go their way. Of course, some things matter more to us than others, and it’s in-between the things we _want_ and the things we _need_ that we find our _range of tolerance_ .  

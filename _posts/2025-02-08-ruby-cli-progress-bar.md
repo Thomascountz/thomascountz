@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Ruby CLI Progress Bar
-date: '2025-02-08'
+title: "Ruby CLI Progress Bar"
+date: 2025-02-08
 tags: [journal, ruby]
+description: "A simple Ruby function to display a progress bar in the terminal."
 ---
-
 ```ruby
 def print_progress(title, total, current_progress, bar_width: 50)
   progress_pct = (current_progress.to_f / total) * bar_width

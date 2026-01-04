@@ -1,12 +1,11 @@
 ---
-title: Low-Poly Image Generation using Evolutionary Algorithms in Ruby
-subtitle: Experimenting with "Generative AI"
-author: Thomas Countz
 layout: post
+title: "Low-Poly Image Generation using Evolutionary Algorithms in Ruby"
+subtitle: "A Deep Dive into how evolutionary algorithms work."
+tags: [ruby, evolutionary-algorithms, machine-learning, interactive]
 featured: true
-tags: ["ruby", "evolutionary-algorithms", "machine-learning"]
+description: "A deep dive into evolutionary algorithms through the lens of low-poly image generation. This exploration covers genetic algorithm theory, custom Ruby implementation using the Petri Dish framework, and detailed analysis of genetic operators including roulette wheel selection, random midpoint crossover, and nudge mutation. Includes comprehensive data analysis of fitness convergence, pixel-level accuracy, and efficiency metrics across 6000+ generations."
 ---
-
 Inspired by biological systems, evolutionary algorithms model the patterns of multi-generational evolution in order to unearth unique ideas. They work by generating a vast number of potential solutions to a particular problem and then pitting them against each other in a process akin natural selection: only the fittest survive. In this way, evolutionary algorithms are able to navigate large ambiguous search spaces in order to find solutions to problems that may be difficult or inefficient to solve using other methods.
 
 These algorithms are used for a wide variety of tasks: from optimizing neural network parameters, evolving mechanical structures, simulating protein folding, and even generating art!

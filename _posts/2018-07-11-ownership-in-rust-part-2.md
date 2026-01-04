@@ -1,11 +1,9 @@
 ---
-title: Ownership in Rust, Part 2
-subtitle: It’s still not my problem.
-author: Thomas Countz
 layout: post
-tags: ["rust"]
+title: "Ownership in Rust, Part 2"
+subtitle: "It’s still not my problem."
+tags: [rust]
 ---
-
 [Checkout _Ownership in Rust, Part 1_](/2018/07/09/ownership-in-rust-part-1).
 
 When we looked at ownership in Rust [last time](/2018/07/09/ownership-in-rust-part-1), we looked at how Rust uses scope to determine when a resource/data in memory should be *dropped *or _freed._

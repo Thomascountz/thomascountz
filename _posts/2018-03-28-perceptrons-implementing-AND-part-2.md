@@ -1,11 +1,9 @@
 ---
-title: Perceptron Implementing AND, Part 2
-subtitle: Learning Machine Learning Journal \#2
-author: Thomas Countz
 layout: post
-tags: ["machine-learning"]
+title: "Perceptron Implementing AND, Part 2"
+subtitle: "Learning Machine Learning Journal #2"
+tags: [machine-learning]
 ---
-
 ![Illustration of a perceptron](/assets/images/perceptron_model_with_names.png)
 
 In [Perceptron Implementing AND, Part 1](2018/03/26/perceptrons-implementing-AND-part-1), we looked at implementing the behavior of `AND` with a perceptron. We set up our perceptron with its inputs and expected outputs, and we sort of reasoned about what our weights and bias should be, in order to get the output we wanted.

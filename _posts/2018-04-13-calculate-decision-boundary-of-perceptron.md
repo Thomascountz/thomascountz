@@ -1,11 +1,9 @@
 ---
-title: Calculate the Decision Boundary of a Single Perceptron; Visualizing Linear Separability
-subtitle: Learning Machine Learning Journal 5
-author: Thomas Countz
 layout: post
-tags: ["machine-learning"]
+title: "Calculate the Decision Boundary of a Single Perceptron; Visualizing Linear Separability"
+subtitle: "Learning Machine Learning Journal 5"
+tags: [machine-learning]
 ---
-
 tl;dr Skip to the [Summary](#summary).
 
 In the appendix of [19-line Line-by-line Python Perceptron](https://www.thomascountz.com/2018/04/05/19-line-line-by-line-python-perceptron), I touched briefly on the idea of **linear separability**.

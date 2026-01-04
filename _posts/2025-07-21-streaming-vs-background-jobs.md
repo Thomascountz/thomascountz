@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Event Streaming vs Background Jobs
-date: '2025-07-21'
-tags:
-- infrastructure
+title: "Event Streaming vs Background Jobs"
+date: 2025-07-21
+tags: [infrastructure]
+description: "At their core, event streaming platforms and background job systems both solve problems related to scaling and asynchronous processing. But we can think of one as managing a log of events, and the other as managing a to-do list."
 ---
-
 I was recently asked the question:
 
 "Can we just use ActiveJob instead of Kafka?"

@@ -1,10 +1,8 @@
 ---
-title: FastBook Chapter 4 Questions & Notes
-author: Thomas Countz
 layout: post
-tags: ["machine-learning", "python"]
+title: "FastBook Chapter 4 Questions & Notes"
+tags: [machine-learning, python]
 ---
-
 [Fastai](https://www.fast.ai/), known for it's MOOCs, is working on a book, [Fastbook](https://github.com/fastai/Fastbook) to go along with their new MOOC starting July 2020. In my eagerness, I've been going through the draft of the book (linked above, though they may remove it after publication) and have been coding alongside on [Kaggle](https://www.kaggle.com/thomascountz). At the end of each chapter of the book is a list of questions for the reader/students to answer. I've found these questions to be rigorous and useful to deepen my understanding.
 
 This blog post might not be useful to anyone besides myself, but I want to keep my answers to these questions as a reference somewhere other than a Kaggle notebook.

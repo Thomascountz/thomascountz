@@ -1,11 +1,10 @@
 ---
-title: Sargable Queries & MUL Indexes; or Why My Query is Slow
-author: Thomas Countz
 layout: post
-tags: ["ruby", "database", "rails"]
+title: "Sargable Queries & MUL Indexes; or Why My Query is Slow"
+tags: [ruby, database, rails]
 featured: true
+description: "My discovery of \"sargability\" in SQL queries, told through the lens of debugging a slow ActiveRecord query in a MySQL database."
 ---
-
 You're on Ops. Debugging `Error`-s in Invoicing Rails app, as usual. They're stored in MySQL, and accessed through ActiveRecord and some helper methods. They've already been updated with a `status_message`, so now it's time to dig in and investigate.
 
 ```ruby

@@ -1,12 +1,10 @@
 ---
 layout: post
-title: 'Ruby Bug #21117: Numbered Block Params'
-date: '2025-02-20'
-tags:
-- journal
-- ruby
+title: "Ruby Bug #21117: Numbered Block Params"
+date: 2025-02-20
+tags: [journal, ruby]
+description: "A breakdown of the fix for Ruby Bug #21117, which addressed issues with numbered block parameters and combined assignment operators."
 ---
-
 ### tl;dr
 1. Numbered block params (`_1`, `_2`, etc.) are reserved and read-only, while `it` (the new block param in Ruby 3.4) has different mutation rules for compatibility.
 2. Using combined assignment operators (e.g. `+=`, `&&=`), numbered block params could be overwritten without error due to a discrepancy between parse.y and Prism (Ruby's default parser since 3.3).

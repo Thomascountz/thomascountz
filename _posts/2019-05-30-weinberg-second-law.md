@@ -2,8 +2,7 @@
 layout: post
 title: "Weinberg's Second Law"
 subtitle: "There's always a problem..."
-author: "Thomas Countz"
-tags: ["process"]
+tags: [process]
 ---
 <br />
 

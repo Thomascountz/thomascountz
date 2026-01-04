@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Forth Feedback Loop
-date: '2025-06-03'
-tags:
-- journal
-- forth
+title: "Forth Feedback Loop"
+date: 2025-06-03
+tags: [journal, forth]
+description: "Forth scratches a strange itch in my brain. I wrote a word to help me rapidly iterate on Forth code by automating an edit-reload cycle."
 ---
-
 Inspired by [Andreas Wagner's `ecr` word](https://youtu.be/mvrE2ZGe-rs?si=xtAowOuaxtU9B3_D&t=1060), I created the word `go`:
 
 ```factor

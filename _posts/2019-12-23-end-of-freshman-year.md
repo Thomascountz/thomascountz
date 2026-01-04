@@ -1,10 +1,8 @@
 ---
-title: End of Freshman Year
-subtitle: What I've Learned After my First Year of Being a Software Consultant
-author: Thomas Countz
 layout: post
+title: "End of Freshman Year"
+subtitle: "What I've Learned After my First Year of Being a Software Consultant"
 ---
-
 As I enter my second year as a software consultant (my sophomore year, as no one will let me call it), I've gained a new perspective about being pushed, having to pull, personal principles, and being the adult in the room... 
 
 Being pushed was invaluable during my first few months of being a freshman consultant. My team and company helped "push" me towards challenges/opportunities and made sure to "push" support towards me. "Thomas, can you lead the client retro, next week?" Is an example of being pushed towards something new. "Do you want to talk through how to approach that implementation idea you brought up?" Is an example of support being pushed up underneath me.

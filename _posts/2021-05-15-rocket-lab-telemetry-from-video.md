@@ -1,11 +1,10 @@
 ---
-title: Rocket Lab Telemetry From Video
-subtitle: Using Google's OCR to Collect Rocket Launch Telemetry from a Live Stream
-author: Thomas Countz
 layout: post
-tags: ["project", "ruby", "machine-learning", "data-science"]
+title: "Rocket Lab Telemetry From Video"
+subtitle: "Using Google's OCR to Collect Rocket Launch Telemetry from a Live Stream"
+tags: [project, ruby, machine-learning, data-science]
+description: "Extracting rocket telemetry data from a YouTube live stream using Google Cloud Video Intelligence API's OCR capabilities. This project walks through video ingestion, text detection across thousands of frames, JSON data wrangling with jq, and Ruby-based data cleanup to produce velocity and altitude datasets from Rocket Lab's Electron launch anomaly."
 ---
-
 I'm both excited and saddened to share with you my experience pulling rocket telemetry data from a recorded video live stream of a rocket launch. What I'm sharing with you is going to feature very hacky brute force data munging, security worst practices, and, the data engineer's favorite: Google Sheets.
 
 But before I share, I want to give my condolences and pay my respects to Rocket Lab and their engineering team. Peter Beck's empathy and humility is demonstrated in all the work that they do. Despite today's anomoly, Rocket Lab is nevertheless one of the most ambitious, successful, and consistent areospace organizations, and thanks to their participation within the wider community, we can all learn from them.

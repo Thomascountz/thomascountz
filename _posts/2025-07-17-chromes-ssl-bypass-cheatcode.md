@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Chrome's SSL Bypass Cheatcode
-date: '2025-07-17'
-tags:
-- security
+title: "Chrome's SSL Bypass Cheatcode"
+date: 2025-07-17
+tags: [security]
+description: "Did you know that Chrome has a secret cheatcode that lets you bypass SSL errors? It's called `thisisunsafe`, and I couldn't help but pull on the thread to uncover its history."
 ---
-
 ## This is Unsafe
 
 If you type `thisisunsafe` on a Chrome SSL error page, Chrome will bypass the error and load the page for you.

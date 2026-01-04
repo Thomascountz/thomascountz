@@ -1,10 +1,8 @@
 ---
-title: Safer Monkey Patching in Ruby
-author: Thomas Countz
-tags: ["ruby"]
 layout: post
+title: "Safer Monkey Patching in Ruby"
+tags: [ruby]
 ---
-
 At 8th Light, my team and I are rigorously working on our most important client’s most important project:  a command line Battleship gem, called [battle_boats](https://rubygems.org/gems/battle_boats). \s
 
 I recently sat down with my mentors and demo-ed version `0.0.4`, where I added a bit of color in dev mode, and my mentors-as-stakeholders liked it so much, they’ve asked for more color! But how??

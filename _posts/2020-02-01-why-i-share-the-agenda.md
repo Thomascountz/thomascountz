@@ -1,9 +1,8 @@
 ---
-title: Why I Share the Agenda
-author: Thomas Countz
-date: 2020-02-01
 layout: post
-tags: ["process"]
+title: "Why I Share the Agenda"
+date: 2020-02-01
+tags: [process]
 ---
 [Originally Published in The Pseudocode 001](https://thepseudocode.com/001/why-i-share-the-agenda/)
 

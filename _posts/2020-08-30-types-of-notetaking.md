@@ -1,10 +1,8 @@
 ---
-title: Types of Notetaking
-author: Thomas Countz
 layout: post
-tags: ["process"]
+title: "Types of Notetaking"
+tags: [process]
 ---
-
 Earlier this week, my pair and I struck upon something interesting, and I stopped to take notes.
 
 > Every time I see you taking notes, you're using a new method!

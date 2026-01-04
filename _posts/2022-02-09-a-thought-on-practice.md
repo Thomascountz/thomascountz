@@ -1,11 +1,10 @@
 ---
-title: A Thought on Practice
-subtitle: A new appreciation for the old
-author: Thomas Countz
 layout: post
-tags: ["process"]
+title: "A Thought on Practice"
+subtitle: "A new appreciation for the old"
+tags: [process]
+description: "A reflection on the value of practicing familiar skills to rediscover growth and inspiration."
 ---
-
 **tl;dr** Do a thing you already know how to do.
 
 Our favorite psychologist, Mihaly Csikszentmihalyi, has taught us that Flow maneuvers between anxiety and boredom. I like to say that I err towards "anxiety" because I'm ambitious, I like to learn new things, I like a challenge. But, I like a bit of boredom too! The boredom range is where I find inspiration, curiosity, and discovery. 

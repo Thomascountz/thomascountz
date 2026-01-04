@@ -2,8 +2,7 @@
 layout: post
 title: "Subscribing to The Public Square"
 subtitle: "Our experiment to fix communication breakdowns caused by private conversations"
-author: "Thomas Countz"
-tags: ["process", "teams"]
+tags: [process, teams]
 ---
 While on a client, it became a normal practice to have lots of work-related conversations in private: direct chat messages, quick video calls, and email threads that didn't include everyone, were commonplace. Given the size of the organization, it made complete sense; a constant stream of public messages would mean that we would all become helplessly buried under notification rubble in no time.
 

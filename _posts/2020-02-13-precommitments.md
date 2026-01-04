@@ -1,9 +1,8 @@
 ---
-title: Precommitments
-author: Thomas Countz
-date: 2020-02-13
 layout: post
-tags: ["process"]
+title: "Precommitments"
+date: 2020-02-13
+tags: [process]
 ---
 [Originally Published in The Pseudocode 001](https://thepseudocode.com/001/precommitments)
 

@@ -1,11 +1,9 @@
 ---
-title: 19-line Line-by-line Python Perceptron
-author: Thomas Countz
 layout: post
-tags: ["machine-learning"]
+title: "19-line Line-by-line Python Perceptron"
+tags: [machine-learning]
 featured: true
 ---
-
 ```python
 """
 MIT License

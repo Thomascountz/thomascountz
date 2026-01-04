@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Color Strings Refinement
-date: '2025-05-27'
-tags:
-- journal
-- ruby
+title: "Color Strings Refinement"
+date: 2025-05-27
+tags: [journal, ruby]
+description: "A Ruby refinement that adds methods to the String class for coloring text output in the terminal."
 ---
-
 ```ruby
 module Colors
   refine String do

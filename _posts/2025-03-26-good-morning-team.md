@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Good Morning, Team!
-date: "2025-03-26"
-tags:
-  - journal
-  - ruby
+title: "Good Morning, Team!"
+date: 2025-03-26
+tags: [journal, ruby]
+description: "Every so often, I like to write a Ruby script that says good morning to my team in a fun way. Here is the one I made this morning which mimics the famous bouncing DVD logo."
 ---
-
 Every so often, I like to write a Ruby script that says good morning to my team in a fun way. Here is the one I made this morning which mimics the famous [bouncing DVD logo](https://bouncingdvdlogo.com/).
 
 <img src="/assets/images/journal/good_morning_team.gif" style="max-width:480px" alt="A colorful 'Good Morning, Team!' text bouncing around the terminal window">

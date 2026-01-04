@@ -1,10 +1,8 @@
 ---
-title: Communication Superhighways
-author: Thomas Countz
 layout: post
-tags: ["process", "teams", "consulting"]
+title: "Communication Superhighways"
+tags: [process, teams, consulting]
 ---
-
 Good communication in an emergency is vital: What is happening? Who is leading? Where are we meeting? Et al. Just like firefighters, who use highways instead of local roads to get to a burning building more quickly, our teams should leverage communication highways to respond efficiently in the face of an emergency.
 
 This communication infrastructure isn't just logistical: you may have a dedicated chat channel, video conference URL, or a paging system already. Designing communication superhighways is also about investing in our workplace environment and ultimately in each other.

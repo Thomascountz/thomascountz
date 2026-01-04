@@ -1,11 +1,9 @@
 ---
-title: Perceptron Implementing AND, Part 1
-subtitle: Learning Machine Learning Journal \#2
-author: Thomas Countz
 layout: post
-tags: ["machine-learning"]
+title: "Perceptron Implementing AND, Part 1"
+subtitle: "Learning Machine Learning Journal #2"
+tags: [machine-learning]
 ---
-
 In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks), we got my feet wet learning about perceptrons. Inspired by [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) book, today, the goal is to expand on that knowledge by using the perceptron formula to mimic the behavior of a logical `AND`.
 
 In this post, we’ll _reason_ about the settings of our network that, in [Perceptrons Implementing AND, Part 2](/2018/03/28/perceptrons-implementing-and-part-2), we’ll have the computer do itself.

@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Dare to be Good Enough—You'll be Happier for it"
-tags: ["process"]
+tags: [process]
 featured: true
 ---
-
 _Originally published on [8th Light's blog](https://8thlight.com/blog/thomas-countz/2020/10/06/dare-to-be-good-enough.html)_
 
 As I sit down to write, I noticed a tug at the back of my neck—a tension forming as I begin editing my words obsessively. It's a habit of writing characterized by my attempts at achieving the best possible outcome. "I know that I can write well," I tell myself, "I've just got to strike the right tempo, tone, voice..."

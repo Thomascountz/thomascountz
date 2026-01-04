@@ -1,12 +1,10 @@
 ---
 layout: post
 title: "Cascii: ASCII Diagram Tool"
-date: '2025-03-18'
-tags:
-- journal
-
+date: 2025-03-18
+tags: [journal]
+description: "Cascii is a new ASCII diagram tool that runs in your browser. Here's a quick comparison with my favorite ASCII tool, Monodraw."
 ---
-
 <img src="/assets/images/journal/monolith_b_ascii_diagram.png" style="max-width:280px" alt="ASCII diagram from my talk, 'From Legacy to Latest: How Zendesk Upgraded a Monolith to Rails 8.0 Overnight' created using Monodraw and Keynote">
 
 

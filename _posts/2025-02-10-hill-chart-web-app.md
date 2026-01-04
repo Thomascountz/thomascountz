@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Hill Chart Web App
-date: '2025-02-10'
-tags: [journal, javascript, project]
+title: "Hill Chart Web App"
+date: 2025-02-10
+tags: [journal, javascript, project, release]
+description: "I built an interactive tool for visualizing task progress using hill charts, a visual metaphor for tracking work phases."
 ---
 I built an [interactive tool for visualizing task progress](https://hillchart.countzresearch.com).
 
