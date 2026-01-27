@@ -44,11 +44,14 @@ def collect_posts_with_tags
   end
 end
 
-desc 'List tags (with tag= filter for specific tag, -a to show all posts)'
-task :tags do
+desc 'List tags (tag= filter, rake tags[alpha] to sort, rake tags[,all] to expand)'
+task :tags, [:sort, :expand] do |t, args|
+  alphabetical = args[:sort] == 'alpha'
+  show_all = args[:expand] == 'all'
+
   posts = collect_posts_with_tags
-  tag_counts = posts.flat_map { |p| p[:tags] }.tally.sort_by { |_, count| -count }
-  show_all = ARGV.include?('-a') || ARGV.include?('--all')
+  tag_counts = posts.flat_map { |p| p[:tags] }.tally
+  tag_counts = alphabetical ? tag_counts.sort_by { |tag, _| tag } : tag_counts.sort_by { |_, count| -count }
 
   if ENV['tag']
     tag = ENV['tag']
