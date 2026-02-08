@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# This is a simple script to run the development server for the project.
+
+# Check if bundle install has been run using bundle check
+if ! bundle check > /dev/null 2>&1; then
+  echo "Running bundle install..."
+  bundle install
+fi
+
+# Run the development server
+bundle exec jekyll serve --livereload --future --watch --trace --open-url
