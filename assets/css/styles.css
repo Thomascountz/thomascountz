@@ -280,8 +280,15 @@ ol li:before {
     font-weight: var(--font-weight-medium);
 }
 
-li {
+li,
+dt {
     margin: 0;
+    padding: 0;
+}
+
+dd {
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
 }
 
