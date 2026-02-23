@@ -3,39 +3,61 @@ layout: post
 title: "Job Scheduling with at(1)"
 subtitle: "The Unix utility that knows when teatime is"
 date: 2026-02-22
-tags: [journal, shellscript]
+tags: [journal, shellscript, devtool]
 description: "at(1) is a one-off job scheduler that's been hiding in plain sight on Unix systems. Yes, it knows when teatime is."
 ---
 
-I recently hacked together an ESP-01 and a cheap solar garden lantern so that I can have warm flickering candlelight whenever the mood strikes. For example, by using `at(1)`, I can make teatime[^1] just a little more magical:
+I recently hacked together an ESP-01 and a cheap solar garden lantern[^lantern] so that I can have warm flickering candlelight whenever the mood strikes. For example, by using `at(1)`, I can make teatime[^teatime] just a little more magical:
 
-[^1]: "...the following keywords may be specified: midnight, noon, or teatime (4pm)..." [at(1) - Linux man page](https://linux.die.net/man/1/at)
+[^lantern]: Like this: [Lampioncino_solare.jpg](https://commons.wikimedia.org/wiki/File:Lampioncino_solare.jpg), [Antonia Mette, CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons
+
+[^teatime]: "...the following keywords may be specified: midnight, noon, or teatime (4pm)..." [at(1) - POSIX specification](https://man7.org/linux/man-pages/man1/at.1p.html)
 
 ```bash
 $ echo "curl 'http://ember.local/on'" | at teatime
+job 42 at Sun Feb 22 16:00:00 2026
 ```
 
-[`at(1)`](https://man7.org/linux/man-pages/man1/at.1p.html) is a Unix utility for scheduling one-off commands. In the example above, a request to turn on the lantern will be sent at 4pm.
+[`at(1)`](https://man7.org/linux/man-pages/man1/at.1p.html) is a Unix utility for scheduling one-off commands. In the example above, a request to turn on the lantern will be sent at 16:00 local time.
 
-Whereas `cron(8)` is used for scheduling recurring jobs, `at(1)` is used for scheduling "do-this-thing-ONCE-at-some-point-in-the-future" kind of jobs, for example:
-
-Scheduling a server restart during off-hours:
+You can verify it's queued with `atq`, and view the job details with `at -c [job]`:
 
 ```bash
-ssh admin@server 'echo "sudo systemctl reboot" | at 02:00'
+$ atq
+42	Sun Feb 22 16:00:00 2026
 ```
 
-Grabbing fresh data before a sync with the team:
 ```bash
-echo "curl api.example.com/stats | jq . | ~/pipe-to-slack.sh" | at 9am monday
-``` 
-
-Stopping that debug container you're likely going to forget:
-```bash
-echo "docker stop my-debug" | at now + 2 hours
+$ at -c 42
+#!/bin/sh
+# atrun uid=502 gid=20
+# ...
+curl 'http://ember.local/on'
 ```
 
-You can even implement cron-like recurring jobs by executing `at` at the end of a job. (Using `-f` to read from a file makes this even easier to manage):
+Whereas `cron(8)` is used for scheduling recurring jobs, `at` is used for scheduling *one-off* tasks. For example, here are some ways I've found it useful:
+
+**Reminding myself to take a break**
+
+```bash
+$ at now + 1 minute <<'EOF'
+osascript -e "display dialog \"Stop what you're doing!\" with title \"Take a break\""
+EOF
+```
+
+**Posting fresh data before a team sync**
+
+```bash
+$ echo "curl https://api.example.com/stats | jq . | ~/pipe-to-slack.sh" | at 9:15AM tomorrow
+```
+
+**Stopping that debug container I'm probably going to forget about**
+
+```bash
+$ echo "docker stop my-debug" | at 1700 friday
+```
+
+Although I haven't tried it myself, you can even implement "recurring" jobs by recursively rescheduling the next run at the end of the current job. That said, if such a job fails, the chain breaks silently; there is no built-in retry or alerting like `cron` provides.
 
 ```bash
 $ cat ~/daily.sh
@@ -44,22 +66,41 @@ $ cat ~/daily.sh
 at -f ~/daily.sh 5pm tomorrow
 
 $ at -f ~/daily.sh 5pm
+job 43 at Mon Feb 23 17:00:00 2026
 ```
 
-On macOS, the `atrun(8)` daemon is disabled by default. You have to enable it using `launchctl`:
+_This example uses the `-f` flag to tell `at` to read the job from a file._
+
+After a job is executed, its output will be captured and sent to you via local `sendmail(8)`[^force-mail]. On macOS, mail lands in `/var/mail/$USER` by default, and you can read it with `mail(1)`.
+
+[^force-mail]: By default, `at` only sends mail if a job produces output. If you want to receive mail even when there's no output, you can use the `-m` flag.
+
+Keep in mind that `at` snapshots your exported environment (working directory, env vars, umask) from wherever you schedule a job, but it **does not** capture your shell profile (e.g. anything from `.bashrc`, `.zshrc`, etc.). Therefore, it's common practice to use absolute paths and avoid shell-specific features.
+
+## Quick Start
+
+To get started using `at` on macOS, you'll need to manually enable the `atrun(8)` daemon using `launchctl(1)`:
 
 ```bash
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.atrun.plist
+$ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.atrun.plist
 ```
 
-`at(1)` captures the entire shell environment from where you schedule the job. This means that when `atrun(8)` executes your job, it runs with your working directory, env vars, umask, etc.
+**Command reference:**
 
-When a job produces output (or you use the `-m` flag), it will be sent to you via local `sendmail(8)`. On macOS, mail lands in `/var/mail/$USER` by default, and you can read it with the `mail` command. 
+`at <time>`
+: schedules a job
 
-Other useful bits:
+`atq`
+: lists pending jobs
 
-- `atq` lists pending jobs
-- `at -c <id>` shows what a job will run 
-- `atrm <id>` cancels a job 
-- `at -f script.sh 3pm` reads from a file instead of stdin
-- `batch` is a sibling that runs jobs when system load is low rather than at a specific time
+`at -c <id>`
+: shows what a job will run
+
+`atrm <id>`
+: cancels a job
+
+`at -f script.sh 3pm`
+: reads from a file instead of stdin
+
+`at -m`
+: sends mail even if there's no output
