@@ -2,7 +2,7 @@
 layout: post
 title: "Interactive jq"
 date: 2025-01-31
-tags: [journal, shellscript, project, release]
+tags: [journal, shellscript, project, release, devtool]
 description: "fzf is an incredibly configurable command-line fuzzy finder. Here's how I used it to build an interactive jq TUI."
 ---
 I built an [interactive `jq` TUI](https://gist.github.com/Thomascountz/5ae98a738abb9246b9f7749f53cdddcf) using [`fzf`](https://github.com/junegunn/fzf)!
