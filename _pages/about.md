@@ -4,11 +4,14 @@ title: About
 permalink: /about
 ---
 
-I'm a senior engineer and tech lead on the Ruby infrastructure team at [Zendesk](https://zendesk.com).
+I'm a Staff Engineer and Tech Lead on the Ruby infrastructure team at [Zendesk](https://zendesk.com).
 
-My career is guided by three principles: to create, to learn, and to share.
+My career is guided by three core goals: to create, to learn, and to share.
 
 * ~
+  * 2026
+    * ↗ [Zendesk](https://zendesk.com)
+      * Staff Software Engineer, Tech Lead
   * 2025
     * ⌘ Kraków Ruby Users Group
       * [_Dependency Tax: What We're Learning About Managing Gem Upgrades_](https://github.com/Krakow-Ruby-Users-Group/krug-presentations/blob/e38079d39233ddbe5c08a82219b96d04ee6c25ce/2025-04/dependency-tax.pdf)
@@ -28,7 +31,7 @@ My career is guided by three principles: to create, to learn, and to share.
     * ♪ Collaborative Craft
       * [Aaron Patterson - Just in Time: Hands-On Learning](https://8thlight.com/insights/podcast-just-in-time-hands-on-learning-with-aaron-patterson)
   * 2021
-    * ↗ Joined [Zendesk](https://zendesk.com)
+    * ↗ [Zendesk](https://zendesk.com)
       * Senior Software Engineer, Tech Lead
     * ♪ Collaborative Craft
       * [Charity Majors - Into the Unknown Unknowns: Observability](https://8thlight.com/insights/podcast-into-the-unknown-unknowns-observability-with-charity-majors)
@@ -40,15 +43,17 @@ My career is guided by three principles: to create, to learn, and to share.
     * ¶ 8th Light Engineering Blog
       * [Sargable Queries & MUL Indexes; or Why My Query is Slow](https://8thlight.com/insights/sargable-queries-and-mul-indexes-or-why-my-query-is-slow)
   * 2020
+    * ↗ [8th Light](https://8thlight.com)
+      * Senior Software Engineer
     * ¶ 8th Light Engineering Blog
       * [Dare to be Good Enough—You'll be Happier for it](https://8thlight.com/insights/dare-to-be-good-enough-youll-be-happier-for-it)
   * 2019
     * ¶ 8th Light Engineering Blog
       * [Essential & Relevant: A Unit Test Balancing Act](https://8thlight.com/insights/essential-amp-relevant-a-unit-test-balancing-act)
   * 2018
-    * ↗ Joined [8th Light](https://8thlight.com)
-      * Senior Software Engineer
+    * ↗ [8th Light](https://8thlight.com)
+      * Software Engineer
   * 2017
-    * ↗ Joined [Rescuing Leftover Cuisine](https://www.rescuingleftovercuisine.org)
+    * ↗ [Rescuing Leftover Cuisine](https://www.rescuingleftovercuisine.org)
       * Ruby on Rails Developer
 {: .tree}

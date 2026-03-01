@@ -1,7 +1,9 @@
-I work at @Zendesk as a Senior Engineer on the Ruby Platform Core team. In my day-to-day, my team and I develop and operate one of the largest-scale ecosystems of Ruby services and gems.
+I work at @Zendesk as a Staff Engineer on the Ruby infrastructure team, where I focus on platform that powers Ruby and Rails across the organization.  My career is guided by three core goals: to create, to learn, and to share.
 
-Outside of my work, I enjoy exploring my interests in a wide range of topics. From programming for the web to designing and building electronics, from 3D-printing to open source data science, I share my experiments and discoveries here on Github and on my [blog](https://thomascountz.com).
-
-My research has three purposes: to make, to learn, and to share.
-
-[thomascountz.com](https://thomascountz.com) • [Mastodon](https://ruby.social/@thomascountz) • [LinkedIn](https://www.linkedin.com/in/thomas-countz-8b0951135/)
+<hr />
+<p>
+  <a href="https://thomascountz.com/atom.xml">Blog RSS Feed</a> •
+  <a href="https://ruby.social/@thomascountz">Mastodon</a> •
+  <a href="https://bsky.app/profile/thomascountz.com">Bluesky</a> •
+  <a href="https://www.linkedin.com/in/thomas-countz-8b0951135/">LinkedIn</a>
+</p>
