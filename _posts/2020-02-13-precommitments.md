@@ -16,7 +16,7 @@ As it turned out, just two years later, that very theory was put to the test.
 
 > "In 2015, I was in San Francisco and we had some investors trying to convince us to do a series A and we were like, 'We're a non-profit, we can't,' and they were like, 'We’ve got $10 million and we really think that you can go far,' and we were like, 'We're a non-profit, we can't.'" — [The Indie Hackers Podcast Episode #139](https://www.indiehackers.com/podcast/139-john-onolan-of-ghost)  
 
-John's story is an extreme example of the power of precommitments. **Precommiements help us make calm decisions today, in order to prevent us from making rash ones later.**  
+John's story is an extreme example of the power of precommitments. **Precommitments help us make calm decisions today, in order to prevent us from making rash ones later.**  
 
 At work, the same concept can be used to define boundaries between what our jobs ask of us and our own priorities.  
 

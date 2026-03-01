@@ -4,7 +4,7 @@ title: "Perceptron Implementing AND, Part 1"
 subtitle: "Learning Machine Learning Journal #2"
 tags: [machine-learning]
 ---
-In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks), we got my feet wet learning about perceptrons. Inspired by [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) book, today, the goal is to expand on that knowledge by using the perceptron formula to mimic the behavior of a logical `AND`.
+In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks), we got our feet wet learning about perceptrons. Inspired by [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) book, today, the goal is to expand on that knowledge by using the perceptron formula to mimic the behavior of a logical `AND`.
 
 In this post, we’ll _reason_ about the settings of our network that, in [Perceptrons Implementing AND, Part 2](/2018/03/28/perceptrons-implementing-and-part-2), we’ll have the computer do itself.
 
@@ -135,9 +135,9 @@ For simplicity, let’s set`b = 1`, `w1 = -1`, and `w2 = -1`
 
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) by [Michael Nielsen](http://michaelnielsen.org/)
 
-- [Getting Starting with Machine Learning](https://medium.com/@suffiyanz/getting-started-with-machine-learning-f15df1c283ea)
+- [Getting Started with Machine Learning](https://medium.com/@suffiyanz/getting-started-with-machine-learning-f15df1c283ea)
 
-- [And Intuitive Guide to Linear Algebra](https://betterexplained.com/articles/linear-algebra-guide/)
+- [An Intuitive Guide to Linear Algebra](https://betterexplained.com/articles/linear-algebra-guide/)
 
 - [Perceptrons — the most basic form of a neural network](https://appliedgo.net/perceptron/)
 

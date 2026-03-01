@@ -60,7 +60,7 @@ void loop() {
 }
 ```
 
-In this example, a major C scale is played while holding each note for 0.5 seconds. The `BUZZER_CHANNEL` argument is optional. In the case of an ESP32, there are 16 PWM channels which can generate independent waveforms which need to explicitly assigned to any PWM-capable pin.
+In this example, a major C scale is played while holding each note for 0.5 seconds. The `BUZZER_CHANNEL` argument is optional. In the case of an ESP32, there are 16 PWM channels which can generate independent waveforms which need to be explicitly assigned to any PWM-capable pin.
 
 Here is the equivalent scale programmed using `ledcWriteNote()`.
 

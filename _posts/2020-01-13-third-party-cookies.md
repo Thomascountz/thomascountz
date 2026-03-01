@@ -46,7 +46,7 @@ Besides cookies, there are additional pieces of identifiable information that yo
 
 Often websites don't know that they're aiding advertisers by allowing their site visitors to be tracked, monitored, fingerprinted, and profiled. Adding a social network "share" button, a visitor counter/analytics tool, or even deciding to use certain fonts can cause a website's users to become tracked or their existing profiles added to.
 
-Website developers often use tools & resources built by companies which support major ad networks, like Google, Facebook, and Amazon, but slowly, more an more privacy-conscious alternatives are being developed, like [Font Squirrel](https://www.fontsquirrel.com/) for fonts, and [TinyFeather](/), for analytics. 
+Website developers often use tools & resources built by companies which support major ad networks, like Google, Facebook, and Amazon, but slowly, more and more privacy-conscious alternatives are being developed, like [Font Squirrel](https://www.fontsquirrel.com/) for fonts, and [TinyFeather](/), for analytics. 
 
 TinyFeather provides the kinds of analytics that businesses use to improve their products & services _without_ compromising their users' & customers' privacy. TinyFeather uses anonymous data—this is data that could never be tied back to an individual—to track a website's performance, not a user's behavior.
 

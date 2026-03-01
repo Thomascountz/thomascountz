@@ -19,7 +19,7 @@ With all of the other new things to learn, I felt things beginning to stack up.
 
 # Stack & Heap
 
-No, its not a hipster clothing brand, the stack and heap are ways of managing memory at runtime.
+No, it’s not a hipster clothing brand, the stack and heap are ways of managing memory at runtime.
 
 ![Stack & Heap](/assets/images/stack_and_heap.png)
 
@@ -104,7 +104,7 @@ Here, the pointers stored in `hello` and `hello1` are using the stack. When we u
 
 ![Move trait when using the heap](/assets/images/move_trait_when_using_the_heap.png)
 
-Over on the heap, the `String` type with value `"Hello, World!"` is bound to the variable `hello` , using the `String::from` method. However, unlike the string literal, there’s more data bound to `hello` than just a pointer, and the size of this data can change during runtime. Here, the `=` operator binds the data from `hello` to a new variable `hello1`, effectively *moving *the data from one variable to another. Poor `hello` is now invalid, as per ownership rule #2: “There can only be one owner at a time.”
+Over on the heap, the `String` type with value `"Hello, World!"` is bound to the variable `hello` , using the `String::from` method. However, unlike the string literal, there’s more data bound to `hello` than just a pointer, and the size of this data can change during runtime. Here, the `=` operator binds the data from `hello` to a new variable `hello1`, effectively *moving* the data from one variable to another. Poor `hello` is now invalid, as per ownership rule #2: “There can only be one owner at a time.”
 
 But why do this? Why doesn’t Rust always just make a copy of the data and bind it to the new variable?
 

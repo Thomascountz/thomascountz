@@ -57,7 +57,7 @@ Note that we could change this value to, let's say, `0`, however, `0` will mean 
 cleaned_data = raw_data.drop(raw_data[(raw_data.Mixed_BC == -999999) | (raw_data.Mixed_NO2 == -999999) | (raw_data.Mixed_UFP == -999999)].index)
 ```
 
-Now we can look at the correlation between each measurement. I _assume_ their's a strong correlation: "where there's high concentration of air pollution of type 'x', there's probably a high concentration of air pollution of type 'y'", but it's always good to check assumptions.
+Now we can look at the correlation between each measurement. I _assume_ there's a strong correlation: "where there's high concentration of air pollution of type 'x', there's probably a high concentration of air pollution of type 'y'", but it's always good to check assumptions.
 
 
 ```python
@@ -66,8 +66,8 @@ cleaned_data[["Mixed_BC", "Mixed_NO2", "Mixed_UFP"]].corr()
 
 | --- | **Mixed_BC** | **Mixed_NO2** | **Mixed_UFP** |
 | **Mixed_BC**  | 1.000000 | 0.938192 | 0.790519 |
-| **Mixed_NO2** | 0.938192 | 1.000000 | 0.702058
-| **Mixed_UFP** | 0.790519 | 0.702058 | 1.000000
+| **Mixed_NO2** | 0.938192 | 1.000000 | 0.702058 |
+| **Mixed_UFP** | 0.790519 | 0.702058 | 1.000000 |
 
 
 And we can take a look at another statistic that might be interesting, the overall mean:
@@ -82,7 +82,7 @@ Mixed_BC         1.131806
 dtype: float64
 ```
 
-It's worth noting that these averages are similar to the ones published on [Google's project site](https://insights.sustainability.google/labs/airquality), which gives me a pretty good confidence that I've loaded the data correctly. The difference between my results and theres may be that fact that I likely dropped some data while doing cleanup.
+It's worth noting that these averages are similar to the ones published on [Google's project site](https://insights.sustainability.google/labs/airquality), which gives me a pretty good confidence that I've loaded the data correctly. The difference between my results and theirs may be that fact that I likely dropped some data while doing cleanup.
 
 Google also shows the distributions of the amounts of pollutant per road section, so we can go ahead and look at that too.
 
@@ -102,7 +102,7 @@ cleaned_data.Mixed_UFP.plot.hist(bins=25, color="xkcd:moss green", rwidth=0.9, a
 ![](/assets/images/copenhagen_pollution_distribution.png)
 
 
-Now for the interesting bit: let's take a look at a map of the data. [GeoPandas](https://geopandas.org/) quickly let's you plot a Series or DataFrame containing `geometries` that it created based on the `geojson` data we imported.
+Now for the interesting bit: let's take a look at a map of the data. [GeoPandas](https://geopandas.org/) quickly lets you plot a Series or DataFrame containing `geometries` that it created based on the `geojson` data we imported.
 
 ```python
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(33, 21))
@@ -123,7 +123,7 @@ cleaned_data.plot(column="Mixed_UFP", ax=ax[2], legend=True, legend_kwds={'label
 
 ![](/assets/images/copenhagen_pollution_maps.png)
 
-I love these maps! One, I think they're beautiful (thank you `matplotlib`!) and two, Its fascinating that there's not underlying map of Copenhagen here. The streets represent the data points and only the streets represented in the data are projected onto the plot/map.
+I love these maps! One, I think they're beautiful (thank you `matplotlib`!) and two, It's fascinating that there's no underlying map of Copenhagen here. The streets represent the data points and only the streets represented in the data are projected onto the plot/map.
 
 ## Route Querying & Data Joining
 
@@ -164,7 +164,7 @@ route_data = pd.DataFrame(decoded_polyline, columns=["x","y"])
 route = gpd.GeoDataFrame(route_data, geometry=gpd.points_from_xy(route_data['x'], route_data['y']), crs=cleaned_data.crs)
 ```
 
-We can then use the route data to overlay onto our original map. We do this by using by using a spacial index build by GeoPandas by using `RTree` to quickly query based on a spacial predicate. In this case, we're looking for all data points that are covered by a box that fits around our route.
+We can then use the route data to overlay onto our original map. We do this by using a spatial index built by GeoPandas using `RTree` to quickly query based on a spatial predicate. In this case, we're looking for all data points that are covered by a box that fits around our route.
 
 ```
 route_boundary = shapely.geometry.box(*route.total_bounds).buffer(0.01)
@@ -190,7 +190,7 @@ plt.show()
 
 ![](/assets/images/copenhagen_route_overlay.png)
 
-This is primarily for visual reasons: to see the route placed onto the map, and to also provide a "zoomed in" version. A zoomed in version would be easier with an interactive mapping library, such as Plotly, but there's no reason we can use a little bit of geometric querying to help us!
+This is primarily for visual reasons: to see the route placed onto the map, and to also provide a "zoomed in" version. A zoomed in version would be easier with an interactive mapping library, such as Plotly, but there's no reason we can't use a little bit of geometric querying to help us!
 
 
 Next, for what I'm really interested in: which of our air quality data points intersect with our route. Here, I'm buffering the route geometry by a tiny amount to turn it from a 1D point geometry to a 2D polygon. This is because the precision on the longitude and latitude coordinates (and thus the geometry coordinates) is so high, I often found that the points from the route and the lines from the air quality data wouldn't intersect at all!

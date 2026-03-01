@@ -26,7 +26,7 @@ BUNDLED WITH
 
 in your `Gemfile.lock` file… which is _not_ the same as bundling with `1.13.6`.
 
-You can tell Bundler that you’d like to use a specific version of Bundler by specifying the exact version number before the command you which to run. Like so:
+You can tell Bundler that you’d like to use a specific version of Bundler by specifying the exact version number before the command you wish to run. Like so:
 
 ```
 bundle _x.x.x_ install
@@ -47,4 +47,4 @@ BUNDLED WITH
 
 at the end of your `Gemfile.lock` file.
 
-Horray!
+Hooray!

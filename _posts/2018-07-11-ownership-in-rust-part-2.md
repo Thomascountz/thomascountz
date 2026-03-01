@@ -6,7 +6,7 @@ tags: [rust]
 ---
 [Checkout _Ownership in Rust, Part 1_](/2018/07/09/ownership-in-rust-part-1).
 
-When we looked at ownership in Rust [last time](/2018/07/09/ownership-in-rust-part-1), we looked at how Rust uses scope to determine when a resource/data in memory should be *dropped *or _freed._
+When we looked at ownership in Rust [last time](/2018/07/09/ownership-in-rust-part-1), we looked at how Rust uses scope to determine when a resource/data in memory should be *dropped* or _freed._
 
 We saw that for types that have a “copy trait,” (i.e. types whose data can be stored on the stack), the ownership model behaves similarly to other languages that may use a different paradigm, like garbage collection. But for types without this trait, we needed to be more conscious of the ownership rules.
 
@@ -136,7 +136,7 @@ Here’s how we would write that interaction in Rust:
 fn main() {
   let string = String::from("Hello, World!");
   println("{:p}", string.as_ptr()); // 0x7fc98be1c010
-  foo(&:string);
+  foo(&string);
   println("{:p}", string.as_ptr()); // 0x7fc98be1c010
 }
 
@@ -145,7 +145,7 @@ fn foo(string: &String) {
 }
 ```
 
-Just like our drawing, we would say that `main()` passes a *reference *of `string` into `foo()`, and `foo()` excepts a `String` type reference. This is indicated by `&` symbol. After then end of `foo()`'s scope, execution returns to it’s caller, `main()`, and `string` is still valid. `foo()` doesn’t have to return ownership, because it was never given ownership, it only _borrowed_.
+Just like our drawing, we would say that `main()` passes a *reference* of `string` into `foo()`, and `foo()` accepts a `String` type reference. This is indicated by `&` symbol. After then end of `foo()`'s scope, execution returns to its caller, `main()`, and `string` is still valid. `foo()` doesn’t have to return ownership, because it was never given ownership, it only _borrowed_.
 
 Ampersands indicate _references_, which allow the passing of values without giving up ownership! Rust knows that when we’re passing a reference, the ownership, and therefore the responsibility of deallocating that space in memory, still belongs to the original owner.
 
@@ -155,7 +155,7 @@ Rust allows us to create any number of references:
 fn main() {
   let string = String::from("Hello, World!");
   println("{:p}", string.as_ptr()); // 0x7fc98be1c010
-  foo(&:string);
+  foo(&string);
   println("{:p}", string.as_ptr()); // 0x7fc98be1c010
 }
 
@@ -174,7 +174,7 @@ fn baz(string: &String) {
 }
 ```
 
-No matter how many times we pass around a reference to `string`, ownership will return to it’s original owner. (In this case, ownership returns to the place where `string` was originally instantiated, but remember, we could have passed ownership _and then_ created a reference).
+No matter how many times we pass around a reference to `string`, ownership will return to its original owner. (In this case, ownership returns to the place where `string` was originally instantiated, but remember, we could have passed ownership _and then_ created a reference).
 
 # Mutability
 
@@ -209,7 +209,7 @@ fn foo(string: &mut String) {
 
 The syntax here is a bit specific, but we see that first we need to declare a mutable variable `let mut string`. Then when we pass a mutable reference, using `&mut`. Finally, we use `&mut` in the function’s signature to explicitly state that our function accepts a mutable reference.
 
-Now, we can still ensure that only `main()` is the responsibly for deallocating `string`, while also allowing other functions to mutate `string`!
+Now, we can still ensure that only `main()` is responsible for deallocating `string`, while also allowing other functions to mutate `string`!
 
 ---
 
@@ -241,7 +241,7 @@ Rust’s ownership rules come to the rescue again, which is emphasized as the co
 
 # Dangling References
 
-One last thing, when passing references, there is another condition what can cause bugs called _dangling references_.
+One last thing, when passing references, there is another condition that can cause bugs called _dangling references_.
 
 Dangling references are pointers to data that has been deallocated, for example:
 
@@ -257,7 +257,7 @@ fn foo() -> &string {
 }
 ```
 
-In this example, `foo()` returns a _reference_ to `string`. However, once `foo()`'s scope ends, the memory for `string` is deallocated, which means the reference will point to a invalid place in memory!
+In this example, `foo()` returns a _reference_ to `string`. However, once `foo()`'s scope ends, the memory for `string` is deallocated, which means the reference will point to an invalid place in memory!
 
 Rust prevents this at compile time by throwing an error.
 

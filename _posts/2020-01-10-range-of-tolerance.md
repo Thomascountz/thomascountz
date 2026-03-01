@@ -18,7 +18,7 @@ Too much or too little oxygen, and we enter a zone of physiological stress. Beyo
 
 We can use this as a metaphor for our working environment; everything needs to be within our range of tolerance, though not everything will be optimal.  
 
-**In our work environment, our range of tolerance for sits along a spectrum between personal preference and personal objection** . As individuals, we can place each aspect of our work environment somewhere on this spectrum. For example, it's _optimal_ for me to have our daily sync meeting at 10 AM, _acceptable_ to me to have it at 9 AM, but _outside of my range of tolerance_ to have it before 8 AM.  
+**In our work environment, our range of tolerance sits along a spectrum between personal preference and personal objection** . As individuals, we can place each aspect of our work environment somewhere on this spectrum. For example, it's _optimal_ for me to have our daily sync meeting at 10 AM, _acceptable_ to me to have it at 9 AM, but _outside of my range of tolerance_ to have it before 8 AM.  
 
 We use this concept on one of my teams in the form of an "any objections" vote. When introducing a change (whether in team rituals, coding style, or meeting times), we ask if there are objections, rather than if everyone agrees. By posing _this_ question, we're asking if the proposal sits within our individual ranges of tolerance while acknowledging that it may not be optimal for everyone.  
 

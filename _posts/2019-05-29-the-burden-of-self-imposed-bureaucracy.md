@@ -4,7 +4,7 @@ title: "The Burden of Self-Imposed Bureaucracy"
 subtitle: "When working alone, sometimes I was my worst teammate"
 tags: [process, teams]
 ---
-When I have an idea to build something, I usually get caught up in my own bureaucracy. I set up a board with a backlog of features, I make a Github repo with a super detailed README, I spend hours creating beautiful  wireframes, I tell all of friends about how cool my idea is, so on and so forth. But, what I _don't_ end up doing, is getting any of the real stuff done.
+When I have an idea to build something, I usually get caught up in my own bureaucracy. I set up a board with a backlog of features, I make a Github repo with a super detailed README, I spend hours creating beautiful  wireframes, I tell all of my friends about how cool my idea is, so on and so forth. But, what I _don't_ end up doing, is getting any of the real stuff done.
 
 The problem is, I usually only have a few hours to try to nail something down, so instead of tackling the hard problems, I nibble away at building artifacts for myself to ogle over. I shy away from sinking my teeth into the meat-and-bones of a project because I feel like I'll never get to finish the whole thing.
 

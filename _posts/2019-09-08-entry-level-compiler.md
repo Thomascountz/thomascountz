@@ -17,7 +17,7 @@ Of the most common compiler architectures that I’ve researched, at their core,
 
 Tokenizing is the act of scanning the source code character-by-character, and producing a list of tokens which contain metadata about the source code.
 
-Parsing takes that list of tokens and creates a tree structure, specifically an abstract syntax tree. This tree represents the hierarchical structure of our source code and obfuscates any details about the source language’s syntax. It does this by following a set of rules know as the *grammar *of the language.
+Parsing takes that list of tokens and creates a tree structure, specifically an abstract syntax tree. This tree represents the hierarchical structure of our source code and obfuscates any details about the source language’s syntax. It does this by following a set of rules known as the *grammar *of the language.
 
 Finally, code emission turns the abstract syntax tree into the target language by walking the tree branch-by-branch, node-by-node.
 
@@ -25,7 +25,7 @@ Finally, code emission turns the abstract syntax tree into the target language b
 
 ## Lexical Analysis
 
-Also know as *scanning* *or lexing*, this first step in our compiler is to turn the characters of our markdown into tokens.
+Also known as *scanning* *or lexing*, this first step in our compiler is to turn the characters of our markdown into tokens.
 
 ### What’s a Token?
 
@@ -153,7 +153,7 @@ After completing lexical analysis, we end up with a list of tokens. These tokens
 
 Also called an *AST* for short, it’s a tree data structure of branches and leaf nodes that encodes the structure of our source code sans any of the syntax, (that’s what makes it abstract.)
 
-I learned more about ASTs from [Vaidehi Joshi](undefined)’s BaseCS article [Leveling up One’s Parsing Game with ASTs,](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff) and highly recommend your read it for an in depth look at this data structure and how it’s used in parsers.
+I learned more about ASTs from Vaidehi Joshi’s BaseCS article [Leveling up One’s Parsing Game with ASTs,](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff) and highly recommend your read it for an in depth look at this data structure and how it’s used in parsers.
 
 For parsing markdown specifically, [markie](https://github.com/Thomascountz/markie) builds an abstract syntax tree by translating certain groups of tokens into nodes on a tree. These nodes then define what those tokens represent in the context of a markup language.
 
@@ -194,7 +194,7 @@ The nodes :body and :paragraph are generated to aid in the code emission step, n
 
 ### Let’s Take a Peek Ahead to See What’s Going On
 
-HTML is tree-link by design. For example, if we have a HTML page like this:
+HTML is tree-like by design. For example, if we have a HTML page like this:
 
 ```
 <body>
@@ -352,7 +352,7 @@ Parser.parse(tokens)
 }
 ```
 
-First, we start at the :body node, traverse it’s child, :paragraph, then traverse it’s child: emphasis. Since we’re at a leaf node, we can begin walking back up the tree, generating fragments along the way.
+First, we start at the :body node, traverse its child, :paragraph, then traverse its child: emphasis. Since we’re at a leaf node, we can begin walking back up the tree, generating fragments along the way.
 
 First, the :emphasis node generates:
 
@@ -372,7 +372,7 @@ And finally the :body:
 <body><p><em>a</em></p></body>
 ```
 
-This traversal strategy is call *post-order *traversal, and would normally be written like this:
+This traversal strategy is called *post-order *traversal, and would normally be written like this:
 
 ```
 def post_order(node)

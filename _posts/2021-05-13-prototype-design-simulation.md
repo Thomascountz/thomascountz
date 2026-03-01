@@ -30,7 +30,7 @@ I didn’t design Hexo’s primary circuitry; the design came from [555 Timer Ci
 
 With that said, in order for me to understand _how_ to modify the circuit and to measure its performance, I had to build prototypes, do some pen-and-paper analysis, and (although perhaps a bit overkill), employ the use of circuit simulation tools. These things all happened in a happy nonlinear feedback loop during multiple iterations.
 
-For **prototyping**, I use these things called _breadboards_ (also known as solderless breadboards, it got its name from the old practice of using nails hammered into a cutting board to wire up temporary circuits), pictured below. A breadboard allows you to quickly “plug in” a bunch of _through-hole _(or _THT_, through-hole technology) components and test out designs.
+For **prototyping**, I use these things called _breadboards_ (also known as solderless breadboards, it got its name from the old practice of using nails hammered into a cutting board to wire up temporary circuits), pictured below. A breadboard allows you to quickly “plug in” a bunch of _through-hole_ (or _THT_, through-hole technology) components and test out designs.
 
 ![Solderless breadboard](/assets/images/breadboard.jpg)
 

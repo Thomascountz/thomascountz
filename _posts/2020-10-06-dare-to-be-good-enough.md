@@ -8,7 +8,7 @@ _Originally published on [8th Light's blog](https://8thlight.com/blog/thomas-cou
 
 As I sit down to write, I noticed a tug at the back of my neck—a tension forming as I begin editing my words obsessively. It's a habit of writing characterized by my attempts at achieving the best possible outcome. "I know that I can write well," I tell myself, "I've just got to strike the right tempo, tone, voice..."
 
-I often have the same sensation when I'm writing code. The giants of our industry, whose shoulders I stand upon, tell me all sorts of things that should be true about my code—the way it reads, the way it's coupled to other parts of a system, and the amount of complexity its allowed to have—it's all qualified and quantified.
+I often have the same sensation when I'm writing code. The giants of our industry, whose shoulders I stand upon, tell me all sorts of things that should be true about my code—the way it reads, the way it's coupled to other parts of a system, and the amount of complexity it’s allowed to have—it's all qualified and quantified.
 
 This tension, of balancing all of the small discrete decisions that crop up when implementing a software feature, causes me to try to painstakingly eke out the "correct" way to do things. It's as if when faced with a choice, I scan through an endless tree of outcomes trying to game out what my best option would be. "Do I extract a shared setup for these tests, or do I duplicate it for each assertion?" "Under what circumstance should I choose the builder pattern over a factory method?" "Should this method be called `is_ready` or `is_prepared`?" The list goes on and on.
 
@@ -24,7 +24,7 @@ _Satisficers_, on the other hand, are happy with whatever "good enough" choice t
 
 Satisficers are pragmatists at their core; the solution that works is the solution they commit to. 
 
-This way of decision-making is embedded in the fabric of agile methodologies, which gives us permission to make small incremental changes over time, rather then grasping for the perfect solution from the start. From this, we know that iterative design can help us build tighter feedback loops, deliver value to stakeholders sooner, and ultimately keep our development reactive and responsive to the needs of our customers.
+This way of decision-making is embedded in the fabric of agile methodologies, which gives us permission to make small incremental changes over time, rather than grasping for the perfect solution from the start. From this, we know that iterative design can help us build tighter feedback loops, deliver value to stakeholders sooner, and ultimately keep our development reactive and responsive to the needs of our customers.
 
 Our projects' bottom line isn't the only beneficiary to thinking like a satisficer. Even though the research is still out over whether maximizers or satisficers achieve objectively better decision-making (Peng, 2013), what is clear is that satisficers are _happier_. In fact, even if a better option occurs to them later, satisficers are less likely to experience regret (Schwartz et al., 2002).
 

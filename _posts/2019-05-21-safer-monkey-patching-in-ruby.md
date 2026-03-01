@@ -92,7 +92,7 @@ module BattleBoats
 end
 ```
 
-This implementation gives us the best of both worlds. 1) We get to call methods directly on the strings we want to colorize, and 2) we don’t effect any other `String` instances. It does have the downside of requiring an extra step, but no more than our previous approach:
+This implementation gives us the best of both worlds. 1) We get to call methods directly on the strings we want to colorize, and 2) we don’t affect any other `String` instances. It does have the downside of requiring an extra step, but no more than our previous approach:
 
 ```ruby
 include BattleBoats

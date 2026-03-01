@@ -64,7 +64,7 @@ I can carry this notebook and pen most places with me, and I'm un-apologetic abo
 
 > Do you remember what we ended up deciding on Friday?
 
-In a world of synchrounous-first communication, after an hours long meeting, the last thing I want to do it write down everything we just talked about. More than that, after an hours long meeting, the last *last* thing I want to do is feel like we forgot everything we talked about.
+In a world of synchronous-first communication, after an hours long meeting, the last thing I want to do is write down everything we just talked about. More than that, after an hours long meeting, the last *last* thing I want to do is feel like we forgot everything we talked about.
 
 Sometimes the meetings I'm in are a bit chaotic and cover a lot of ground. (Often more like [mob programming](https://en.wikipedia.org/wiki/Mob_programming) than a meeting). In these cases, I've found that rapid-fire note taking has allowed me to both 1) keep a reference of what we may have decided and 2) free up my brain to keep listening.
 
@@ -76,7 +76,7 @@ Contemporaneous Work Notes look like this for me:
 
 ### My solution: yellow legal pad and mechanical pencil*
 
-Yellow legal pads are beloved (and hated) by many for their accessibility and ease of use, see: [The Illustrious History of the Yellow Legal Pad](https://www.legalaffairs.org/issues/May-June-2005/scene_snider_mayjun05.msp). I fell in love with them because they feel limitless. I found that when taking notes in beautiful leather-bound $40 notebook, I became a bit too precious about what I would write in it and began to edit my notes before I put pencil to paper! On the contratry, yellow legal pads are cheap, thin, and always open. I prefer a mechanical pencil because I feel as though I can write cleaner lines with a 0.5mm lead than I can with an equally fine pen. Also, I _do_ erase things sometimes, especially if I'm trying to capture a concept in an illustration. 
+Yellow legal pads are beloved (and hated) by many for their accessibility and ease of use, see: [The Illustrious History of the Yellow Legal Pad](https://www.legalaffairs.org/issues/May-June-2005/scene_snider_mayjun05.msp). I fell in love with them because they feel limitless. I found that when taking notes in beautiful leather-bound $40 notebook, I became a bit too precious about what I would write in it and began to edit my notes before I put pencil to paper! On the contrary, yellow legal pads are cheap, thin, and always open. I prefer a mechanical pencil because I feel as though I can write cleaner lines with a 0.5mm lead than I can with an equally fine pen. Also, I _do_ erase things sometimes, especially if I'm trying to capture a concept in an illustration. 
 
 **A yellow legal pad is a private portable whiteboard.**
 
@@ -100,7 +100,7 @@ My solution to avoid this type of thing is to take long-form reference notes:
 
 This is a new venture for me, but you can find the beginnings of this journey at [research.thomascountz.com](https://research.thomascountz.com). Gitbook has switch from self-hosted to a SAAS offering in the past few years, but still offer free services for individuals. I enjoy Gitbook because the online editor is intuitive and comfortable, and all of my notes are backed by git/Github, which means exportability. Also, I like that these notes are public. They're not quite a blog post, but being able to link directly to specific notes is helpful when sharing ideas.
 
-I've also taken to recording personal project documentation in wiki format. Even when I'm working alone, I prefer to write asynchronous documentation as though I'm together with a team. These project docs help me link thoughts and ideas togethers that would otherwise decay over time as other priorities come into focus.
+I've also taken to recording personal project documentation in wiki format. Even when I'm working alone, I prefer to write asynchronous documentation as though I'm together with a team. These project docs help me link thoughts and ideas together that would otherwise decay over time as other priorities come into focus.
 
 **A personal wiki is the brain's external hard drive.**
 

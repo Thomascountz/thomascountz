@@ -11,7 +11,7 @@ In such scenarios, Ruby Docker images provide a lighter weight solution compared
 
 Let's take an example of running `bundle install` in a project that requires JRuby. We'll use JRuby as an example as it's not always as straightforward to install as CRuby.
 
-First (assuming you hav Docker running locally), pull the Docker image from DockerHub for the Ruby version you need.
+First (assuming you have Docker running locally), pull the Docker image from DockerHub for the Ruby version you need.
 
 ```shell
 docker pull jruby:latest

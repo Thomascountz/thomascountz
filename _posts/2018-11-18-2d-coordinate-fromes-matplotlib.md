@@ -23,7 +23,7 @@ Now, let's say that May is jogging along the road at 5 km/hr and Sandra drives p
 
 Implicitly, Mary's 5 km/hr jogging and Sandra's 25 km/hr driving is _relative_ to a stationary frame of reference, perhaps Bill, who is standing on a corner as both Mary and Sandra move past him.
 
-In robotics, we can use the concepts of frames of reference to mathematically model the mechanics of our robot. By using a Cartesiean coordinate system and leveraging linear algebra to model a system of joints and links, we can calculate the static and kinematic models of our robot.
+In robotics, we can use the concepts of frames of reference to mathematically model the mechanics of our robot. By using a Cartesian coordinate system and leveraging linear algebra to model a system of joints and links, we can calculate the static and kinematic models of our robot.
 
  > A robot is mechanically constructed by connecting a set of bodies, called links,
 to each other using various types of joints. Actuators, such as electric motors,
@@ -67,14 +67,14 @@ Well use this initial blue frame as our frame of reference going forward.
 
 # Rotation
 
-Rotation is a linear transformation of the affine variety. Affine transformations are, generally speaking, tranfomations where:
+Rotation is a linear transformation of the affine variety. Affine transformations are, generally speaking, transformations where:
 
   - Straight lines remain straight
   - The origin stays fixed
 
 Rotation, in terms of a coordinate frame, is a circular movement about an axis such that the axes remain orthogonal to one another.
 
-To calculate the rotation of of a vector derived from an angle, `θ` and in relation to a coordinate frame, we use a _rotation matrix_ and perform matrix-vector mutiplication.
+To calculate the rotation of of a vector derived from an angle, `θ` and in relation to a coordinate frame, we use a _rotation matrix_ and perform matrix-vector multiplication.
 
 We can apply the rotation matrix on the vectors, `x̂` and `ŷ` to described a new coordinate frame _in relation to_ the original coordinate frame.
 
@@ -86,7 +86,7 @@ The rotation matrix from `frame0` to `frame1` would be:
 
 Where `x` and `y` are the component parts of both `x̂` and `ŷ`, meaning we'll have to do two calculations, one for each unit vector. 
 
-An execllent resource to learn more about the properties of a 2D rotation matrix the [2D Geometry Course](https://robotacademy.net.au/masterclass/2d-geometry/?lesson=75) taught by Professor Peter Corke of QUT, an amazing free resource!
+An excellent resource to learn more about the properties of a 2D rotation matrix the [2D Geometry Course](https://robotacademy.net.au/masterclass/2d-geometry/?lesson=75) taught by Professor Peter Corke of QUT, an amazing free resource!
 
 
 ```python
@@ -174,7 +174,7 @@ t(v) = v + u
 
 The translation `t` of the vector `v` is the addition of a _translation_ vector, `u`. 
 
-It's importatnt to note that this works beause in pure translations, the axes of the resulting frame, `frame1`, and the reference frame, `frame0`, remate paralell to one another. 
+It's important to note that this works because in pure translations, the axes of the resulting frame, `frame1`, and the reference frame, `frame0`, remain parallel to one another. 
 
 It's also important to note that this type of translation acts on the _origin_ of the reference frame.
 
@@ -273,7 +273,7 @@ Because pose is relative, we can use it to describe three things:
   - the reference frame in which a vector or frame is represented
   - the displacement of a vector or frame
 
-Independenly, the two transformation equations we have so far are:
+Independently, the two transformation equations we have so far are:
 
 **Rotation:**
 
@@ -375,7 +375,7 @@ With code, that wasn't so bad!
 
 Before we get to the homogenous part, image now that what we have is a robot arm with one revolute joint (i.e. a servo), at `frame0`, and an end effector, at `frame1`. This rotation _and_ translation represents the rotational movement of the servo at `frame0`. As the joint rotates, the end effect's rotation is constant with the angle, `θ`; it doesn't rotate independently.
 
-The translation vector, in yellow, represents the _link_ between the revolute joint and the end effector. This mathematical model is what is represented by kineamatic, or joint, diagrams.
+The translation vector, in yellow, represents the _link_ between the revolute joint and the end effector. This mathematical model is what is represented by kinematic, or joint, diagrams.
 
 Of course, we don't want our robot just to have one joint and one end effector, let's try adding a second joint: 
 
@@ -454,7 +454,7 @@ Pretty neat!
 
 Notice that we have to add transformations and thetas together is several places. This is because of the relativity. We need a way to say that `frame1` is in reference to `frame0`, and `frame2` is in reference to `frame1`. We do that by duplicating the math to get from `frame0` to `frame1` so that we can get to `frame2`.
 
-There is a more consise way: homogenous transformation matricies. 
+There is a more concise way: homogenous transformation matrices. 
 
 Let's take a look, and then we'll go back and see how they work.
 

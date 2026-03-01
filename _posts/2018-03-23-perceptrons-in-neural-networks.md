@@ -18,9 +18,9 @@ How can we take three binary inputs and produce one binary output? First, we ass
 
 In the picture above, weights are illustrated by black arrows. We’ll call each weight w. Each input, x above has an associated weight: x¹ has a weight w¹, x² a weight of w², and x³, a weight of w³.
 
-To determine the perceptron’s activation, we take the *weighted sum* of each of the inputs *and then* determine if it is above or below a certain *threshold*, or *bias, *represented by b.
+To determine the perceptron’s activation, we take the *weighted sum* of each of the inputs *and then* determine if it is above or below a certain *threshold*, or *bias*, represented by b.
 
-The formula for perceptron neurons can can be expressed like this:
+The formula for perceptron neurons can be expressed like this:
 
 ![http://neuralnetworksanddeeplearning.com/index.html](/assets/images/perceptron-equation.png)
 
@@ -28,7 +28,7 @@ Let’s break this down.
 
 * output is the output of our formula, which is called the *activation* of our perceptron.
 
-* Both if branches start with the same ∑ formula which takes each input, x, multiplies it by its weight, w, and then add them all together. This is the *weighted sum, *in our case, x¹w¹ + x²w² + x³w³, which can also be, (and usually is), represented using dot product notation.
+* Both if branches start with the same ∑ formula which takes each input, x, multiplies it by its weight, w, and then add them all together. This is the *weighted sum*, in our case, x¹w¹ + x²w² + x³w³, which can also be, (and usually is), represented using dot product notation.
 
 * If the *weighted sum* is less than or equal to our *threshold*, or *bias*, b, then our output will be 0
 
@@ -40,7 +40,7 @@ This formula is called a [Heaviside Step function](https://en.wikipedia.org/wiki
 f(x) = { x <= b : 0 , x > b : 1 }
 ```
 
-Were x is our *weighted sum, *and b is our *bias*, 0, in this case.
+Where x is our *weighted sum*, and b is our *bias*, 0, in this case.
 
 ![](/assets/images/step-function.png)
 
@@ -58,9 +58,9 @@ It’s more common to represent the perceptron math like this:
 
 * The “threshold” is moved to the other side of the equality and labeled b for “bias.”
 
-* The summation and bias are added together and compared to to 0.
+* The summation and bias are added together and compared to 0.
 
-This new way of comparing to 0, offers us a new way of thinking about these artificial neurons. We can think of the bias, now, like a predictor of how easily our neuron will *activate*, or produce 1 as an output. A neuron with a large biases will indicate that it will “fire” more easily than the same neuron with a smaller bias.
+This new way of comparing to 0, offers us a new way of thinking about these artificial neurons. We can think of the bias, now, like a predictor of how easily our neuron will *activate*, or produce 1 as an output. A neuron with a large bias will indicate that it will “fire” more easily than the same neuron with a smaller bias.
 
 Lastly, pseudocode might look something like this:
 

@@ -219,4 +219,4 @@ You refresh JIRA:
 
 "Status: Done."
 
-You give a shout out to Brianna and  `⌘-SHIFT-Q`.
+You give a shout out to Brianna and `⌘-SHIFT-Q`.

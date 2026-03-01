@@ -21,11 +21,11 @@ There's no textbox to type into, just type `thisisunsafe` blindly with the page 
 
 ## History of the Bypass Code
 
-My first reaction upon discovering `thisisunsafe` was one of delight! I was flooded with memories of trying `↑ ↑ ↓ ↓ ← → ← → B A` on every Playstation game I had as a kid (see  _[Konami Code](https://en.wikipedia.org/wiki/Konami_Code)_).
+My first reaction upon discovering `thisisunsafe` was one of delight! I was flooded with memories of trying `↑ ↑ ↓ ↓ ← → ← → B A` on every Playstation game I had as a kid (see _[Konami Code](https://en.wikipedia.org/wiki/Konami_Code)_).
 
 By why does Chrome have a cheatcode?
 
-Like Tomb Raider searching for ancient artifacts, my sense of wonder led me to dig through history of Chromium to try and find out how this code came to be. I was curious to know if it was a joke, a mistake, or something else entirely.
+Like Tomb Raider searching for ancient artifacts, my sense of wonder led me to dig through the history of Chromium to try and find out how this code came to be. I was curious to know if it was a joke, a mistake, or something else entirely.
 
 Here's what I found.
 
@@ -81,7 +81,7 @@ Unfortunately, the reason it was added doesn't appear to have been documented. M
 
 A year later, in 2015, the `BYPASS_SEQUENCE` was changed to `badidea`. Like before, there's little evidence left to understand the intention behind the changes.
 
-However, as we'll see, later changes were made due to concerns around the bypass code's popularity and misuse, so it seems likely that the change to `badidea` was changed made for similar reasons.
+However, as we'll see, later changes were made due to concerns around the bypass code's popularity and misuse, so it seems likely that the change to `badidea` was made for similar reasons.
 
 Interestingly, in 2014, Google published a paper entitled _Experimenting At Scale With Google Chrome’s SSL Warning_, where authors experimented with ways to reduce the number of users who bypassed SSL warnings via the UI.
 
@@ -105,7 +105,7 @@ Interestingly, in 2014, Google published a paper entitled _Experimenting At Scal
      if (keyPressState == BYPASS_SEQUENCE.length) {
 ```
 
-On Januay 03, 2018, [the bypass code was updated again](https://chromium-review.googlesource.com/c/chromium/src/+/843085/4/components/security_interstitials/core/browser/resources/interstitial_large.js), this time to `thisisnotsafe`.
+On January 03, 2018, [the bypass code was updated again](https://chromium-review.googlesource.com/c/chromium/src/+/843085/4/components/security_interstitials/core/browser/resources/interstitial_large.js), this time to `thisisnotsafe`.
 
 Unlike before, the code was changed explicitly due to concern around the growing popularity of being able to bypass SSL warnings in Chrome using the bypass code.
 
@@ -136,7 +136,7 @@ Based on the source code, the bypass code was only intended for testing and not 
 
 Just a few days later, on January 10, 2018, [the bypass code was changed once again](https://chromium-review.googlesource.com/c/chromium/src/+/860418):
 
-`thisisnotesafe` was changed to `dGhpc2lzdW5zYWZl`, in what I believe was an attempt at obfuscation.
+`thisisnotsafe` was changed to `dGhpc2lzdW5zYWZl`, in what I believe was an attempt at obfuscation.
 
 ```bash
 $ echo dGhpc2lzdW5zYWZl | base64 -d
@@ -191,6 +191,6 @@ What may have started as a convenience for developers, later became a point of c
 
 The rise of HTTPS enforcement has been a net-positive for the web, but it's hard to articulate the risks of broken SSL to everyday users and why they shouldn't simply ignore it.
 
-Is it the job of a browser to keep users safe? Even if one could argue that web access shouldn't be gated by coporations on the basis of security, the enforcement of HTTPS has undoubtedly incentivized web developers to adopt better security practices.
+Is it the job of a browser to keep users safe? Even if one could argue that web access shouldn't be gated by corporations on the basis of security, the enforcement of HTTPS has undoubtedly incentivized web developers to adopt better security practices.
 
 What do you think?

@@ -5,22 +5,22 @@ subtitle: "Using Google's OCR to Collect Rocket Launch Telemetry from a Live Str
 tags: [project, ruby, machine-learning, data-science]
 description: "Extracting rocket telemetry data from a YouTube live stream using Google Cloud Video Intelligence API's OCR capabilities. This project walks through video ingestion, text detection across thousands of frames, JSON data wrangling with jq, and Ruby-based data cleanup to produce velocity and altitude datasets from Rocket Lab's Electron launch anomaly."
 ---
-I'm both excited and saddened to share with you my experience pulling rocket telemetry data from a recorded video live stream of a rocket launch. What I'm sharing with you is going to feature very hacky brute force data munging, security worst practices, and, the data engineer's favorite: Google Sheets.
-
-But before I share, I want to give my condolences and pay my respects to Rocket Lab and their engineering team. Peter Beck's empathy and humility is demonstrated in all the work that they do. Despite today's anomoly, Rocket Lab is nevertheless one of the most ambitious, successful, and consistent areospace organizations, and thanks to their participation within the wider community, we can all learn from them.
-
-> On one of our toughest days, our team operated with professionalism and worked swiftly to ensure the anomaly was managed safely. Our team is resilient, and our top priority remains to safely and reliably return to flight for our customers. We will learn from this, and we’ll be back on the pad again.
-> —[Rocket Lab Experiences Anomaly During Launch](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/)
-
 ## The Anomaly
 
 Early today, [Rocket Lab](https://www.rocketlabusa.com/) launched their 20th Electron rocket, [Running out of Toes](https://www.rocketlabusa.com/missions/completed-missions/running-out-of-toes/) from their Launch Complex 1 	Mahia Peninsula in New Zealand.
 
-Unfortunately, the mission ended in failure right around T+00:02:30 shortly after main engine cutoff and second stage separation. In the live stream, the second stage appears to ignite and then quickly cutoff. Rocket Lab [released a statement](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/) confirming that the anomaly had lead to the failure of the mission, but not yet releasing any preliminary data that might point to the cause of the failure, of course, pending the investigation.
+> On one of our toughest days, our team operated with professionalism and worked swiftly to ensure the anomaly was managed safely. Our team is resilient, and our top priority remains to safely and reliably return to flight for our customers. We will learn from this, and we’ll be back on the pad again.
+> —[Peter Beck, Rocket Lab founder and chief executive](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/)
 
-Days like to day are a magnet for armchair engineers.
 
-## Youtube Video Stream
+Unfortunately, the mission ended in failure right around T+00:02:30 shortly after main engine cutoff and second stage separation. In the live stream, the second stage appears to ignite and then quickly cutoff.
+
+Rocket Lab [released a statement](https://www.rocketlabusa.com/about-us/updates/rocket-lab-experiences-anomaly-during-launch/) confirming that the anomaly had lead to the failure of the mission, but not yet releasing any preliminary data that might point to the cause of the failure, of course, pending the investigation.
+
+Days like today are a magnet for armchair engineers...
+
+## The Data
+
 ![](/assets/images/rocket-lab-stream.png)
 
 This is a single frame from the live stream right at T-00:00:00. On the right hand side, you can see that they helpfully show some telemetry: flight time, speed, and altitude, along with the video feed itself, and some stages or "gates" on the left hand side.
@@ -66,7 +66,7 @@ curl -X POST \
 ## Data Cleanup/Presentation
 What came back was exciting and a _little_ unexpected. I guess I didn't know what to expect (it's not like I had read any documentation or anything).
 
-Firstly, the API responds with a job name that then you can later use to query for the results and other metadata. I used that name to send another API request and I got back results almost instantly. The entire took maybe 2 second to complete and I got something back like this:
+Firstly, the API responds with a job name that then you can later use to query for the results and other metadata. I used that name to send another API request and I got back results almost instantly. The entire job took maybe 2 second to complete and I got something back like this:
 
 ```json
 {

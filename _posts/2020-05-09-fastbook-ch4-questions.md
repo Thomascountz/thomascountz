@@ -126,7 +126,7 @@ Nope. Thanks Pytorch!
 
 ### Why can't we use accuracy as a loss function?
 
-Accuracy is for humans to consume. It tells us how well a model is at prediction examples that it has never seen before (in the validate set) overall. Accuracy isn't necessarily a function from which we can calculate a gradient/derivative in order update our weights. In the MNIST model in this chapter, a small nudge in a parameter won't necessarily effect accuracy, unless that small nudge changes a prediction from a `0` to a `1` or vice versa. 
+Accuracy is for humans to consume. It tells us how well a model is at prediction examples that it has never seen before (in the validate set) overall. Accuracy isn't necessarily a function from which we can calculate a gradient/derivative in order update our weights. In the MNIST model in this chapter, a small nudge in a parameter won't necessarily affect accuracy, unless that small nudge changes a prediction from a `0` to a `1` or vice versa. 
 
 ### Draw the sigmoid function. What is special about its shape?
 

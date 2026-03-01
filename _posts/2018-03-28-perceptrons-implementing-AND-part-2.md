@@ -6,11 +6,11 @@ tags: [machine-learning]
 ---
 ![Illustration of a perceptron](/assets/images/perceptron_model_with_names.png)
 
-In [Perceptron Implementing AND, Part 1](2018/03/26/perceptrons-implementing-AND-part-1), we looked at implementing the behavior of `AND` with a perceptron. We set up our perceptron with its inputs and expected outputs, and we sort of reasoned about what our weights and bias should be, in order to get the output we wanted.
+In [Perceptron Implementing AND, Part 1](/2018/03/26/perceptrons-implementing-AND-part-1), we looked at implementing the behavior of `AND` with a perceptron. We set up our perceptron with its inputs and expected outputs, and we sort of reasoned about what our weights and bias should be, in order to get the output we wanted.
 
 Even for just a single artificial neuron, with only two binary inputs, a single binary output, and a complete set of training data, that was still a considerable amount of work, which resulted in mimicking behavior of a simple logic statement.
 
-If we consider that neural networks are made up of dozens, thousands, or even [160 billion neurons](http://Biggest Neural Network Ever Pushes AI Deep Learning), we can see that manually tuning our weights and biases is simply out of the question.
+If we consider that neural networks are made up of dozens, thousands, or even [160 billion neurons](https://spectrum.ieee.org/biggest-neural-network-ever-pushes-ai-deep-learning), we can see that manually tuning our weights and biases is simply out of the question.
 
 When we talk about a neural network “learning,” or “training,” this _tuning_ process is exactly what we’re talking about. Our networks can _learn_ to assign its own weights and biases, based on a set of _training_ _data_, where the inputs and expected outputs are known.
 
@@ -108,7 +108,7 @@ y   f(x) | y - f(x)
 
 The goal: get `y — f(x)` closer to `0`.
 
-The intuition behind this learning algorithm, developed by [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt), who you’ll remember as the creator as the perceptron, follows a simple rule:
+The intuition behind this learning algorithm, developed by [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt), who you’ll remember as the creator of the perceptron, follows a simple rule:
 
 > If the neuron activates, when we want it not, suppress it.
 
@@ -369,7 +369,7 @@ w <- w + (y - f(x)) * x
 
 Those are our two formulas to describe perceptrons and our learning rule.
 
-We ended up finding different weights (*and pseudo-bias) *than last time, when we simply _reasoned_ about a solution. This was solved _algorithmically,_ and is something a computer could do!
+We ended up finding different weights (*and pseudo-bias*) than last time, when we simply _reasoned_ about a solution. This was solved _algorithmically,_ and is something a computer could do!
 
 #### There Are a Few Concepts Missing
 
@@ -377,9 +377,9 @@ Three concepts in particular that are missing from our training algorithm are **
 
 **_Epoch_** is the number of times we’ve iterated through the entire training set. So for the example above, during `epoch = 5`, we were able to establish weights to classify all of our inputs, but we continued iterating, to be sure that our weights were tried on all of our inputs.
 
-**_Threshold_** is different than what we now call our bias. Threshold is the maximum number of epoch we will allow to pass while training. There is not built in stopping point of our algorithm. It will continue adding `0` to our weights, on and on, forever. Adding a threshold is one way of stopping our training loop.
+**_Threshold_** is different than what we now call our bias. Threshold is the maximum number of epoch we will allow to pass while training. There is no built in stopping point of our algorithm. It will continue adding `0` to our weights, on and on, forever. Adding a threshold is one way of stopping our training loop.
 
-**_Learning rate_**, symbolize by α, is the magnitude at which we increase or decrease our weights during each iteration of training:
+**_Learning rate_**, symbolized by α, is the magnitude at which we increase or decrease our weights during each iteration of training:
 
 ```
 w <- w + α(y - f(x))x

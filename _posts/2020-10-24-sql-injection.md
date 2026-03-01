@@ -13,7 +13,7 @@ An SQL Injection **occurs when untrusted input is used directly in the construct
 
 ## Authentication Form Example
 
-Let's take a login form with that requires a user enter a username and password to log in.
+Let's take a login form that requires a user enter a username and password to log in.
 
 ![](/assets/images/sql_injection/login-long-password.png)
 

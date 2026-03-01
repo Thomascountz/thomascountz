@@ -6,7 +6,7 @@ tags: [ruby, evolutionary-algorithms, machine-learning, interactive]
 featured: true
 description: "A deep dive into evolutionary algorithms through the lens of low-poly image generation. This exploration covers genetic algorithm theory, custom Ruby implementation using the Petri Dish framework, and detailed analysis of genetic operators including roulette wheel selection, random midpoint crossover, and nudge mutation. Includes comprehensive data analysis of fitness convergence, pixel-level accuracy, and efficiency metrics across 6000+ generations."
 ---
-Inspired by biological systems, evolutionary algorithms model the patterns of multi-generational evolution in order to unearth unique ideas. They work by generating a vast number of potential solutions to a particular problem and then pitting them against each other in a process akin natural selection: only the fittest survive. In this way, evolutionary algorithms are able to navigate large ambiguous search spaces in order to find solutions to problems that may be difficult or inefficient to solve using other methods.
+Inspired by biological systems, evolutionary algorithms model the patterns of multi-generational evolution in order to unearth unique ideas. They work by generating a vast number of potential solutions to a particular problem and then pitting them against each other in a process akin to natural selection: only the fittest survive. In this way, evolutionary algorithms are able to navigate large ambiguous search spaces in order to find solutions to problems that may be difficult or inefficient to solve using other methods.
 
 These algorithms are used for a wide variety of tasks: from optimizing neural network parameters, evolving mechanical structures, simulating protein folding, and even generating art!
 
@@ -252,7 +252,7 @@ Point = Struct.new(:x, :y, :grayscale)
 ```
 
 > 📐 **Why a Struct?**\
-> A `Struct` is a simple way to define a class with attributes. It's a good choice here because we do not need to define any behavior on `Point`-s; it is a data-only object. Based on my benchmarks[^struct_benchmarks], a hash would be more performant, through it's less flexible and less explicit. A class or Ruby 3.2 [`Data`](https://docs.ruby-lang.org/en/3.2/Data.html) object offer no additional benefits.
+> A `Struct` is a simple way to define a class with attributes. It's a good choice here because we do not need to define any behavior on `Point`-s; it is a data-only object. Based on my benchmarks[^struct_benchmarks], a hash would be more performant, though it's less flexible and less explicit. A class or Ruby 3.2 [`Data`](https://docs.ruby-lang.org/en/3.2/Data.html) object offer no additional benefits.
 
 <!-- TODO: Add benchmarks -->
 [^struct_benchmarks]: [Hash v. Struct v. Data v. Class Benchmark](https://gist.github.com/Thomascountz/f9c8912c3b6aae0345f4b4d2901ec16c)
@@ -418,7 +418,7 @@ Modeling a fitness function to map to the search space is often the most difficu
 
 Deterministic means that given the same `Member`, the fitness function should always return the same fitness score. This is because the fitness of a member may be evaluated multiple times during the evolutionary process, and inconsistent results could lead to unpredictable behavior.
 
-Discriminative means that the fitness function should be able to discriminate between different members of the population. That is, members with different genes should have different fitness scores. Although fitness function do not have to be strictly discriminative, if many members have the same fitness score, the evolutionary algorithm may have a harder time deciding which members are better.
+Discriminative means that the fitness function should be able to discriminate between different members of the population. That is, members with different genes should have different fitness scores. Although fitness functions do not have to be strictly discriminative, if many members have the same fitness score, the evolutionary algorithm may have a harder time deciding which members are better.
 
 Lucky for us, the `rmagick` library provides an [`Image#difference`](https://rmagick.github.io/image1.html#difference) method that fits the bill. `Image#difference` compares two images and returns three numbers that represent how different they are: `mean_erorr_per_pixel`, `normalized_mean_error`, and `normalized_maximum_error`. We'll use the `normalized_mean_error` to calculate our fitness score.[^normalized_mean_error]
 
@@ -510,7 +510,7 @@ Here's what that looks like:
   end
   ```
 
-The proportional fitness is calculated by dividing the member's fitness by the total population fitness, like before. Then, we raise a random number between 0 and 1 to the inverse of the proportional fitness in order to bias the selection towards members with higher fitness scores. The `Enumberable#max_by` method is used to select two members with the highest result from the block.
+The proportional fitness is calculated by dividing the member's fitness by the total population fitness, like before. Then, we raise a random number between 0 and 1 to the inverse of the proportional fitness in order to bias the selection towards members with higher fitness scores. The `Enumerable#max_by` method is used to select two members with the highest result from the block.
 
 The maths are a bit annoying to me personally, but nevertheless, the result of all of this is like spinning a roulette wheel where the size of each slice is proportional to the member's fitness. The higher the fitness, the larger the slice, and the more likely the member is to be selected.
 
@@ -528,7 +528,7 @@ This is the selection method we'll use for our task, but it may be worth experim
 
 ## Crossover Function
 
-In biology, crossover is when paired chromosomes from each parent swap segments of their DNA. This creates new combinations of genes, leading to genetic diversity in offspring. In evolutionary algorithms, crossover is the process of combining the genes of parents members to create a new child member.
+In biology, crossover is when paired chromosomes from each parent swap segments of their DNA. This creates new combinations of genes, leading to genetic diversity in offspring. In evolutionary algorithms, crossover is the process of combining the genes of parent members to create a new child member.
 
 After selecting parents, their genes, an Array of `Point`-s in our case, are combined to create a new `Petridish::Member`. There are many different ways to combine the genes of parents, but for our task, we'll use a method called _random midpoint crossover_ to crossover two parents.
 
@@ -693,7 +693,7 @@ Before we look at the results, let's recap everything we've gone over.
    2. We also represent a member of the population as a `PetriDish::Member` object with an Array of `Point`-s as genes, which is used by the Petri Dish framework to evolve the population.
 4. The genetic operators are selection, crossover, mutation, and replacement.
    1. Selection is the process of choosing which members of the population are the most fit and therefore should be used as _parents_ to create the next generation of _children_.
-   2. Crossover is the process of combining the genes of parents members to create a new child member.
+   2. Crossover is the process of combining the genes of parent members to create a new child member.
    3. Mutation is the process of randomly changing the genes of a child member after crossover.
    4. Replacement is the process of replacing the old population with the new population.
 5. The end condition is the criteria that determines when the algorithm should stop.
@@ -741,7 +741,7 @@ Finally, it's time to run the algorithm and see what happens! Let's take a subje
   <figcaption>Target image and result</figcaption>
 </div>
 
-After running the algorithm for over 6000 generations over the course of an hour, I'm really please with the results!
+After running the algorithm for over 6000 generations over the course of an hour, I'm really pleased with the results!
 
 I'm surprised by the details the algorithm was able to replicate. For example, the curvature of the top of the ruby is really well defined, given that we're working with only straight lines. Also, the highlights along the gem's facets were captured well. If I squint hard enough, I have a hard time distinguishing the target image from the result!
 
@@ -756,7 +756,7 @@ It looks like algorithm had a lot of early success: by generation 120, we can al
 
 The biggest improvements to the image after the early generations appear to be in the grayscale values, rather than the positions of the points. This makes sense because the position of the points only really matter in that the resulting triangle contributes to the grayscale value of the pixels it covers.
 
-By looking only at the images, it's hard for me to tell how much the algorithm improved after generation 2000 and wether or not we could have stopped it there.
+By looking only at the images, it's hard for me to tell how much the algorithm improved after generation 2000 and whether or not we could have stopped it there.
 
 I'm curious to see if the numbers tell a different story.[^subjectivity]
 
@@ -797,7 +797,7 @@ Using the logs as a data source, let's start by looking at a plot of the highest
 
 We can see that the fitness of the fittest member of each population trends heavily positive over time; somewhat linearly but with a steeper slope at the beginning. This is to be expected because the algorithm starts with a lot to gain from its initial, somewhat random, initial state, and then spends time improving on better and better results.
 
-We can also see that the the trend is not monotonically increasing, i.e. it does not always increase from one time step (generation) to the next. This is because the algorithm is not guaranteed to find a better solution in each generation.
+We can also see that the trend is not monotonically increasing, i.e. it does not always increase from one time step (generation) to the next. This is because the algorithm is not guaranteed to find a better solution in each generation.
 
 We can visualize this by plotting the change in highest fitness over time, which I called _velocity_, but can also be considered _efficiency_.
 
@@ -808,7 +808,7 @@ We can visualize this by plotting the change in highest fitness over time, which
 
 Here, we can see a lot of zero-efficiency/zero-velocity generations, where the fitness of the fittest member of the population did not change from the previous generation, specifically after about the 1000th generation. This shows us in another way that the algorithm is converging on a solution.
 
-In fact, we could this metric to improve our end condition function, i.e. stop the algorithm when the efficiency drops below a certain threshold, rather than blindly after a certain number generations or a particular fitness score. We can also use efficiency to compare the performance of different configurations.
+In fact, we could use this metric to improve our end condition function, i.e. stop the algorithm when the efficiency drops below a certain threshold, rather than blindly after a certain number generations or a particular fitness score. We can also use efficiency to compare the performance of different configurations.
 
 That said, convergence on a solution doesn't always mean that the solution is the best solution to be found, just that it's the best so far. We should be careful not to prematurely stop the algorithm. For example, at around generation 4500, we see another significant spike in efficiency even after many hundreds of generations with little-or-no improvement.
 
@@ -856,7 +856,7 @@ If we look at the _difference of the differences_ between generations 2194 and 6
 
 This is what "68% better" looks like!
 
-Despite all the math and theory, throughout this exploration, we have aimed the power of evolutionary algorithms towards scratching the subjective search space surface of creativity and art. Algorithmic processes can produce results that are not only fascinating from a technical standpoint but also visually (and philosophically) compelling. At the end of analyzing our algorithm's ability to near its target, we are left to contemplate how well the resulting image captures our aesthics and creative vision.
+Despite all the math and theory, throughout this exploration, we have aimed the power of evolutionary algorithms towards scratching the subjective search space surface of creativity and art. Algorithmic processes can produce results that are not only fascinating from a technical standpoint but also visually (and philosophically) compelling. At the end of analyzing our algorithm's ability to near its target, we are left to contemplate how well the resulting image captures our aesthetics and creative vision.
 
 # Conclusion
 
@@ -864,7 +864,7 @@ Crafting a low-poly image representation is but one example of the myriad applic
 
 Despite the diverse applications, evolutionary algorithms generally follow a uniform framework, as discussed in [Putting it Together](#putting-it-together). Interestingly, many of the design considerations we covered in this blog post are even more broadly applicable to the field of data engineering.
 
-If you're intersted in exploring the use of genetic algorithms for creative purposes, I can recommend:
+If you're interested in exploring the use of genetic algorithms for creative purposes, I can recommend:
 
 - "The Nature of Code" by Daniel Shiffman, particularly the chapters on evolutionary algorithms.
 - "Generative Art" by Matt Pearson, which discusses the principles of algorithmic art creation.

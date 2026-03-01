@@ -18,7 +18,7 @@ A perceptron is more specifically a **linear classification** algorithm, because
 I spent a lot of time wanting to plot this decision boundary so that I could visually, and algebraically, understand how a perceptron works. So today, we’ll look at the maths of taking a perceptron’s inputs, weights, and bias, and turning it into a line on a plot.
 
 
-The first thing to consider is that a I’m only interested in plotting a decision boundary in a 2-D space, this means that our input vector must also be 2-dimensional, and each input in the vector can be represented as a point on a graph.
+The first thing to consider is that I’m only interested in plotting a decision boundary in a 2-D space, this means that our input vector must also be 2-dimensional, and each input in the vector can be represented as a point on a graph.
 
 ![Labeled training data plotted on a graph](/assets/images/labeled_training_data.png)
 
@@ -51,7 +51,7 @@ We can visually guess that the new input `(5, 4)` belongs in the same class as t
 
 ## Maths
 
-Remember, the summation of that our perceptron uses to determine its output is the **dot product** of the inputs and weights vectors, plus the bias:
+Remember, the summation that our perceptron uses to determine its output is the **dot product** of the inputs and weights vectors, plus the bias:
 
 ```
 w · x + b
@@ -63,7 +63,7 @@ When our inputs and weights vectors of are of 2-dimensions, the long form of our
 w1 * x1 + w2 * x2 + b
 ```
 
-Since we’re consider `x1` to be the `x` and `x2` to be the `y`, we can rewrite it:
+Since we’re considering `x1` to be the `x` and `x2` to be the `y`, we can rewrite it:
 
 ```
 w1x + w2y + b
@@ -98,7 +98,7 @@ point_1 = (0, -b / w2)
 point_2 = (-b / w1, 0)m = (y2 - y1) / (x2 - x1)m = (0 - -(b / w2)) / (-(b / w1) - 0)m = -(b / w2) / (b / w1)
 ```
 
-Now, we have the two values we need to to construct our line in slope-intercept form:
+Now, we have the two values we need to construct our line in slope-intercept form:
 
 ```
 slope = -(b / w2) / (b / w1)

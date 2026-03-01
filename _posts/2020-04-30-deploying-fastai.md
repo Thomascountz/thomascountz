@@ -157,7 +157,7 @@ $ curl -F 'image=@/Users/thomas/Pictures/sparrow.jpg' localhost:5000/predict
 
 ## Docker
 
-If it wasn't for Heroku's slug size restrictions, this would have been almost the end. You'd `heroku push` this up and your new ML app would be up and running. However, after of our discussion earlier, we know that we want to use Docker to encompass our application's runtime environment so as to avoid Heroku's slug size restrictions.
+If it wasn't for Heroku's slug size restrictions, this would have been almost the end. You'd `heroku push` this up and your new ML app would be up and running. However, after our discussion earlier, we know that we want to use Docker to encompass our application's runtime environment so as to avoid Heroku's slug size restrictions.
 
 Here's a minimal Dockerfile with a little bit of a twist on how I've handled dependencies...
 
@@ -292,7 +292,7 @@ $ curl -F 'image=@/Users/thomas/Pictures/sparrow.jpg' https://shielded-eyrie-488
 
 ## Conclusion 
 
-Hopefully this article answered the question: "what do I do after fitting my model?" The reason that I like this stack in particular is because it parallels what I'm familiar with as a web developer—the fact that the API happens to loads a `.pkl` file is trivial thanks to fastai2. Also, with a Dockerfile, I'm not locked into the proprietary solutions that MLOps is building towards. 
+Hopefully this article answered the question: "what do I do after fitting my model?" The reason that I like this stack in particular is because it parallels what I'm familiar with as a web developer—the fact that the API happens to load a `.pkl` file is trivial thanks to fastai2. Also, with a Dockerfile, I'm not locked into the proprietary solutions that MLOps is building towards. 
 
 ### Is this stack production-ready?
 
@@ -311,7 +311,7 @@ $ curl https://shielded-eyrie-48894.herokuapp.com/ping
 
 Now, test it out with these images, or upload your own!
 
-⚠️  This model is probably not going to infer all of your images very accurately. It was trained on a tiny dirty dataset, but it worked for illustrating the deployment pipeline in this article. Secondly, I miss labelled mourning doves as `morning_dove`, sorry!
+⚠️  This model is probably not going to infer all of your images very accurately. It was trained on a tiny dirty dataset, but it worked for illustrating the deployment pipeline in this article. Secondly, I mislabelled mourning doves as `morning_dove`, sorry!
 
 ```bash
 $ curl -F 'image=@/Users/thomas/Pictures/sparrow.jpg' https://shielded-eyrie-48894.herokuapp.com/predict

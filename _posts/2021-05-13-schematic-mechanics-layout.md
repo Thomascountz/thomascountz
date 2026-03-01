@@ -14,7 +14,7 @@ Pictured above is the schematic for Hexo’s circuit. Like I mentioned earlier, 
 After schematic capture, I moved onto **mechanical design.** All I knew was that I wanted Hexo to be worn as a pendant on a necklace. In electronics projects, mechanical design is concerned primarily with the _shape_ of the PCB as it’s often mounted without an enclosure or case. For Hexo, the PCB itself would be exposed as the final form factor and I was inspired by game pieces from one of my husband and my (mine?) favorite games, _Eclipse_, pictured below. Eclipse is a sci-fi based game and besides the size and shape of its pieces, I was inspired by the futuristic and mysterious vibe of the game’s design.
 
 
-![Geometric boardgame picess](/assets/images/eclipse-pieces.jpg)
+![Geometric boardgame pieces](/assets/images/eclipse-pieces.jpg)
 
 
 The mechanical design was constrained primarily by the size of the battery I planned to use (or rather the size of the mechanical clip that holds the battery) and the user experience of pressing a small button and reading the numbers. The important constraints limited how _small_ Hexo could be because I wanted Hexo to be as small as possible (because I thought it would look cooler).
@@ -29,7 +29,7 @@ Finally, the **PCB Layout**, or the process by which you plan where to mount eac
 
 ![Bare PCBs after being delivered](/assets/images/bare_hexo_pcbs.jpg)
 
-[During prototyping](https://www.thomascountz.com/2021/05/13/prototyping-design-siulation), we used the THT (through-hole technology) components that had _leads_ that allow them to “plug-into” a breadboard. For PCBs, we can also use SMT (surface mount technology) components that, instead of having _leads_ that go into a hole, they have _pins_ that are soldered to _pads_.  
+[During prototyping](/2021/05/13/prototype-design-simulation), we used the THT (through-hole technology) components that had _leads_ that allow them to “plug-into” a breadboard. For PCBs, we can also use SMT (surface mount technology) components that, instead of having _leads_ that go into a hole, they have _pins_ that are soldered to _pads_.  
 
 These pads are where the electrical connection between the component pins and the rest of the circuit is made. Taken together, a group of pads make up a component’s _footprint_ or the overall shape and dimensions of the electrical connections between the component and the PCB. 
 

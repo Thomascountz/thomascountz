@@ -68,13 +68,13 @@ Before we begin, we’ll start with a little recap and summary.
 
 # Recap & Summary
 
-**In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks)**, we looked at what a perceptron was, and we discussed the formula that describes the process it uses to binarily classify inputs. We learned that the perceptron takes in an input vector, `x`, multiplies it by a corresponding weight vector `w`, and then adds it to a bias, `b`. It then uses an activation function, (the step function, in this case), to determine if our resulting summation is greater than `0`, in order to to classify it as `1` or `0`.
+**In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks)**, we looked at what a perceptron was, and we discussed the formula that describes the process it uses to binarily classify inputs. We learned that the perceptron takes in an input vector, `x`, multiplies it by a corresponding weight vector `w`, and then adds it to a bias, `b`. It then uses an activation function, (the step function, in this case), to determine if our resulting summation is greater than `0`, in order to classify it as `1` or `0`.
 
 ![[https://en.wikipedia.org/wiki/Perceptron](https://en.wikipedia.org/wiki/Perceptron)](/assets/images/perceptron-equation-simple.png)
 
-**In [Preceptron Implementing AND - Part 1](/2018/03/26/perceptrons-implementing-and-part-1)**, we looked at how we could use a perceptron to mimic the behavior of an `AND` logic gate. We walked through, and reasoned about, how to determine the values of the weight vector, `w`, and the bias, `b`, in order for our perceptron to accurately classify the inputs from the `AND` truth table.
+**In [Perceptron Implementing AND - Part 1](/2018/03/26/perceptrons-implementing-and-part-1)**, we looked at how we could use a perceptron to mimic the behavior of an `AND` logic gate. We walked through, and reasoned about, how to determine the values of the weight vector, `w`, and the bias, `b`, in order for our perceptron to accurately classify the inputs from the `AND` truth table.
 
-**In [Preceptron Implementing AND - Part 2](/2018/03/28/perceptrons-implementing-and-part-2)**, we looked at the Perceptron Learning Rule. We learned that by using labeled data, we could have our perceptron predict an output, determine if it was correct or not, and then adjust the weights and bias accordingly. In the end, we ended up with two formulas to describe the perceptron:
+**In [Perceptron Implementing AND - Part 2](/2018/03/28/perceptrons-implementing-and-part-2)**, we looked at the Perceptron Learning Rule. We learned that by using labeled data, we could have our perceptron predict an output, determine if it was correct or not, and then adjust the weights and bias accordingly. In the end, we ended up with two formulas to describe the perceptron:
 
 ```
 f(x) = 1 if w · x + b > 0
@@ -89,9 +89,9 @@ w <- w + (y - f(x)) * x
 
 > - Sebastian Raschka, Vahid Mirjalili, [Python Machine Learning — 2nd Ed.](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning-second-edition)
 
-**Supervised learning**, is a subcategory of Machine Learning, where learning data is **labeled**, meaning that for each of the examples used to train the perceptron, the output in known in advanced.
+**Supervised learning**, is a subcategory of Machine Learning, where learning data is **labeled**, meaning that for each of the examples used to train the perceptron, the output in known in advance.
 
-When considering what kinds of problems a perceptron is useful for, we can determine that it’s good for tasks where we want to predict if an input belongs in one of two categories, based on it’s features and the features of inputs that are known to belong to one of those two categories.
+When considering what kinds of problems a perceptron is useful for, we can determine that it’s good for tasks where we want to predict if an input belongs in one of two categories, based on its features and the features of inputs that are known to belong to one of those two categories.
 
 These tasks are called **binary classification tasks**. Real-world examples include email spam filtering, search result indexing, medical evaluations, financial predictions, and, well, almost anything that is “binarily classifiable.”
 
@@ -215,7 +215,7 @@ There are three important steps happening in this line:
 
 1. While we iterate through, we store each elements in the `training_inputs` list into the `inputs` variable, and each of the elements in `labels`, in the variable `label`.
 
-In the code block after this line, when we reference `label`, we get the *expected output *of the input vector stored in the `inputs` variable, and we do this once for every `inputs`/`label` pair.
+In the code block after this line, when we reference `label`, we get the *expected output* of the input vector stored in the `inputs` variable, and we do this once for every `inputs`/`label` pair.
 
 ```python
 prediction = self.predict(inputs)
@@ -326,7 +326,7 @@ f(x) = 1 if w · x + b > 0
        0 otherwise
 ```
 
-In order to the determine the **weights**, the **Perceptron Learning Rule**:
+In order to determine the **weights**, the **Perceptron Learning Rule**:
 
 - **Predicts** an output based on the current weights and inputs
 
@@ -352,7 +352,7 @@ w <- w + α(y - f(x))x
 
 # Appendix and Further Exploration
 
-There are a few concepts we haven’t touch on yet. Notably, the limitations of the perceptron.
+There are a few concepts we haven’t touched on yet. Notably, the limitations of the perceptron.
 
 The **Perceptron Convergence Theorem** is, from what I understand, a lot of math that proves that a perceptron, given enough time, will always be able to find a **decision boundary** between two **linearly separable** classes.
 
