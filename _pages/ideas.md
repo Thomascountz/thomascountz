@@ -9,6 +9,8 @@ permalink: /.ideas
   - What can we learn from standardized datasheets to improve software readmes?
 - Software Engineering Malpractice
   - What are our responsibilities as software engineers, and what does it mean when we shirk them?
+- Three solutions
+  - Inspired by what Jan taught me at the maker space
   
 ## Software Projects
 - Pros & Consequences
