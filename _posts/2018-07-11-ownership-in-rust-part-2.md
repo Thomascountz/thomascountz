@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Ownership in Rust, Part 2"
+title: "Ownership in Rust II: References, Borrowing, and Safety"
 subtitle: "It’s still not my problem."
-tags: [rust]
+tags: [rust, series__rust-ownership]
 ---
 [Checkout _Ownership in Rust, Part 1_](/2018/07/09/ownership-in-rust-part-1).
 
@@ -282,4 +282,3 @@ There’s still a bit more left to uncover about Rust ownership, but with these 
 - [Rust Book](https://doc.rust-lang.org/book/second-edition/)
 
 - [Rust Language Form Post about The Copy Trait](https://users.rust-lang.org/t/the-copy-trait-what-does-it-actually-copy/18730)
-

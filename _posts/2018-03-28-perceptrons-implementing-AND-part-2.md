@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Perceptron Implementing AND, Part 2"
+title: "Automating Perceptron Learning Algorithm"
 subtitle: "Learning Machine Learning Journal #2"
-tags: [machine-learning]
+tags: [machine-learning, python, series__perceptron]
 ---
 ![Illustration of a perceptron](/assets/images/perceptron_model_with_names.png)
 

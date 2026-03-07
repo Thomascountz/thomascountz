@@ -4,7 +4,7 @@ title: Good Citizen Syndrome
 subtitle: Your Best Engineers Can't Defend Your Products Forever
 date: "2026-01-26"
 description: "When skilled engineers constantly fill gaps in process and standards, it can mask weak reliability strategy."
-tags: [teams, process, leadership]
+tags: [teams]
 ---
 
 **Good Citizen Syndrome is what happens when engineering leaders—often unwittingly—confuse good reliable engineers with good reliability engineering.**

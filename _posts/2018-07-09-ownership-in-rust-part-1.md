@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Ownership in Rust, Part 1"
+title: "Ownership in Rust I: Moves, Copies, and the Stack vs. Heap"
 subtitle: "It’s not my problem."
-tags: [rust]
+tags: [rust, series__rust-ownership]
 featured: true
 ---
 [_Ownership in Rust, Part 2_ →](/2018/07/11/ownership-in-rust-part-2)
@@ -163,4 +163,3 @@ So far, it seems like learning about ownership is more to do with navigating Rus
 - [Rust Book](https://doc.rust-lang.org/book/second-edition/)
 
 - [Rust Language Form Post about The Copy Trait](https://users.rust-lang.org/t/the-copy-trait-what-does-it-actually-copy/18730)
-

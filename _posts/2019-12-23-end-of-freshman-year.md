@@ -2,6 +2,7 @@
 layout: post
 title: "End of Freshman Year"
 subtitle: "What I've Learned After my First Year of Being a Software Consultant"
+tags: [journal, teams, communication]
 ---
 As I enter my second year as a software consultant (my sophomore year, as no one will let me call it), I've gained a new perspective about being pushed, having to pull, personal principles, and being the adult in the room... 
 
@@ -13,7 +14,7 @@ Tackling the first issue is where I learned about "pulling". Pulling is when you
 
 The frustrating part was that I didn't know what I needed until I wasn't getting it, and once I realized this, I was afraid to ask.
 
-It takes a lot of self-worth/self-confidence to feel like you can ask for some things. Between being a minority in tech (gay & POC) and having imposter syndrome, getting to a place where I felt comfortable asking took me a long time.
+It takes a lot of self-worth/self-confidence to feel like you can ask for some things. Between being a minority in tech and having imposter syndrome, getting to a place where I felt comfortable asking took me a long time.
 On top of that, I felt very indignant for having to ask for some things at all! 
 
 "Why isn't there just a clear policy about X??"
@@ -54,7 +55,7 @@ After realizing this, I went back to them and said flat out:
 
 "I think we can do this and do it well. I have good feelings about this, no matter the outcome. Let's do it!"
 
-It's this exact confidence, (that is often said that cis-White men have inherently), and commitment that costs me very little, but has the psychological benefit of forcing me to start to believe that it's true. Note: It wasn't a question of "can I", but "would I?"
+It's this confidence and commitment that costs me very little, but has the psychological benefit of forcing me to start to believe that it's true. Note: It wasn't a question of "can I", but "would I?"
 
 I thought about the people I admire—they are the people who would have also said yes. Saying yes to difficult things feels very adult to me. I think of my parents and how many times they've done the hard thing. To me they didn't flinch, but of course, everyone has doubts.
 

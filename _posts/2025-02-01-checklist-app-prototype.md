@@ -2,7 +2,7 @@
 layout: post
 title: "Checklist App Prototype"
 date: 2025-02-01
-tags: [journal, prototype, javascript]
+tags: [journal, prototype]
 description: "A prototype for a checklist app designed to help users complete procedures step-by-step."
 ---
 I've been playing around with the idea of building a checklist app that's geared towards completing procedures.

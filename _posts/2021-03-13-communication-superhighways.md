@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Communication Superhighways"
-tags: [process, teams, consulting]
+tags: [teams, communication]
 ---
 Good communication in an emergency is vital: What is happening? Who is leading? Where are we meeting? Et al. Just like firefighters, who use highways instead of local roads to get to a burning building more quickly, our teams should leverage communication highways to respond efficiently in the face of an emergency.
 

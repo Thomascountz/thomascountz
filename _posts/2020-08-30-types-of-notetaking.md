@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Types of Notetaking"
-tags: [process]
+tags: [craft]
 ---
 Earlier this week, my pair and I struck upon something interesting, and I stopped to take notes.
 

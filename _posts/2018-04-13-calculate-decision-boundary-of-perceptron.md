@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Calculate the Decision Boundary of a Single Perceptron; Visualizing Linear Separability"
+title: "Calculate the Decision Boundary; Visualize Linear Separability"
 subtitle: "Learning Machine Learning Journal 5"
-tags: [machine-learning]
+tags: [machine-learning, python, series__perceptron]
 ---
 tl;dr Skip to the [Summary](#summary).
 

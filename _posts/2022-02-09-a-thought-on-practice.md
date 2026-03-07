@@ -2,7 +2,7 @@
 layout: post
 title: "A Thought on Practice"
 subtitle: "A new appreciation for the old"
-tags: [process]
+tags: [craft]
 description: "A reflection on the value of practicing familiar skills to rediscover growth and inspiration."
 ---
 **tl;dr** Do a thing you already know how to do.

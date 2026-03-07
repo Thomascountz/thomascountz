@@ -2,7 +2,7 @@
 layout: post
 title: "Adding Journals"
 date: 2025-01-20
-tags: [journal]
+tags: [meta, journal]
 description: "Adding journals to my blog for quick thoughts and ideas."
 ---
 

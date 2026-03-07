@@ -2,7 +2,7 @@
 layout: post
 title: "ActiveRecord Models to a Mermaid ERD"
 date: 2025-01-28
-tags: [journal, rails, activerecord]
+tags: [journal, rails]
 description: "A Ruby script that converts ActiveRecord models into a Mermaid Entity-Relationship Diagram (ERD) format."
 ---
 Turn your ApplicationRecord models into a Mermaid ERD

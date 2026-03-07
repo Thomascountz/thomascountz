@@ -2,7 +2,7 @@
 layout: post
 title: "Range of Tolerance"
 date: 2020-01-10
-tags: [process]
+tags: [teams]
 ---
 [Originally Published in The Pseudocode 001](https://thepseudocode.com/001/range-of-tolerance)
 
@@ -23,4 +23,3 @@ We can use this as a metaphor for our working environment; everything needs to b
 We use this concept on one of my teams in the form of an "any objections" vote. When introducing a change (whether in team rituals, coding style, or meeting times), we ask if there are objections, rather than if everyone agrees. By posing _this_ question, we're asking if the proposal sits within our individual ranges of tolerance while acknowledging that it may not be optimal for everyone.  
 
 Considering the ranges of tolerance at work means that we allow some things to be against the personal preferences of some, while not against the personal preferences of others, as long as it's tolerable to everyone. The next time that you feel yourself resisting your team’s ideas, consider whether you personally object, or if it's somewhere within your range of tolerance.
-

@@ -3,7 +3,7 @@ layout: post
 title: "Becoming a Project Manager"
 subtitle: "After a year of being a consultant, it's true: software is about people."
 author: "Thomas Countz"
-tags: ["process", "consulting"]
+tags: [systems]
 ---
 
 As consultants, we're never just thinking about delivering code. Although it can be the majority of our work, clients don't hire us just because we can get things done, they hire us to become _partners_ in their work. So when I began to feel comfortable consistently delivering code for my client, I also began to see other ways that I might provide them value.

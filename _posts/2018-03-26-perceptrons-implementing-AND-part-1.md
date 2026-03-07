@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Perceptron Implementing AND, Part 1"
+title: "Teaching a Perceptron by Hand"
 subtitle: "Learning Machine Learning Journal #2"
-tags: [machine-learning]
+tags: [machine-learning, python, series__perceptron]
 ---
 In [Perceptron in Neural Networks](/2018/03/23/perceptrons-in-neural-networks), we got our feet wet learning about perceptrons. Inspired by [Michael Nielsen](http://michaelnielsen.org/)’s [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html) book, today, the goal is to expand on that knowledge by using the perceptron formula to mimic the behavior of a logical `AND`.
 

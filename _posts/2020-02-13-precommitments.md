@@ -2,7 +2,7 @@
 layout: post
 title: "Precommitments"
 date: 2020-02-13
-tags: [process]
+tags: [craft, communication]
 ---
 [Originally Published in The Pseudocode 001](https://thepseudocode.com/001/precommitments)
 
@@ -32,4 +32,3 @@ When boundaries are not defined, it can be difficult to be principled about them
 > "Your resolve waivers, no matter how much you believe something. Having the safeguard of, 'I've already made this decision and I've... locked myself into this decision...”'I've never been more grateful for [it]." — [The Indie Hackers Podcast Episode #139](https://www.indiehackers.com/podcast/139-john-onolan-of-ghost)  
 
 Boundaries are malleable and may change over time in good-faith negotiation with ourselves, our partners, or our workplaces. What's important, before you make commitments to others, evaluate your priorities and make precommitments to yourself.
-

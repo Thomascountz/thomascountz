@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Repeated Signals Wear Grooves"
-tags: [process, teams, consulting]
+tags: [teams, communication]
 ---
 In _The Design of Everyday Things_, Don Norman shares an anecdote about "signifiers," which are the design elements that communicate the purpose, structure, and operation of an object or system. The anecdote was about a wall onto which someone placed an empty bottle. Over time, more and more empty bottles showed up on this wall:
 

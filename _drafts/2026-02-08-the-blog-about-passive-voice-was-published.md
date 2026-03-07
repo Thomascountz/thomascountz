@@ -4,7 +4,7 @@ title: "The Blog About Passive Voice Was Published"
 subtitle: "Let the outcomes do the talking"
 date: '2026-02-08'
 description: 'In this blog post, I summarize my preference for passive voice when writing reports, updates, and other high-density information.'
-tags: [process]
+tags: [communication]
 ---
 
 Hi there. Let's jump right in: 

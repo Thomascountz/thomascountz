@@ -3,7 +3,7 @@ layout: post
 title: Good Citizen Syndrome
 date: '2026-01-26'
 description: ''
-tags: [teams, process, leadership]
+tags: [teams, systems]
 ---
 
 To explain what _Good Citizen Syndrome_ is, let me tell you about something that _didn't_ happen...

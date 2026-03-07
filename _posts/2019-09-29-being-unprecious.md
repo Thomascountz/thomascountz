@@ -1,7 +1,7 @@
 ---
 title: "Becoming Unprecious"
 subtitle: "If Lin-Manuel Miranda Can Write Hamilton in a Laundry Room, then I Can Blog Without a Coffee"
-tags: [process]
+tags: [craft]
 ---
 In [a recent "Footnotes" episode of _My Dad Wrote A Porno_](http://aca.st/f9905a), Tony-, Emmy-, Oscar, and Pulitzer Prize-winning guest, Lin-Manuel Miranda, sat down to talk about all things _Belinda Blinked_. But, he also got to talking a bit about his process as a writer:
 

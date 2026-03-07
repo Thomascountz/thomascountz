@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Perceptrons in Neural Networks"
+title: "Perceptrons: The Simplest Artificial Neuron"
 subtitle: "Learning Machine Learning Journal 1"
-tags: [machine-learning]
+tags: [machine-learning, python, series__perceptron]
 ---
 Perceptrons are a type of artificial neuron that predates the sigmoid neuron. It appears that they were invented in 1957 by [Frank Rosenblatt](https://en.wikipedia.org/wiki/Frank_Rosenblatt) at the Cornell Aeronautical Laboratory.
 

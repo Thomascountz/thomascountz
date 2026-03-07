@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dare to be Good Enough—You'll be Happier for it"
-tags: [process]
+tags: [craft]
 featured: true
 ---
 _Originally published on [8th Light's blog](https://8thlight.com/blog/thomas-countz/2020/10/06/dare-to-be-good-enough.html)_

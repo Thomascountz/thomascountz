@@ -2,7 +2,7 @@
 layout: post
 title: "Low-Poly Image Generation using Evolutionary Algorithms in Ruby"
 subtitle: "A Deep Dive into how evolutionary algorithms work."
-tags: [ruby, evolutionary-algorithms, machine-learning, interactive]
+tags: [ruby, algorithms, demo]
 featured: true
 description: "A deep dive into evolutionary algorithms through the lens of low-poly image generation. This exploration covers genetic algorithm theory, custom Ruby implementation using the Petri Dish framework, and detailed analysis of genetic operators including roulette wheel selection, random midpoint crossover, and nudge mutation. Includes comprehensive data analysis of fitness convergence, pixel-level accuracy, and efficiency metrics across 6000+ generations."
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hexo - Prototyping, Design, Simulation"
-tags: [project__hexo, hardware, electronics, project, design]
+tags: [series__hexo, electronics, project, design]
 description: "Building an electronic six-sided die from concept to prototype. This post covers breadboard prototyping, pen-and-paper circuit analysis using Ohm's and Kirchhoff's laws, and SPICE simulation with LTspice and Falstad. Includes modifying a 555 timer roulette circuit from 9V/10-LED to 3V/6-LED, with transient analysis of LED timing behavior."
 ---
 ![Hexo cycling through six LEDs and landing on number four](/assets/images/hexo_gif.gif)

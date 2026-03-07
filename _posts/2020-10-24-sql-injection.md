@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SQL Injection Overview"
-tags: [security, ruby, java, elixir, database]
+tags: [security, databases]
 ---
 ![](/assets/images/sql_injection/sql-injection-owasp.png)
 

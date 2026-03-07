@@ -2,7 +2,7 @@
 layout: post
 title: "Run Commands on File Change"
 date: 2025-03-17
-tags: [journal, devtool]
+tags: [journal, utils]
 description: "I use `entr` to run commands automatically when files change. Here's how I use it to run tests."
 ---
 I use [`entr`](https://github.com/eradman/entr) to run commands automatically when files change. Here's how I use it to run tests.

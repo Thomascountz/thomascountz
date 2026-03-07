@@ -2,7 +2,7 @@
 layout: post
 title: "Debouncing API Calls"
 date: 2025-07-02
-tags: [javascript, api, interactive]
+tags: [javascript, api, demo]
 description: "Debouncing is a technique used to limit the rate at which a function is executed. It's particularly useful for optimizing performance in scenarios where a function is called frequently, such as handling user input events or making API calls."
 featured: true
 ---

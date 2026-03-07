@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Crafting an Invitation to Think"
-tags: [process, teams, consulting]
+tags: [communication, craft]
 ---
 Foreshadowing: signaling an outcome of chapter eight in the middle of chapter one, i.e. the original spoiler. Although, akin to the mean-spirited handiwork of a Reddit troll, wielded gracefully, foreshadowing helps an author build tension, introduce indirection, and drive home a butterfly-inducing denouement.
 

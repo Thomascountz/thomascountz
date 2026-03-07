@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Specify Bundler Version"
-tags: [ruby]
+tags: [ruby, rails]
 ---
 If you’re like me, you may have versions of both Bundler 1 and Bundler 2 installed on your system. This can make it difficult to manage different codebases.
 

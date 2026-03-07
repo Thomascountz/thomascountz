@@ -2,7 +2,7 @@
 layout: post
 title: "Ruby Bug #21117: Numbered Block Params"
 date: 2025-02-20
-tags: [journal, ruby]
+tags: [ruby]
 description: "A breakdown of the fix for Ruby Bug #21117, which addressed issues with numbered block parameters and combined assignment operators."
 ---
 ### tl;dr

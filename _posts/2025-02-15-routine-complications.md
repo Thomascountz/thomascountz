@@ -2,7 +2,7 @@
 layout: post
 title: "Routine Complications"
 date: 2025-02-15
-tags: [journal]
+tags: ["craft"]
 description: "Understanding and managing routine complications keeps us honest and responsible, even though we wish things would never go wrong."
 ---
 In [_A Life-Saving Checklist_](https://archive.is/0H188), author Atul Gawande describes a patient suffering from an infection introduced by medical equipment. These "line infections" are so common, they're said to be a _routine complication_.

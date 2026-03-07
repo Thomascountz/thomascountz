@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "19-line Line-by-line Python Perceptron"
-tags: [machine-learning]
+tags: [machine-learning, python, series__perceptron]
 featured: true
 ---
 ```python

@@ -3,7 +3,7 @@ layout: post
 title: "Job Scheduling with at(1)"
 subtitle: "The Unix utility that knows when teatime is"
 date: 2026-02-22
-tags: [journal, shellscript, devtool]
+tags: [utils]
 description: "at(1) is a one-off job scheduler that's been hiding in plain sight on Unix systems. Yes, it knows when teatime is."
 ---
 

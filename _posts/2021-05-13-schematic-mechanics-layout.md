@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hexo - Schematic Capture, Mechanical Design, & PCB Layout"
-tags: [project__hexo, hardware, electronics, project, design]
+tags: [series__hexo, electronics, project, design]
 description: "A walkthrough of transforming a circuit design into a manufacturable PCB using KiCAD EDA. Covers schematic capture with electrical rules checking, mechanical design constraints for a wearable pendant form factor, custom footprint creation from datasheets, and PCB layout including trace routing and component placement for a hexagonal LED die."
 ---
 ![Final revision of Hexo's schematic](/assets/images/hexo_schematic_final.png)

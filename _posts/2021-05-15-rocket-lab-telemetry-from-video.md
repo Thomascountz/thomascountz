@@ -2,7 +2,7 @@
 layout: post
 title: "Rocket Lab Telemetry From Video"
 subtitle: "Using Google's OCR to Collect Rocket Launch Telemetry from a Live Stream"
-tags: [project, ruby, machine-learning, data-science]
+tags: [project, data-science]
 description: "Extracting rocket telemetry data from a YouTube live stream using Google Cloud Video Intelligence API's OCR capabilities. This project walks through video ingestion, text detection across thousands of frames, JSON data wrangling with jq, and Ruby-based data cleanup to produce velocity and altitude datasets from Rocket Lab's Electron launch anomaly."
 ---
 ## The Anomaly

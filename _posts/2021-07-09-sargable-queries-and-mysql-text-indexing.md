@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sargable Queries & MUL Indexes; or Why My Query is Slow"
-tags: [ruby, database, rails]
+tags: [databases]
 featured: true
 description: "My discovery of \"sargability\" in SQL queries, told through the lens of debugging a slow ActiveRecord query in a MySQL database."
 ---
