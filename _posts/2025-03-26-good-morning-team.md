@@ -12,10 +12,11 @@ Every so often, I like to write a Ruby script that says good morning to my team 
 {: .wrap-it}
 ```ruby
 require "io/console"
+
 greeting = [71, 111, 111, 100, 32, 77, 111, 114, 110, 105, 110, 103, 44, 32, 84, 101, 97, 109, 33].map(&:chr).join
 colors = ["\e[31m", "\e[33m", "\e[32m", "\e[36m", "\e[34m", "\e[35m"]
 rows, columns = begin
-  io.console.winsize
+  IO.console.winsize
 rescue
   [24, 80]
 end
@@ -27,7 +28,7 @@ dx = 1
 dy = 1
 frame = 0
 loop do
-  print "\e[h\e[2j"
+  print "\e[H\e[2J"
   puts "\n" * y
   color = colors[frame % colors.size]
   print(" " * x + color + greeting + "\e[0m")
