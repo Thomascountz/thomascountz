@@ -1,0 +1,136 @@
+/* thomas-blog.css */
+body {
+    /* 1. TYPOGRAPHY - Match your JetBrains Mono setup */
+    --font-text: 'JetBrains Mono', monospace;
+    --font-monospace: 'JetBrains Mono', monospace;
+    --font-editor: 'JetBrains Mono', monospace;
+
+    /* 2. COLORS - From your :root variables */
+    --text-normal: #222323;        /* var(--dark) */
+    --text-muted: #666666;         /* var(--text-color-alt) */
+    --background-primary: #f0f6f0; /* var(--light) */
+    --background-secondary: #eeeeee; /* var(--background-color-alt) */
+
+    /* 3. SIZING & SPACING */
+    --line-height-normal: 1.4;
+    --font-text-size: 16px;
+    --font-weight-normal: 500;
+    --font-weight-bold: 800;
+
+    /* 4. WIDTH - Your body is set to ~80ch */
+    --file-line-width: 80ch;
+}
+
+/* 5. HEADER STYLING - Matching your H1 & H2 exact sizes and uppercase transforms */
+.markdown-source-view h1, .markdown-rendered h1, .HyperMD-header-1 {
+    font-size: 2rem !important;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 2.8rem; /* calc(var(--line-height) * 2) */
+}
+
+.markdown-source-view h2, .markdown-rendered h2, .HyperMD-header-2 {
+    font-size: 1.3rem !important;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* 6. CODE STYLING - Matching your custom blue */
+.theme-light {
+    --code-normal: #01a0e4;
+}
+
+/* 7. DARK MODE SUPPORT - Matching your @media (prefers-color-scheme: dark) */
+.theme-dark {
+    --text-normal: #f0f6f0;
+    --text-muted: #aaaaaa;
+    --background-primary: #222323;
+    --background-secondary: #111111;
+}
+
+/* Optional: Hiding Obsidian's left-hand ribbon to look more like a standalone editor */
+.workspace-ribbon.mod-left { display: none; }
+
+/* 8. SYNTAX HIGHLIGHTING - Mapped from your highlight.css (3024 Night) */
+body {
+    /* Code block background and standard text */
+    --code-background: #141414;
+    --code-normal: #f7f7f7;
+
+    /* Comments */
+    --code-comment: #5c5855;
+
+    /* Keywords (e.g. if, return, function) */
+    --code-keyword: #a16a94;
+
+    /* Strings */
+    --code-string: #01a252;
+
+    /* Numbers */
+    --code-value: #e8bbd0;
+
+    /* Functions */
+    --code-function: #01a0e4;
+
+    /* Operators and Punctuation (e.g. =, +, {}, () ) */
+    --code-operator: #b5e4f4;
+    --code-punctuation: #f7f7f7;
+
+    /* Classes and Types */
+    --code-property: #fded02;
+
+    /* Tags and Attributes (for HTML/XML) */
+    --code-tag: #b5e4f4;
+
+    /* Errors / Deletions / Constants */
+    --code-error: #db2d20;
+}
+
+/* Ensure code blocks don't get a border, matching your blog's flat aesthetic */
+.markdown-source-view.mod-cm6 .cm-theme .cm-content {
+    caret-color: var(--text-normal);
+}
+.markdown-rendered pre,
+.markdown-source-view.mod-cm6 .cm-scroller {
+    border: none !important;
+}
+
+/* 9. TABLES - Mapped directly from thomascountz.com styles.css */
+
+/* Overriding Obsidian's default table container */
+.markdown-rendered table {
+    position: relative;
+    top: 0.7rem; /* calc(1.4rem / 2) */
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 2.8rem; /* calc(1.4rem * 2) */
+}
+
+/* Matching the stark 1px solid text-color borders and specific paddings */
+.markdown-rendered th,
+.markdown-rendered td {
+    border: 1px solid var(--text-normal) !important;
+    /* padding: calc(line-height / 2) calc(1ch - border/2) calc(line-height / 2 - border) */
+    padding: 0.7rem calc(1ch - 0.5px) calc(0.7rem - 1px) !important;
+    line-height: 1.4rem;
+    vertical-align: top;
+    text-align: left;
+}
+
+.markdown-rendered tbody tr:first-child > * {
+    padding-top: calc(0.7rem - 1px) !important;
+}
+
+.markdown-rendered th {
+    font-weight: 800 !important;
+}
+
+/*
+ * CRITICAL: Obsidian natively applies zebra-striping (alternating gray backgrounds) to table rows.
+ * Your blog does not. This forces the background to remain clean.
+ */
+.markdown-rendered tbody tr:nth-child(even),
+.markdown-rendered tbody tr:nth-child(odd),
+.markdown-rendered tbody tr:hover {
+    background-color: transparent !important;
+}
