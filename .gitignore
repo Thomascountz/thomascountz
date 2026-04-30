@@ -5,8 +5,10 @@
 .jekyll-cache
 .mise.toml
 .sass-cache
+.obsidian/workspace.json
 .zed
 _site/
 tmp
 vendor/bundle
 scripts/
+

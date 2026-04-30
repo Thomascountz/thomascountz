@@ -1,5 +1,7 @@
 {
   "useMarkdownLinks": true,
   "showUnsupportedFiles": true,
-  "vimMode": true
+  "vimMode": true,
+  "autoConvertHtml": false,
+  "promptDelete": true
 }
