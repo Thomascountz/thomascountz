@@ -1,116 +1,142 @@
-/* thomas-blog.css */
+/* thomascountz.com — Obsidian snippet */
+
+/* Variables */
 body {
-    /* 1. TYPOGRAPHY - Match your JetBrains Mono setup */
     --font-text: 'JetBrains Mono', monospace;
     --font-monospace: 'JetBrains Mono', monospace;
     --font-editor: 'JetBrains Mono', monospace;
-
-    /* 2. COLORS - From your :root variables */
-    --text-normal: #222323;        /* var(--dark) */
-    --text-muted: #666666;         /* var(--text-color-alt) */
-    --background-primary: #f0f6f0; /* var(--light) */
-    --background-secondary: #eeeeee; /* var(--background-color-alt) */
-
-    /* 3. SIZING & SPACING */
+    --text-normal: #222323;
+    --text-muted: #666666;
+    --background-primary: #f0f6f0;
+    --background-secondary: #f0f6f0;
+    --background-modifier-border: #222323;
     --line-height-normal: 1.4;
     --font-text-size: 16px;
     --font-weight-normal: 500;
     --font-weight-bold: 800;
-
-    /* 4. WIDTH - Your body is set to ~80ch */
     --file-line-width: 80ch;
+    --code-normal: #01a0e4;
+    --code-size: 1em;
+    --code-background: transparent;
+    --blockquote-border-thickness: 0px;
+    --blockquote-border-color: transparent;
+    --blockquote-color: inherit;
+    --blockquote-background-color: transparent;
+    --blockquote-font-style: normal;
 }
 
-/* 5. HEADER STYLING - Matching your H1 & H2 exact sizes and uppercase transforms */
-.markdown-source-view h1, .markdown-rendered h1, .HyperMD-header-1 {
+.theme-dark {
+    --text-normal: #f0f6f0;
+    --text-muted: #aaaaaa;
+    --background-primary: #222323;
+    --background-secondary: #222323;
+    --background-modifier-border: #f0f6f0;
+    --code-normal: #01a0e4;
+}
+
+/* Headers */
+h1, .HyperMD-header-1, .markdown-rendered h1 {
     font-size: 2rem !important;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: 2.8rem; /* calc(var(--line-height) * 2) */
+    line-height: calc(2 * 1.4rem);
+    margin-bottom: 2.8rem;
 }
 
-.markdown-source-view h2, .markdown-rendered h2, .HyperMD-header-2 {
+h2, .HyperMD-header-2, .markdown-rendered h2 {
     font-size: 1.3rem !important;
     text-transform: uppercase;
     font-weight: 800;
 }
 
-/* 6. CODE STYLING - Matching your custom blue */
-.theme-light {
-    --code-normal: #01a0e4;
+/* Links */
+a, a:link, a:visited,
+.cm-s-obsidian .cm-link,
+.cm-s-obsidian .cm-hmd-internal-link,
+.cm-s-obsidian .cm-url,
+.markdown-rendered a {
+    color: var(--text-normal) !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 2px;
 }
 
-/* 7. DARK MODE SUPPORT - Matching your @media (prefers-color-scheme: dark) */
-.theme-dark {
-    --text-normal: #f0f6f0;
-    --text-muted: #aaaaaa;
-    --background-primary: #222323;
-    --background-secondary: #111111;
+/* Lists */
+.markdown-rendered ul,
+.cm-s-obsidian .HyperMD-list-line {
+    list-style-type: square;
 }
 
-/* Optional: Hiding Obsidian's left-hand ribbon to look more like a standalone editor */
-.workspace-ribbon.mod-left { display: none; }
-
-/* 8. SYNTAX HIGHLIGHTING - Mapped from your highlight.css (3024 Night) */
-body {
-    /* Code block background and standard text */
-    --code-background: #141414;
-    --code-normal: #f7f7f7;
-
-    /* Comments */
-    --code-comment: #5c5855;
-
-    /* Keywords (e.g. if, return, function) */
-    --code-keyword: #a16a94;
-
-    /* Strings */
-    --code-string: #01a252;
-
-    /* Numbers */
-    --code-value: #e8bbd0;
-
-    /* Functions */
-    --code-function: #01a0e4;
-
-    /* Operators and Punctuation (e.g. =, +, {}, () ) */
-    --code-operator: #b5e4f4;
-    --code-punctuation: #f7f7f7;
-
-    /* Classes and Types */
-    --code-property: #fded02;
-
-    /* Tags and Attributes (for HTML/XML) */
-    --code-tag: #b5e4f4;
-
-    /* Errors / Deletions / Constants */
-    --code-error: #db2d20;
+/* Code blocks — edit mode */
+.cm-s-obsidian .cm-line.HyperMD-codeblock {
+    background-color: #141414 !important;
+    color: #f7f7f7;
 }
 
-/* Ensure code blocks don't get a border, matching your blog's flat aesthetic */
-.markdown-source-view.mod-cm6 .cm-theme .cm-content {
-    caret-color: var(--text-normal);
+.cm-s-obsidian .HyperMD-codeblock .cm-comment { color: #5c5855; }
+.cm-s-obsidian .HyperMD-codeblock .cm-keyword { color: #a16a94; }
+.cm-s-obsidian .HyperMD-codeblock .cm-string { color: #01a252; }
+.cm-s-obsidian .HyperMD-codeblock .cm-number { color: #e8bbd0; }
+.cm-s-obsidian .HyperMD-codeblock .cm-def,
+.cm-s-obsidian .HyperMD-codeblock .cm-callee { color: #01a0e4; }
+.cm-s-obsidian .HyperMD-codeblock .cm-operator { color: #b5e4f4; }
+.cm-s-obsidian .HyperMD-codeblock .cm-property { color: #fded02; }
+.cm-s-obsidian .HyperMD-codeblock .cm-tag { color: #b5e4f4; }
+
+/* Code blocks — reading mode */
+.markdown-rendered pre {
+    background-color: #141414 !important;
+    color: #f7f7f7;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    padding: 1.4rem;
+    max-width: 100%;
+    border: none !important;
 }
-.markdown-rendered pre,
+
+.markdown-rendered pre code {
+    color: #f7f7f7;
+    white-space: pre !important;
+    word-wrap: normal !important;
+    overflow-wrap: normal !important;
+    display: block;
+}
+
+.markdown-rendered pre code .token.comment,
+.markdown-rendered pre code .token.prolog,
+.markdown-rendered pre code .token.doctype { color: #5c5855 !important; }
+.markdown-rendered pre code .token.keyword { color: #a16a94 !important; }
+.markdown-rendered pre code .token.string,
+.markdown-rendered pre code .token.attr-value,
+.markdown-rendered pre code .token.regex { color: #01a252 !important; }
+.markdown-rendered pre code .token.number,
+.markdown-rendered pre code .token.boolean { color: #e8bbd0 !important; }
+.markdown-rendered pre code .token.function { color: #01a0e4 !important; }
+.markdown-rendered pre code .token.operator { color: #b5e4f4 !important; }
+.markdown-rendered pre code .token.punctuation { color: #f7f7f7 !important; }
+.markdown-rendered pre code .token.property,
+.markdown-rendered pre code .token.class-name { color: #fded02 !important; }
+.markdown-rendered pre code .token.tag,
+.markdown-rendered pre code .token.selector { color: #b5e4f4 !important; }
+.markdown-rendered pre code .token.attr-name { color: #01a0e4 !important; }
+.markdown-rendered pre code .token.variable,
+.markdown-rendered pre code .token.constant { color: #db2d20 !important; }
+
 .markdown-source-view.mod-cm6 .cm-scroller {
     border: none !important;
 }
 
-/* 9. TABLES - Mapped directly from thomascountz.com styles.css */
-
-/* Overriding Obsidian's default table container */
+/* Tables */
 .markdown-rendered table {
     position: relative;
-    top: 0.7rem; /* calc(1.4rem / 2) */
+    top: 0.7rem;
     width: 100%;
     border-collapse: collapse;
-    margin: 0 0 2.8rem; /* calc(1.4rem * 2) */
+    margin: 0 0 2.8rem;
 }
 
-/* Matching the stark 1px solid text-color borders and specific paddings */
 .markdown-rendered th,
 .markdown-rendered td {
     border: 1px solid var(--text-normal) !important;
-    /* padding: calc(line-height / 2) calc(1ch - border/2) calc(line-height / 2 - border) */
     padding: 0.7rem calc(1ch - 0.5px) calc(0.7rem - 1px) !important;
     line-height: 1.4rem;
     vertical-align: top;
@@ -125,12 +151,123 @@ body {
     font-weight: 800 !important;
 }
 
-/*
- * CRITICAL: Obsidian natively applies zebra-striping (alternating gray backgrounds) to table rows.
- * Your blog does not. This forces the background to remain clean.
- */
 .markdown-rendered tbody tr:nth-child(even),
 .markdown-rendered tbody tr:nth-child(odd),
 .markdown-rendered tbody tr:hover {
     background-color: transparent !important;
+}
+
+.cm-table-widget table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cm-table-widget th,
+.cm-table-widget td {
+    border: 1px solid var(--text-normal) !important;
+    padding: 0.7rem calc(1ch - 0.5px) calc(0.7rem - 1px) !important;
+    line-height: 1.4rem;
+    vertical-align: top;
+    text-align: left;
+    background-color: transparent !important;
+}
+
+.cm-table-widget th {
+    font-weight: 800 !important;
+}
+
+.cm-table-widget td.is-selected,
+.cm-table-widget th.is-selected {
+    background-color: transparent !important;
+}
+
+/* Blockquotes */
+.markdown-rendered blockquote {
+    border: none !important;
+    padding: 0 0 0 3ch !important;
+    margin: 1.4rem 0 !important;
+}
+
+.markdown-rendered blockquote code,
+.cm-s-obsidian .HyperMD-quote .cm-inline-code {
+    color: var(--code-normal) !important;
+}
+
+/* Horizontal rules */
+.markdown-rendered hr {
+    border: none;
+    height: 1.4rem;
+    position: relative;
+}
+
+.markdown-rendered hr::after {
+    content: "";
+    position: absolute;
+    top: calc(1.4rem / 2);
+    left: 0;
+    width: 100%;
+    border-top: 1px solid var(--text-normal);
+}
+
+/* Images */
+.markdown-rendered img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.4rem auto;
+    display: block;
+}
+
+/* Highlights */
+.markdown-rendered mark,
+.cm-s-obsidian .cm-highlight {
+    background-color: var(--text-normal);
+    color: var(--background-primary);
+    padding: 0 0.5ch;
+}
+
+/* Footnotes */
+.markdown-rendered .footnotes ol {
+    counter-reset: footnote-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.markdown-rendered .footnotes ol li {
+    counter-increment: footnote-counter;
+    margin-bottom: 1.4rem;
+}
+
+.markdown-rendered .footnotes ol li::before {
+    content: counter(footnote-counter) ". ";
+    font-weight: 800;
+}
+
+.markdown-rendered .footnotes p {
+    display: inline;
+}
+
+/* Layout */
+.workspace-ribbon.mod-left {
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0;
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+.mod-macos .workspace-tabs .workspace-tab-header-container {
+    padding-left: 64px;
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer {
+    max-width: var(--file-line-width);
+}
+
+.markdown-source-view.mod-cm6 .cm-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.markdown-source-view.mod-cm6 .cm-gutters {
+    padding-right: 4px;
 }

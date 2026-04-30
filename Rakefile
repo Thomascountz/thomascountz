@@ -1,27 +1,31 @@
 require 'date'
+require 'fileutils'
 require 'yaml'
 
 def slugify(title)
   title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
 end
 
-desc 'Create a new blog post'
+desc 'Create a new draft (title= required, tags= optional comma-separated)'
 task :post do
   title = ENV['title'] || abort('Please provide a title with title=')
+  tags = ENV['tags'] ? ENV['tags'].split(',').map(&:strip) : []
   slug = slugify(title)
   date = Date.today.strftime('%Y-%m-%d')
-  filename = File.join('_posts', "#{date}-#{slug}.md")
+  filename = File.join('_drafts', "#{date}-#{slug}.md")
 
   if File.exist?(filename)
     abort("Error: #{filename} already exists!")
   end
 
-  puts "Creating new post: #{filename}"
+  puts "Creating new draft: #{filename}"
   front_matter = {
     'layout' => 'post',
     'title' => title,
+    'subtitle' => '',
     'date' => Date.today.to_s,
-    'description' => ''
+    'description' => '',
+    'tags' => tags
   }
 
   File.open(filename, 'w') do |file|
@@ -29,7 +33,25 @@ task :post do
     file.puts('---')
     file.puts
   end
-  puts "Post created successfully!"
+  puts "Draft created successfully!"
+end
+
+desc 'Publish a draft to _posts/ (file= required)'
+task :publish do
+  file = ENV['file'] || abort('Please provide a draft with file=')
+  unless File.exist?(file)
+    abort("Error: #{file} not found!")
+  end
+
+  basename = File.basename(file)
+  dest = File.join('_posts', basename)
+
+  if File.exist?(dest)
+    abort("Error: #{dest} already exists!")
+  end
+
+  FileUtils.mv(file, dest)
+  puts "Published: #{dest}"
 end
 
 def collect_posts_with_tags
