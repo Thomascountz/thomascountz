@@ -21,7 +21,8 @@ task :post do
     'layout' => 'post',
     'title' => title,
     'date' => Date.today.to_s,
-    'description' => ''
+    'description' => '',
+    'tags' => []
   }
 
   File.open(filename, 'w') do |file|
